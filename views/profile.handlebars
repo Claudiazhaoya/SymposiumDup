@@ -1,47 +1,147 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-	<title>Symposium</title>
-	<link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
-	<link rel="stylesheet" href="/stylesheets/style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css"> <!-- Bootstrap style -->
+  <link rel="stylesheet" href="/stylesheets/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="/stylesheets/profile.css"> <!-- Gem style -->
+
+  <script src="javascripts/modernizr.js"></script> <!-- Modernizr -->
+    
+  <title>Symposium</title>
 </head>
 <body>
-	<div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-              <li role="presentation"><a href="/users/login">yes</a></li>
-              <li role="presentation"><a href="/users/signup">no</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Symposium</h3>
-      </div>
+  <header role="banner">
+    <!-- <div id="cd-logo"><a href="#0"><img src="img/nav-logo-6.png" alt="Logo"></a></div> -->
+    <div id="cd-logo"> 
+      <h1> Symposium </h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <!-- inser more links here -->
+        <li class="sampleText">Wecome User1234</li>
+      </ul>
+    </nav>
+  </header>
 
-
-      <div class="row">
-        <div class="col-lg-12">
-          {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-          {{/if}}
-
-          {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
-          {{/if}}
-
-          {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-          {{/if}}
-          
-          {{{body}}}
+  <div class="container">
+    <h2>My Profile</h1>
+    <hr>
+  <div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Change your avatar</h6>
+          <input type="file" class="form-control">
+          <ul>
+          <hr>
+            <li><a class="classTaken" href="#"> Classes Taken on Symposium </a></li>
+          <hr>
+            <li><a class="fileDL" href="#"> Files Downloaded </a></li>
+          <hr>
+            <li><a class="fileUL" href="#"> Files Uploaded </a></li>
+          <hr>
+            <li><a class="pointHistory" href="#"> Points History </a></li>
+          <ul>
         </div>
-
-        
       </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        <h3>Personal info</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Username:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="Username1234" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email Address:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="janesemail@gmail.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Current Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="11111122333">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">New Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="11111122333">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm New password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="11111122333">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">College / University:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Major: </label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <!-- Below is just to reference dropdown list that may be required for the future purposes -->
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Time Zone:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Alaska">(GMT-09:00) Alaska</option>
+                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                  <option value="Arizona">(GMT-07:00) Arizona</option>
+                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Reference dropdown ends -->
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <div class="col-md-10">
+                <input type="button" class="btn btn-primary" value="Save Changes">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-      <footer class="footer">
-        <p>&copy; 2017 Symposium, Inc.</p>
-      </footer>
 
-    </div> <!-- /container -->
+
+
+  <div class="footer">
+    <p>&copy; 2017 Symposium, Inc.</p>
+  </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="javascripts/logsign_nav.js"></script> <!-- Gem jQuery -->
 </body>
 </html>

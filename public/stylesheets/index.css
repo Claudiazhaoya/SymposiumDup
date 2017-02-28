@@ -14,7 +14,16 @@ html * {
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
   font-size: 100%;
   font-family: "PT Sans", sans-serif;
   color: #505260;
@@ -96,7 +105,6 @@ header[role=banner]::after {
   margin-right: 5%;
   width: 44px;
   height: 100%;
-  background: url("../images/cd-icon-menu.svg") no-repeat center center;
   cursor: pointer;
 }
 .main-nav ul {
@@ -496,12 +504,13 @@ xsigin/signup popup
 
 .logo1 {
   position: absolute;
+  margin-top: 7%;
   left: 50%;
-  margin-left: -500px
+  margin-left: -400px
 }
 
 .search {
-  top: 50%;
+  margin-top: 10%;
   left: 50%;
   margin-left: -600px;
   position: absolute;
@@ -590,4 +599,15 @@ xsigin/signup popup
 
 input:-moz-placeholder {
   color: #888
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #1a1a1a;
+  color: #b4a046;
 }
