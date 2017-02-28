@@ -1,4 +1,3 @@
-
 var express = require('express');
 var path = require('path');
 
@@ -14,20 +13,20 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-
+// connect to the local database
 mongoose.connect('mongodb://localhost/symposium');
 var db = mongoose.connection;
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var users = require('./routes/users');
 
+// initialize the application
 var app = express();
 
 
 
-// view engine setup
+// set up view engine
 app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'pug');
 app.engine('handlebars', exphbs('index'));
 app.set('view engine', 'handlebars');
 
@@ -82,7 +81,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/users', users);
 
 
