@@ -1,14 +1,36 @@
 <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
-<link rel="stylesheet" href="/stylesheets/style.css"/>
+<link rel="stylesheet" href="/stylesheets/signup.css"/>
 <h2 class="page-header">Login</h2>
-<form method="post" action="/users/login">
-  <div class="form-group">
-    <label>Username</label>
-    <input type="text" class="form-control" name="username" placeholder="Username">
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" name="password" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+
+    <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+      <div id="cd-login"> <!-- log in form -->
+        <form class="cd-form" method="post" action="/users/login">
+          <p class="fieldset">
+            <label class="image-replace cd-username" for="signup-username">Username</label>
+            <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" name="username">
+            <span class="cd-error-message">Username error message</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signin-password">Password</label>
+            <input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password" name="password">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input type="checkbox" id="remember-me" checked>
+            <label for="remember-me">Remember me</label>
+          </p>
+
+          <p class="fieldset">
+            <input class="full-width" type="submit" value="Login">
+          </p>
+        </form>
+        <!-- <a href="#0" class="cd-close-form">Close</a> -->
+      </div> <!-- cd-login -->
+    </div>
