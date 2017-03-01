@@ -2,40 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf0a31cb-0d26-43b5-8a19-229f439b39e7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/css/styles..css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/css/styles..css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/css/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/css/styles.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/images/icon-discussion-board.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/images/icon-group-study.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/images/icon-my-repository.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/images/profile-picture.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/_boards.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/_boxs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/_buttons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/_global.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/_labels.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/_typography.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/discussion_board/assets/sass/styles.scss" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/course.js" afterPath="$PROJECT_DIR$/model/course.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/course.js" afterPath="$PROJECT_DIR$/routes/course.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets_wjz/assets/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/stylesheets_wjz/assets/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets_wjz/assets/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/public/stylesheets_wjz/assets/css/font-awesome.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/course.handlebars" afterPath="$PROJECT_DIR$/views/course.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/discussion.handlebars" afterPath="$PROJECT_DIR$/views/discussion.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/groupstudy.handlebars" afterPath="$PROJECT_DIR$/views/groupstudy.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.handlebars" afterPath="$PROJECT_DIR$/views/index.handlebars" />
     </list>
     <ignored path="cs307.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,31 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.handlebars" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.handlebars">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets_wjz/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="discussion.handlebars" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/discussion.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3765">
-              <caret line="259" column="84" lean-forward="false" selection-start-line="259" selection-start-column="19" selection-end-line="259" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="groupstudy.handlebars" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/groupstudy.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,8 +40,28 @@
       <file leaf-file-name="course.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/course.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+            <state relative-caret-position="360">
+              <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="discussion.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/discussion.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3885">
+              <caret line="261" column="22" lean-forward="false" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupstudy.handlebars" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/groupstudy.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="287" column="38" lean-forward="false" selection-start-line="287" selection-start-column="38" selection-end-line="287" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -115,20 +87,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/user.js">
+      <file leaf-file-name="course.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/course.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-88">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -149,8 +121,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>course</find>
       <find>study no</find>
+      <find>course</find>
+      <find>search</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,9 +141,9 @@
         <option value="$PROJECT_DIR$/model/course.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/routes/course.js" />
-        <option value="$PROJECT_DIR$/views/groupstudy.handlebars" />
-        <option value="$PROJECT_DIR$/views/discussion.handlebars" />
         <option value="$PROJECT_DIR$/views/course.handlebars" />
+        <option value="$PROJECT_DIR$/views/discussion.handlebars" />
+        <option value="$PROJECT_DIR$/views/groupstudy.handlebars" />
       </list>
     </option>
   </component>
@@ -184,9 +157,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="173" />
-    <option name="y" value="90" />
-    <option name="width" value="1276" />
+    <option name="x" value="211" />
+    <option name="y" value="50" />
+    <option name="width" value="1069" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -275,54 +248,6 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets_wjz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs307" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs307" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets_wjz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs307" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs307" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -356,9 +281,12 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/stylesheets_wjz/assets/css" />
       <recent name="$PROJECT_DIR$/public/discussion" />
+      <recent name="$PROJECT_DIR$/public/stylesheets_wjz/assets/css" />
       <recent name="$PROJECT_DIR$/public/stylesheets_wjz" />
       <recent name="$PROJECT_DIR$/public/discussion_board/assets" />
       <recent name="$PROJECT_DIR$/public/discussion_board" />
@@ -432,18 +360,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1487444842556</updated>
-      <workItem from="1488340513383" duration="8897000" />
+      <workItem from="1488340513383" duration="12581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8897000" />
+    <option name="totallyTimeSpent" value="12581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="173" y="90" width="1276" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="211" y="50" width="1069" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2492163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29747427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -509,14 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/discussion_board/assets/images/icon-discussion-board.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -546,22 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="84" column="15" lean-forward="false" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/course.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -570,26 +474,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/groupstudy.handlebars">
+    <entry file="file://$PROJECT_DIR$/model/course.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets_wjz/assets/css/styles.css.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets_wjz/assets/css/styles..css.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets_wjz/assets/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11173">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="84" column="15" lean-forward="false" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets_wjz/assets/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/course.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+        <state relative-caret-position="360">
+          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/discussion.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3765">
-          <caret line="259" column="84" lean-forward="false" selection-start-line="259" selection-start-column="19" selection-end-line="259" selection-end-column="84" />
+        <state relative-caret-position="3885">
+          <caret line="261" column="22" lean-forward="false" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/groupstudy.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="287" column="38" lean-forward="false" selection-start-line="287" selection-start-column="38" selection-end-line="287" selection-end-column="38" />
           <folding />
         </state>
       </provider>
