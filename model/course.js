@@ -7,9 +7,9 @@ var app = express();
 
 app.use(bodyParser.json());
 
-var myurl = 'http://api.purdue.io/odata/Courses?$filter=Title eq ';
+var myurl = 'http://api.purdue.io/odata/Courses?$filter=Subject/Abbreviation eq ';
 var course = {
-   url: 'http://api.purdue.io/odata/Courses?$filter=Title eq \'Planet Earth\'',
+   url: '',
    method: 'GET',
    qs: {
 	   '@data.context': "",
@@ -17,19 +17,23 @@ var course = {
    }
 }
 
-request(course, function(error, response, body){
+/*request(course, function(error, response, body){
    if(error) console.log(error);
 	else {
 	  var json = JSON.parse(body);
 	  var first = json.value[0];
 	  console.log(first);
 	}
-});
+});*/
+
 
 exports.searchCourse = function(coursename, callback){
-   course[url] = myurl + '\'' + coursename + '\'';
-   request(course, function(error, response, body){
-   if(error) return callback(error);
+	console.log(coursename);
+	var subString = coursename.split(" ");
+   	course.url = myurl + ' \'' + subString[0] + '\'' + ' and Number eq ' + ' \'' + subString[1] + '\'';
+   	console.log(myurl);
+   	request(course, function(error, response, body){
+   	if(error) return callback(error);
 	else {
 	  var json = JSON.parse(body);
 	  var first = json.value[0];
@@ -37,13 +41,6 @@ exports.searchCourse = function(coursename, callback){
 	  return callback(null, first);
 	}
 	});
-   
-}
+};
 
-exports.searchCourseId = function(coursename, callback) {
-     searchCourse(coursename, function(err, course) {
-       if(err) throw err
-       var id = course.CourseId;
-       callback(null, id);
-     }
-}
+
