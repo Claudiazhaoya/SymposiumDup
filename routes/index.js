@@ -27,7 +27,7 @@ function ensureAuthenticated(req, res, next){
 }
 
 /* Search courses */
-router.post('/', function(req, res, next){
+router.use('/', function(req, res, next){
 	console.log('search course');
 	//console.log(req.body.coursename);
 	Course.searchCourse(req.body.coursename, function(err, course) {
@@ -38,9 +38,7 @@ router.post('/', function(req, res, next){
 		}
 		else {
 			console.log('hi2');
-			res.redirect('/course');
-		}
-	        
+		} 
 	});
 });
 

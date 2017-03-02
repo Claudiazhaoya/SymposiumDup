@@ -4,7 +4,7 @@ var router = express.Router();
 var Post = require('../model/post');
 
 router.post('/', function(req, res, next) {
-        	
+        console.log(req.body);	
 	console.log('test for create post');
         var newPost = new Post({
           course_id: 'cs180',
