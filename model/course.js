@@ -37,7 +37,7 @@ exports.searchCourse = function(coursename, callback){
 	else {
 	  var json = JSON.parse(body);
 	  var first = json.value[0];
-	  if(typeof first === "undefined") return 
+	  if(typeof first === 'undefined') return callback(new error('can not find the course'));
 	  console.log(first);
 	  return callback(null, first);
 	}
