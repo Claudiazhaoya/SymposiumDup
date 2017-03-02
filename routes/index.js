@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+var localStorage = require('localStorage');
+var bodyParser = require('body-parser');
 //add
 var Course = require('../model/course');
 
@@ -16,7 +17,10 @@ router.get('/error', function(req, res, next) {
 
 
 router.get('/course', function(req,res,next) {
-    res.render('course');
+      console.log('index course');
+      var json = JSON.parse(localStorage.getItem('Course'));
+      console.log('local Storage' + json.Title);
+      res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+''});
 });
 
 function ensureAuthenticated(req, res, next){
@@ -27,21 +31,25 @@ function ensureAuthenticated(req, res, next){
 	}
 }
 
+router.param('/',function(req,res,next) {
+   req.Title = 'ddddd';
+});
 
 /* Search courses */
-router.use('/', function(req, res, next){
+router.post('/', function(req, res, next){
 	console.log('search course');
 	//console.log(req.body.coursename);
 	Course.searchCourse(req.body.coursename, function(err, course) {
-		console.log('hi.5');
 		if (err) {
-			console.log('hi');
 			res.redirect('/error');
 		}
 		else {
-			console.log(course);
-			//res.redirect('/course');
-			res.render('index',{Title: course});
+			req.body.Title = 'dddd';
+			localStorage.setItem('Course',JSON.stringify(course));
+			//res.render('index',{Title: course})
+				//,function(err){
+			   res.redirect('/course');
+		       //	});
 		}
 
 	});
