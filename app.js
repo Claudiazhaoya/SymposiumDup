@@ -21,7 +21,6 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 //var course = require('./routes/course');
 var test = require('./routes/test');
->>>>>>> refs/remotes/origin/shirleyFu
 // initialize the application
 var app = express();
 

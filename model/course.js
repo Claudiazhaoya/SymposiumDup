@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/shirleyFu
 var express = require('express');
 //var router = express.router();
 var request = require('request');
