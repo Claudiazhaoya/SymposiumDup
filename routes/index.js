@@ -14,6 +14,7 @@ router.get('/error', function(req, res, next) {
   res.render('error');
 });
 
+
 router.get('/course', function(req,res,next) {
     res.render('course');
 });
@@ -26,6 +27,7 @@ function ensureAuthenticated(req, res, next){
 	}
 }
 
+
 /* Search courses */
 router.use('/', function(req, res, next){
 	console.log('search course');
@@ -37,8 +39,11 @@ router.use('/', function(req, res, next){
 			res.redirect('/error');
 		}
 		else {
-			console.log('hi2');
-		} 
+			console.log(course);
+			//res.redirect('/course');
+			res.render('index',{Title: course});
+		}
+
 	});
 });
 

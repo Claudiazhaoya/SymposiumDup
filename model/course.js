@@ -1,3 +1,4 @@
+
 var express = require('express');
 //var router = express.router();
 var request = require('request');
@@ -38,10 +39,9 @@ exports.searchCourse = function(coursename, callback){
 	  var json = JSON.parse(body);
 	  var first = json.value[0];
 	  if(typeof first === 'undefined') return callback(new Error('can not find the course'));
-	  console.log(first);
-	  return callback(null, first);
+	  console.log(first.Title);
+	  return callback(null, first.Title);
 	}
 	});
 };
-
 

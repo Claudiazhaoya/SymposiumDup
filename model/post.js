@@ -38,6 +38,7 @@ module.exports.createPost = function(newPost, callback) {
     newPost.save(callback);
 }
 
+
 module.exports.getPostByCourseId = function(course_id, callback) {
     var query = {course_id : course_id, main_post_id : null };
     post.find(query, callback);
@@ -47,3 +48,6 @@ module.exports.getPostByMainPost = function(post_id, callback) {
     var query = {main_post_id : post_id};
     post.find(query, callback);
 }
+
+
+//module.exports.updataPostById = function(
