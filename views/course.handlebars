@@ -80,7 +80,7 @@
 
 
 
-            <center><h1><span id="Title"></span></h1></center>
+            <center><h1><span id="Title" ></span></h1></center>
 
             <!-- Course Description, We may need Purdue API Interface here -->
 
@@ -122,15 +122,8 @@
     <!--Josn Test Part START -->
 
     <script type="text/javascript">
-        var JSONObject= {
 
-            "Title":"CS307: Software Engineer",
-            "Description":"(a) Introduce fundamental principles, techniques, and tools used in the design of modern industrial-strength software systems. <br>(b) provide an opportunity to work in small teams. <br> (c) assist in sharpening of documentation and presentation skills.",
-            "CreditHours":"3.0"
-        };
-        document.getElementById("Title").innerHTML=JSONObject.Title
-        document.getElementById("Description").innerHTML=JSONObject.Description
-        document.getElementById("CreditHours").innerHTML=JSONObject.CreditHours
+        document.getElementById("Title").innerHTML = localStorage.getItem("title");
     </script>
 
     <!-- Bootstrap core JavaScript
@@ -138,7 +131,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
 
 </body>
 

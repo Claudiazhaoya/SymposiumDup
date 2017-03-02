@@ -1,24 +1,4 @@
-<<<<<<< HEAD
-var mongoose = require('mongoose');
-var textSearch = require('mongoose-text-search')
 
-// Course Schema
-var CourseSchema = mongoose.Schema({
-    coursename: {
-        type: String
-    },
-    description: {
-        type: String
-    }
-});
-
-var Course = module.exports = mongoose.model('Course', CourseSchema);
-
-module.exports.searchCourse = function(coursename, callback) {
-    var query = {coursename: coursename};
-    Course.findOne(query, callback);
-};
-=======
 var express = require('express');
 //var router = express.router();
 var request = require('request');
@@ -59,11 +39,9 @@ exports.searchCourse = function(coursename, callback){
 	  var json = JSON.parse(body);
 	  var first = json.value[0];
 	  if(typeof first === 'undefined') return callback(new Error('can not find the course'));
-	  console.log(first);
-	  return callback(null, first);
+	  console.log(first.Title);
+	  return callback(null, first.Title);
 	}
 	});
 };
 
-
->>>>>>> b7c3b0453e3cf3802a1ff468e86d4cbc0207d543
