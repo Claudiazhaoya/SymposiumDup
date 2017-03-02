@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Group Study Demo</title>
+  <title>Discussion Board Demo</title>
 
-  <link href="../stylesheets_wjz/assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../stylesheets_wjz/assets/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../stylesheets_wjz/assets/css/styles.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,10 +30,10 @@
             <h2 class="page-title">Discussion Boards</h2>
 
             <div class="m-box page-actions">
-              <div class="col-md-9">
+              <div class="col-md-7">
                 <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
-                <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
-                <a href="discussion" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-discussion-board.svg" class="icons"> Course Boards</a>
+                <button class="btn btn-default btn-lg" type="submit"> <img src="assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
+                <a href="groupstudy.html" class="btn btn-default btn-lg" type="submit"><img src="assets/images/icon-group-study.svg" class="icons"> Study Note</a>
                 <div class="btn-group">
                   <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-cog" aria-hidden="true"></i> Options <span class="caret"></span>
@@ -49,15 +49,16 @@
                   </ul>
                 </div>
               </div><!-- end col-md-9 -->
-              <div class="col-md-3">
-              </div><!-- end col-md-3 -->
+              <div class="col-md-5">
+                <a class="btn btn-lg btn-primary pull-right" href="../index.html" role="button">Course page &raquo;</a>
+              </div><!-- end col-md-5 -->
               <div class="clearfix"></div>
             </div>
 
             <div class="m-board-header">
               <div class="m-board-header-cell m-board-header-key"></div>
               <div class="m-board-header-cell m-board-header-title">
-                Group Study Boards
+                Course Boards
               </div>
               <div class="m-board-header-cell m-board-header-expand">
                 <div class="js-collapse-all">
@@ -68,7 +69,7 @@
                 </div>
               </div>
               <div class="m-board-header-cell m-board-header-readstatus">
-                Last Post
+                Unread
               </div>
               <div class="m-board-header-cell m-board-header-check">
                 <input type="checkbox" id="checkAll" name="" value="">
@@ -78,13 +79,64 @@
             <div class="m-board">
               <div class="m-board-cell m-board-key"></div>
               <div class="m-board-cell m-board-title">
-                JU School Of Elite Nurses
+                Main Board
               </div>
               <div class="m-board-cell m-board-expand">
                 <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
               </div>
               <div class="m-board-cell m-board-readstatus">
-                Members <div class="m-label">12</div>
+                Unread <div class="m-label m-label-unread">10</div>
+              </div>
+              <div class="m-board-cell m-board-check">
+                <input type="checkbox" name="" value="">
+              </div>
+            </div>
+
+
+
+
+            <div class="m-topics-container">
+              <div class="m-topic">
+                <div class="m-topic-cell m-topic-key"></div>
+                <div class="m-topic-cell m-topic-title">
+                  Resources
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Replies <div class="m-label">2</div>
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Unread <div class="m-label m-label-unread">4</div>
+                </div>
+                <div class="m-topic-cell m-topic-check">
+                </div>
+              </div>
+
+              <div class="m-topic">
+                <div class="m-topic-cell m-topic-key"></div>
+                <div class="m-topic-cell m-topic-title">
+                  Global Health Payers and Players
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Replies <div class="m-label">6</div>
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Unread <div class="m-label m-label-unread">6</div>
+                </div>
+                <div class="m-topic-cell m-topic-check">
+                </div>
+              </div>
+            </div>
+
+            <div class="m-board">
+              <div class="m-board-cell m-board-key"></div>
+              <div class="m-board-cell m-board-title">
+                Off Topic Discussion Board
+              </div>
+              <div class="m-board-cell m-board-expand">
+                <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+              </div>
+              <div class="m-board-cell m-board-readstatus">
+                Unread <div class="m-label m-label-unread">8</div>
               </div>
               <div class="m-board-cell m-board-check">
                 <input type="checkbox" name="" value="">
@@ -95,56 +147,14 @@
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
                 <div class="m-topic-cell m-topic-title">
-                  Introduction
+                  Welcome to the course
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">3</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
-
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  Week 1 Discussion - Glenda DePriest
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">1</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
-
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  School Colors & Name
+                  Replies <div class="m-label">6</div>
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
                   Unread <div class="m-label m-label-unread">6</div>
                 </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
                 <div class="m-topic-cell m-topic-check">
                 </div>
               </div>
@@ -152,17 +162,13 @@
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
                 <div class="m-topic-cell m-topic-title">
-                  CV
+                  Nutrition
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">7</div>
+                  Replies <div class="m-label">3</div>
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
+                  Unread <div class="m-label m-label-unread">2</div>
                 </div>
                 <div class="m-topic-cell m-topic-check">
                 </div>
@@ -172,69 +178,13 @@
             <div class="m-board">
               <div class="m-board-cell m-board-key"></div>
               <div class="m-board-cell m-board-title">
-                Nightingale School of Nursing
+                Weekly Discussion Boards
               </div>
               <div class="m-board-cell m-board-expand">
                 <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
               </div>
               <div class="m-board-cell m-board-readstatus">
-                Members <div class="m-label">8</div>
-              </div>
-              <div class="m-board-cell m-board-check">
-                <input type="checkbox" name="" value="">
-              </div>
-            </div>
-
-            <div class="m-topics-container">
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  Service Learning
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">6</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
-
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  Classroom Assessment Techniques
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">3</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
-            </div>
-
-            <div class="m-board">
-              <div class="m-board-cell m-board-key"></div>
-              <div class="m-board-cell m-board-title">
-                Infinite Choices University (ICU)
-              </div>
-              <div class="m-board-cell m-board-expand">
-                <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
-              </div>
-              <div class="m-board-cell m-board-readstatus">
-                Members <div class="m-label">6</div>
+                Unread <div class="m-label m-label-unread">12</div>
               </div>
               <div class="m-board-cell m-board-check">
                 <input type="checkbox" name="" value="">
@@ -248,14 +198,10 @@
                   Week 1 Discussion
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">2</div>
+                  Replies <div class="m-label">3</div>
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
+                  Unread <div class="m-label m-label-unread">2</div>
                 </div>
                 <div class="m-topic-cell m-topic-check">
                 </div>
@@ -264,23 +210,55 @@
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
                 <div class="m-topic-cell m-topic-title">
-                  Career Plan
+                  Week 2 Discussion
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">6</div>
+                  Replies <div class="m-label">1</div>
                 </div>
                 <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
+                  Unread <div class="m-label m-label-unread">1</div>
+                </div>
+                <div class="m-topic-cell m-topic-check">
+                </div>
+              </div>
+
+              <div class="m-topic">
+                <div class="m-topic-cell m-topic-key"></div>
+                <div class="m-topic-cell m-topic-title">
+                  Week 3 Discussion
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Replies <div class="m-label">6</div>
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Unread <div class="m-label m-label-unread">1</div>
+                </div>
+                <div class="m-topic-cell m-topic-check">
+                </div>
+              </div>
+
+              <div class="m-topic">
+                <div class="m-topic-cell m-topic-key"></div>
+                <div class="m-topic-cell m-topic-title">
+                  Week 4 Discussion
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Replies <div class="m-label">12</div>
+                </div>
+                <div class="m-topic-cell m-topic-readstatus">
+                  Unread <div class="m-label m-label-unread">8</div>
                 </div>
                 <div class="m-topic-cell m-topic-check">
                 </div>
               </div>
             </div>
 
+
+        </div><!-- end row -->
+      </div><!-- end container -->
+
+
+        <!--Josn Test Part START -->
 
 
 
