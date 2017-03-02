@@ -14,6 +14,18 @@ router.get('/error', function(req, res, next) {
   res.render('error');
 });
 
+router.get('/course', function(req,res,next) {
+    res.render('course');
+});
+
+router.get('/course/discussion', function(req,res,next) {
+    res.render('discussion');
+});
+
+router.get('/course/groupstudy', function(req,res,next) {
+    res.render('groupstudy');
+});
+
 function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){
 		return next();
@@ -22,33 +34,19 @@ function ensureAuthenticated(req, res, next){
 	}
 }
 
-Course.create({coursename: 'cs307', description: 'hi'}, function(err) {
-	if (err) console.log("error");
-	else console.log("307 added to db");
-});
-
-
 /* Search courses */
-router.post('/', function(req, res, next) {
+router.post('/', function(req, res, next){
+	console.log('search course');
+	//console.log(req.body.coursename);
 	Course.searchCourse(req.body.coursename, function(err, course) {
-		if (err) throw err;
-		if (!course) {
+		console.log('hi.5');
+		if (err) {
+			console.log('hi');
 			res.redirect('/error');
-		} else {
-			res.redirect('/users/signup');
-			console.log(course);
 		}
-	});
-});
-
-/* For Error page needs modification for later */
-router.post('/error', function(req, res, next) {
-	Course.searchCourse(req.body.coursename, function(err, course) {
-		if (err) throw err;
-		if (!course) {
-			res.redirect('/error');
-		} else {
-			res.redirect('/users/signup');
+		else {
+			console.log('hi2');
+			res.redirect('/course');
 		}
 	});
 });

@@ -1,19 +1,46 @@
-var mongoose = require('mongoose');
-var textSearch = require('mongoose-text-search')
+var express = require('express');
+//var router = express.router();
+var request = require('request');
+var bodyParser = require('body-parser');
+var app = express();
 
-// Course Schema
-var CourseSchema = mongoose.Schema({
-    coursename: {
-        type: String
-    },
-    description: {
-        type: String
-    }
-});
 
-var Course = module.exports = mongoose.model('Course', CourseSchema);
+app.use(bodyParser.json());
 
-module.exports.searchCourse = function(coursename, callback) {
-    var query = {coursename: coursename};
-    Course.findOne(query, callback);
+var myurl = 'http://api.purdue.io/odata/Courses?$filter=Subject/Abbreviation eq ';
+var course = {
+   url: '',
+   method: 'GET',
+   qs: {
+	   '@data.context': "",
+	   'value': []
+   }
+}
+
+/*request(course, function(error, response, body){
+   if(error) console.log(error);
+	else {
+	  var json = JSON.parse(body);
+	  var first = json.value[0];
+	  console.log(first);
+	}
+});*/
+
+
+exports.searchCourse = function(coursename, callback){
+	console.log(coursename);
+	var subString = coursename.split(" ");
+   	course.url = myurl + ' \'' + subString[0] + '\'' + ' and Number eq ' + ' \'' + subString[1] + '\'';
+   	console.log(myurl);
+   	request(course, function(error, response, body){
+   	//if(error) return callback(error);
+	//else {
+	  var json = JSON.parse(body);
+	  var first = json.value[0];
+	  console.log(first);
+	  return callback(null, first);
+	//}
+	});
 };
+
+

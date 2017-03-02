@@ -19,7 +19,7 @@ var db = mongoose.connection;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var course = require('./routes/course');
+
 // initialize the application
 var app = express();
 
@@ -82,7 +82,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', index);
-app.use('/course',course);
 app.use('/users', users);
 
 
