@@ -38,8 +38,8 @@ module.exports.createPost = function(newPost, callback) {
 }
 
 module.exports.getPostByCourseId = function(course_id, callback) {
-    var query = {course_id : course_id};
-    User.findone(query, callback);
+    var query = {course_id : course_id, main_post_id : null };
+    User.find(query, callback);
 }
 
 module.exports.getPostByMainPost = function(post_id, callback) {
