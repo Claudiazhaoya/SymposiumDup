@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/shirleyFu
 var express = require('express');
 //var router = express.router();
 var request = require('request');
@@ -33,14 +37,15 @@ exports.searchCourse = function(coursename, callback){
    	course.url = myurl + ' \'' + subString[0] + '\'' + ' and Number eq ' + ' \'' + subString[1] + '\'';
    	console.log(myurl);
    	request(course, function(error, response, body){
-   	//if(error) return callback(error);
-	//else {
+
+   	if(error) return callback(error);
+	else {
 	  var json = JSON.parse(body);
 	  var first = json.value[0];
+	  if(typeof first === 'undefined') return callback(new Error('can not find the course'));
 	  console.log(first);
 	  return callback(null, first);
-	//}
+	}
 	});
 };
-
 

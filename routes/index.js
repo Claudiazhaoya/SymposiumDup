@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+var localStorage = require('localStorage');
+var bodyParser = require('body-parser');
 //add
 var Course = require('../model/course');
 
@@ -14,16 +15,12 @@ router.get('/error', function(req, res, next) {
   res.render('error');
 });
 
+
 router.get('/course', function(req,res,next) {
-    res.render('course');
-});
-
-router.get('/course/discussion', function(req,res,next) {
-    res.render('discussion');
-});
-
-router.get('/course/groupstudy', function(req,res,next) {
-    res.render('groupstudy');
+      console.log('index course');
+      var json = JSON.parse(localStorage.getItem('Course'));
+      console.log('local Storage' + json.Title);
+      res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+''});
 });
 
 function ensureAuthenticated(req, res, next){
@@ -34,20 +31,24 @@ function ensureAuthenticated(req, res, next){
 	}
 }
 
+
 /* Search courses */
 router.post('/', function(req, res, next){
 	console.log('search course');
 	//console.log(req.body.coursename);
 	Course.searchCourse(req.body.coursename, function(err, course) {
-		console.log('hi.5');
 		if (err) {
-			console.log('hi');
 			res.redirect('/error');
 		}
 		else {
-			console.log('hi2');
-			res.redirect('/course');
+			req.body.Title = 'dddd';
+			localStorage.setItem('Course',JSON.stringify(course));
+			//res.render('index',{Title: course})
+				//,function(err){
+			   res.redirect('/course');
+		       //	});
 		}
+
 	});
 });
 

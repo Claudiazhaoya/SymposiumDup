@@ -7,14 +7,14 @@
     <meta name="description" content="">
     <meta name="Jingzhou Wang" content="">
 
+
     <link href="../stylesheets_wjz/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../stylesheets_wjz/assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="../stylesheets_wjz/assets/css/styles.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     </head>
-    <body>
-
+    <body onload="iframe()">
 
 
 
@@ -26,7 +26,7 @@
 
             <div class="m-box page-actions">
               <div class="col-md-7">
-                <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+                <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
                 <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
                 <a href="groupstudy" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
                 <div class="btn-group">
@@ -76,12 +76,20 @@
               <div class="m-board-cell m-board-title">
                 Main Board
               </div>
-              <div class="m-board-cell m-board-expand">
-                <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
-              </div>
-              <div class="m-board-cell m-board-readstatus">
-                Unread <div class="m-label m-label-unread">10</div>
-              </div>
+                <div class="m-board-header-cell m-board-header-expand">
+                    <div class="js-expand">
+                        <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+                    </div>
+                </div>
+
+                <!-- commit button Start-->
+              <a class="m-board-cell m-board-readstatus " type="submit">
+                Commit
+              </a>
+
+                <!--<button class="btn " type="submit">commit</button>-->
+                <!-- commit button End-->
+
               <div class="m-board-cell m-board-check">
                 <input type="checkbox" name="" value="">
               </div>
@@ -96,15 +104,25 @@
                 <div class="m-topic-cell m-topic-title">
                   Resources
                 </div>
+
                 <div class="m-topic-cell m-topic-readstatus">
-                  Replies <div class="m-label">2</div>
+                    <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                  <div class="m-label">2</div>
                 </div>
+
+
                 <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">4</div>
+                    <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
+                   <div class="m-label m-label-unread">4</div>
+
                 </div>
+
+
                 <div class="m-topic-cell m-topic-check">
                 </div>
               </div>
+
+
 
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
@@ -252,13 +270,47 @@
         </div><!-- end row -->
       </div><!-- end container -->
 
+          <!--Editor Test Part START -->
+          <br>
+          <br>
+              <center>
+          <form method="post" action="../stylesheets_wjz/assets/js/submit.php" id="rtf">
+
+              <input type="button"value="B" onclick="bold()">
+              <input type="button"value="I" onclick="italic()">
+              <input type="button"value="U" onclick="underline()">
+              <input type="button"value="Size" onclick="fontsize()">
+              <input type="button"value="Highlight" onclick="highlight()">
+              <input type="button"value="Color" onclick="fontcolor()">
+              <input type="button"value="Link" onclick="link()">
+              <input type="button" value="Unlink" onclick="unlink()">
+              <br>
+
+              <textarea name="textarea" id="textarea" style="display: none;"></textarea>
+              <iframe class="text-editor" name="editor" id="editor" style="width: 500; height: 400;"></iframe>
+
+              <br>
+              <br>
+
+              <input type="button" onclick="formsubmit()" value="Submit Data">
+          </form>
+              </center>
+
+          <br>
+
+          <!--Editor Test Part End -->
+
+          <div class="footer">
+              <p>&copy; 2017 Symposium, Inc.</p>
+          </div>
 
         <!--Josn Test Part START -->
 
 
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+          <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
+          <script src="../stylesheets_wjz/assets/js/main.js"></script>
+          <script src="../stylesheets_wjz/assets/js/functions.js"></script>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="stylesheets_wjz/assets/js/bootstrap.min.js"></script>
-      <script src="stylesheets_wjz/assets/js/main.js"></script>
     </body>
     </html>

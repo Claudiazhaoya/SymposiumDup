@@ -43,11 +43,11 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="/users/profile">Profile</a>
                 </li>
 
                 <li class="nav-item">
@@ -79,18 +79,19 @@
             <!--  <h1>CS307: Software Engineer</h1> -->
 
 
-
-            <center><h1><span id="Title"></span></h1></center>
+             
+	    <center><h1><span id="Title" ></span>{{Title}}</h1></center>
 
             <!-- Course Description, We may need Purdue API Interface here -->
 
             <p class="lead">
-                CreditHours: <span id="CreditHours"></span><br>
-                Description: <br>
-                <span id="Description"></span>
+	        CreditHours: <span id="CreditHours">{{CH}}</span><br>
+                Description: 
+		<span id="Description">{{DC}}</span>
             </p>
-
+            <center>
             <a class="btn btn-lg btn-primary" href="https://github.com/AF8EJFE/cs307_Symposium" role="button">View on Github &raquo;</a>
+            </center>
         </div>
         <s>
         </s>
@@ -98,10 +99,11 @@
 
     <div class="container">
         <div class="jumbotron2">
-
+            <center>
             <a class="btn btn-lg btn-primary2" href="/course/discussion" role="button">Course Post &raquo;</a>
 
             <a class="btn btn-lg btn-primary2" href="/course/groupstudy" role="button">Study Note &raquo;</a>
+            </center>
         </div>
     </div>
 
@@ -113,25 +115,19 @@
         </div>
     </div>
 
+    <div class="footer">
+        <p>&copy; 2017 Symposium, Inc.</p>
+    </div>
+
     <!--Josn Test Part START -->
 
-    <script type="text/javascript">
-        var JSONObject= {
-            "Title":"CS307: Software Engineer",
-            "Description":"(a) Introduce fundamental principles, techniques, and tools used in the design of modern industrial-strength software systems. <br>(b) provide an opportunity to work in small teams. <br> (c) assist in sharpening of documentation and presentation skills.",
-            "CreditHours":"3.0"
-        };
-        document.getElementById("Title").innerHTML=JSONObject.Title
-        document.getElementById("Description").innerHTML=JSONObject.Description
-        document.getElementById("CreditHours").innerHTML=JSONObject.CreditHours
-    </script>
 
+    
     <!-- Bootstrap core JavaScript
         ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
 
 </body>
 

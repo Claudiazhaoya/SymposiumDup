@@ -40,7 +40,7 @@
           {{/if}}
 
           {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
+	  <div class="alert alert-danger">{{error_msg}}</div>
           {{/if}}
 
           {{#if error}}
@@ -49,7 +49,7 @@
           
           {{{body}}}
         </div>
-  </div>
+  </div> 
 
   <div class="logo1">
     <img src="images/logo-1c.png" alt="" style="width:800px; height:210px"/>
@@ -58,22 +58,26 @@
         <form action="#" method="post" class="flexsearch--form">
           <div class="search--input-wrapper">
             <input type="search" placeholder="Type in your course here" class="search--input" name="coursename"/>
-            <input type="submit" value="➜" class="search--submit"/>
+	    <a href="https://www.w3schools.com"><input type="submit" value="➜" class="search--submit" /></>
           </div>
         </form>
       </div>
     </div>
   </div>
-  
 
 
-  
+  <center><h1 id = "Title">"d"{{Title}}</h1></center>
+
+
+  <!-- Josn End-->
 
   <div class="footer">
     <p>&copy; 2017 Symposium, Inc.</p>
   </div>
 
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="javascripts/logsign_nav.js"></script> <!-- Gem jQuery -->
+<script src="ja
+ascripts/logsign_nav.js"></script> <!-- Gem jQuery -->
 </body>
 </html>

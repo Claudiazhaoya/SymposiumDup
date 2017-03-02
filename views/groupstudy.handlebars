@@ -30,8 +30,8 @@
             <h2 class="page-title">Discussion Boards</h2>
 
             <div class="m-box page-actions">
-              <div class="col-md-9">
-                <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+              <div class="col-md-7">
+                <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
                 <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
                 <a href="discussion" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-discussion-board.svg" class="icons"> Course Boards</a>
                 <div class="btn-group">
@@ -49,9 +49,10 @@
                   </ul>
                 </div>
               </div><!-- end col-md-9 -->
-              <div class="col-md-3">
-              </div><!-- end col-md-3 -->
-              <div class="clearfix"></div>
+                <div class="col-md-5">
+                    <a class="btn btn-lg btn-primary pull-right" href="/course" role="button">Course page &raquo;</a>
+                </div><!-- end col-md-5 -->
+                <div class="clearfix"></div>
             </div>
 
             <div class="m-board-header">
@@ -281,11 +282,43 @@
               </div>
             </div>
 
+              <!--Editor Test Part START -->
+              <br>
+              <br>
+              <center>
+                  <form method="post" action="../stylesheets_wjz/assets/js/submit.php" id="rtf">
 
+                      <input type="button"value="B" onclick="bold()">
+                      <input type="button"value="I" onclick="italic()">
+                      <input type="button"value="U" onclick="underline()">
+                      <input type="button"value="Size" onclick="fontsize()">
+                      <input type="button"value="Highlight" onclick="highlight()">
+                      <input type="button"value="Color" onclick="fontcolor()">
+                      <input type="button"value="Link" onclick="link()">
+                      <input type="button" value="Unlink" onclick="unlink()">
+                      <br>
+
+                      <textarea name="textarea" id="textarea" style="display: none;"></textarea>
+                      <iframe class="text-editor" name="editor" id="editor" style="width: 500; height: 400;"></iframe>
+
+                      <br>
+                      <br>
+
+                      <input type="button" onclick="formsubmit()" value="Submit Data">
+                  </form>
+              </center>
+
+              <br>
+
+              <!--Editor Test Part End -->
+
+              <div class="footer">
+                  <p>&copy; 2017 Symposium, Inc.</p>
+              </div>
 
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="assets/js/bootstrap.min.js"></script>
-      <script src="assets/js/main.js"></script>
+      <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
+      <script src="../stylesheets_wjz/assets/js/main.js"></script>
     </body>
     </html>
