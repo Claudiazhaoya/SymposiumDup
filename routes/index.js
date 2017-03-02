@@ -38,8 +38,9 @@ router.post('/', function(req, res, next){
 		}
 		else {
 			console.log('hi2');
-			res.redirect('/users/profile');
+			res.redirect('/course');
 		}
+	        
 	});
 });
 

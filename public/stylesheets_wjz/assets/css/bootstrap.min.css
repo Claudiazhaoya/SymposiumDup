@@ -269,8 +269,8 @@ td, th {
 
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url(../fonts/glyphicons-halflings-regular.eot);
-    src: url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(../fonts/glyphicons-halflings-regular.woff) format('woff'), url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
+    src: url(../../../fonts/glyphicons-halflings-regular.eot);
+    src: url(../../../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../../../fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(../../../fonts/glyphicons-halflings-regular.woff) format('woff'), url(../../../fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(../../../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
 }
 
 .glyphicon {
@@ -7209,6 +7209,17 @@ button.close {
     .hidden-print {
         display: none !important
     }
+}
+
+.footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #b4a046;
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
