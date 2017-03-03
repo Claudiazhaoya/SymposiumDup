@@ -37,11 +37,6 @@ router.get('/error', function(req, res, next) {
 router.get('/course', function(req,res,next) {
       //console.log('index course');
       var json = JSON.parse(localStorage.getItem('Course'));
-<<<<<<< HEAD
-      console.log('local Storage' + json.Title);
-      res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+'', CI : json.CourseId});
-
-=======
       if(!req.user) {
 	      res.render('course', {
 	      	Title : json.Title+'', 
@@ -58,7 +53,6 @@ router.get('/course', function(req,res,next) {
 	      	username:req.user.username
 	      });
       }
->>>>>>> 21d9b95a2f797b49f203af6ea047c3a50c812bc4
 });
 
 function ensureAuthenticated(req, res, next){
