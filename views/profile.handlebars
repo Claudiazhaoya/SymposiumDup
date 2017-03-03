@@ -26,6 +26,7 @@
                 <!--
                 <a href="#home">Home</a> -->
                 {{#if user}}
+                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
                     <a href="/users/profile">Profile</a>
                     <a href="/users/logout">Log Out</a>
                 {{else}}
@@ -50,7 +51,9 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 {{#if user}}
+                    <a class="nav-link prompt"> Welcome! {{username}} </a>
                     <li class="nav-item active">
+
                         <a class="nav-link" href="/users/profile">Profile</a>
                     </li>
                     <li class="nav-item">
@@ -111,6 +114,7 @@
             <label class="col-lg-3 control-label">Username:</label>
             <div class="col-lg-8">
               <input class="form-control" type="text" name="username" value={{username}} disabled>
+              <input class="form-control" type="text" value={{username}} disabled>
             </div>
           </div>
           <div class="form-group">
@@ -119,22 +123,33 @@
               <input class="form-control" type="text" name="email" value={{email}}>
             </div>
           </div>
+          <!-- CURRENT PASSOWORD
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Current Password:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="password" value="">
+            </div>
+          </div>
+          -->
           <div class="form-group">
             <label class="col-lg-3 control-label">New Password:</label>
             <div class="col-lg-8">
               <input class="form-control" type="password" name="password" value="">
+              <input class="form-control" type="password" value="" name="password">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Confirm New password:</label>
             <div class="col-lg-8">
               <input class="form-control" type="password" name="passwordConfirm" value="">
+              <input class="form-control" type="password" value="" name="passwordConfirm">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">College / University:</label>
             <div class="col-lg-8">
               <input class="form-control" type="text" name="college" value={{college}}>
+              <input class="form-control" type="text" value={{college}}>
             </div>
           </div>
           <div class="form-group">
@@ -146,6 +161,28 @@
           
           
           <!-- Reference dropdown ends -->
+              <input class="form-control" type="text" value="{{major}}">
+            </div>
+          </div>
+          <!-- Below is just to reference dropdown list that may be required for the future purposes
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Time Zone:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Alaska">(GMT-09:00) Alaska</option>
+                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                  <option value="Arizona">(GMT-07:00) Arizona</option>
+                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          Reference dropdown ends -->
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">

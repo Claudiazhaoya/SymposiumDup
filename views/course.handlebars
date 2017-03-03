@@ -32,11 +32,12 @@
                 <!--
                 <a href="#home">Home</a> -->
                 {{#if user}}
-                    <a href="#faculty-sec">Profile</a>
-                    <a href="#faculty-sec">Log Out</a>
+                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
+                    <a href="/users/profile">Profile</a>
+                    <a href="/users/logout">Log Out</a>
                 {{else}}
-                    <a href="#faculty-sec">Sign Up</a>
-                    <a href="#faculty-sec">Log In</a>
+                    <a href="/users/signup">Sign Up</a>
+                    <a href="/users/login">Log In</a>
                 {{/if}}
                 <!--
                 <a href="#course-sec">Course</a>
@@ -52,7 +53,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
             <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="coursename"/>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
 
@@ -62,6 +63,7 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 {{#if user}}
+                    <a class="nav-link prompt"> Welcome! {{username}} </a>
                     <li class="nav-item active">
                         <a class="nav-link" href="/users/profile">Profile</a>
                     </li>
