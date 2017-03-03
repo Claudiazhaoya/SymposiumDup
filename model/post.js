@@ -50,5 +50,12 @@ module.exports.getPostByMainPost = function(post_id, callback) {
     post.find(query,callback);
 }
 
+module.exports.deletePostById = function(post_id, callback) {
+    var query = {_id : post_id};
+    post.findOneAndRemove(query,function(err, post) {
+       if(err) throw err;	
+	console.log('post: '+ post_id + 'is deleted!');
+    });
+}
 
 //module.exports.updataPostById = function(
