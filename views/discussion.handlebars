@@ -268,34 +268,31 @@
               </div>
             </div>
 
-              <div class="m-board">
-                  <div class="m-board-cell m-board-key"></div>
-                  <div class="m-board-cell m-board-title">
-                      Hi:
-                          {{#each posts}}
-                              <h2>{{this}}</h2><br>
-                              <h2>{{this}}</h2><br>
+              {{#each posts}}
+              <div class="m-topics-container">
+                  <div class="m-topic">
+                      <div class="m-topic-cell m-topic-key"></div>
+                      <div class="m-topic-cell m-topic-title">
+                          <h4>{{this.MainPost.information}}</h4>>
+                      </div>
 
-                      {{/each}}
-                  </div>
-                  <div class="m-board-header-cell m-board-header-expand">
-                      <div class="js-expand">
-                          <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+                      <div class="m-topic-cell m-topic-readstatus">
+                          <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                          <div class="m-label">2</div>
+                      </div>
+
+
+                      <div class="m-topic-cell m-topic-readstatus">
+                          <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
+                          <div class="m-label m-label-unread">4</div>
+
+                      </div>
+
+
+                      <div class="m-topic-cell m-topic-check">
                       </div>
                   </div>
-
-                  <!-- commit button Start-->
-                  <a class="m-board-cell m-board-readstatus " type="submit">
-                      Commit
-                  </a>
-
-                  <!--<button class="btn " type="submit">commit</button>-->
-                  <!-- commit button End-->
-
-                  <div class="m-board-cell m-board-check">
-                      <input type="checkbox" name="" value="">
-                  </div>
-              </div>
+                  {{/each}}
 
 
           </div><!-- end row -->
@@ -304,6 +301,12 @@
           <div id="my-container" class="table-responsive">
           </div>
 
+          <script>
+              var PostNum = {{posts}};
+              for (var i = 0; i < PostNum.length; i++) {
+
+              }
+          </script>
 
           <!--Editor Test Part START -->
           <br>
@@ -333,13 +336,7 @@
 
         <!--Josn Test Part START -->
           <!--Handlebar templates start-->
-          <script  type="text/javascript">
-              console.log(posts);
-              var jason = posts;
-              for (var i = 0; i < jason.length; i++) {
-                  <h2>jason[i].information</h2>
-              }
-          </script>
+
           <!--Handlebar templates end-->
 
 
