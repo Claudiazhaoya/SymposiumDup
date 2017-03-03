@@ -271,7 +271,7 @@
               <div class="m-board">
                   <div class="m-board-cell m-board-key"></div>
                   <div class="m-board-cell m-board-title">
-                      Hi: <!-- {{#lists posts}}{{_id}}{{timeStamp}}{{/lists}} -->
+                      Hi: <span id="demo"></span>
                   </div>
                   <div class="m-board-header-cell m-board-header-expand">
                       <div class="js-expand">
@@ -329,15 +329,9 @@
         <!--Josn Test Part START -->
           <!--Handlebar templates start-->
           <script type="text/javascript">
-              Handlebars.registerHelper('lists', function(items, options) {
-              var out = "<ul>";
+              console.log({{posts}});
 
-              for(var i=0, l=items.length; i<l; i++) {
-              out = out + "<li>" + options.fn(items[i]) + "</li>";
-              }
-
-              return out + "</ul>";
-              });
+              document.getElementById("demo").innerHTML = json.information;
           </script>
           <!--Handlebar templates end-->
 
