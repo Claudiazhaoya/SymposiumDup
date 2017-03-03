@@ -40,6 +40,7 @@ module.exports.createPost = function(newPost, callback) {
 
 
 module.exports.getPostByCourseId = function(course_id, callback) {
+    console.log('get post by course id');
     var query = {course_id : course_id, main_post_id : null };
     post.find(query, callback);
 }
