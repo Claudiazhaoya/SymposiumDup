@@ -4,23 +4,60 @@ var localStorage = require('localStorage');
 var bodyParser = require('body-parser');
 //add
 var Course = require('../model/course');
+var User = require('../model/user');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+	if(!req.user) {
+		//console.log('hi iam stranger');
+		res.render('index');
+	}
+  	else {
+  		//console.log('hi iam user');
+  		res.render('index', {
+  			username: req.user.username
+  		})
+  	}
 });
 
 /* GET error page. */
 router.get('/error', function(req, res, next) {
-  res.render('error');
+	if(!req.user) {
+		//console.log('hi iam stranger');
+		res.render('error');
+	}
+  	else {
+  		//console.log('hi iam user');
+  		res.render('error', {
+  			username: req.user.username
+  		})
+  	}
 });
 
 
 router.get('/course', function(req,res,next) {
-      console.log('index course');
+      //console.log('index course');
       var json = JSON.parse(localStorage.getItem('Course'));
+<<<<<<< HEAD
       console.log('local Storage' + json.Title);
       res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+'', CI : json.CourseId});
+=======
+      //console.log('local Storage' + json.Title);
+      if(!req.user) {
+	      res.render('course', {
+	      	Title : json.Title+'', 
+	      	CH : json.CreditHours+'', 
+	      	DC : json.Description+''
+	      });
+      } else {
+      	  res.render('course', {
+	      	Title : json.Title+'', 
+	      	CH : json.CreditHours+'', 
+	      	DC : json.Description+'',
+	      	username:req.user.username
+	      });
+      }
+>>>>>>> b393ebe6909ee50527a0b1501e6a2431bc098c4a
 });
 
 function ensureAuthenticated(req, res, next){
@@ -31,6 +68,10 @@ function ensureAuthenticated(req, res, next){
 	}
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b393ebe6909ee50527a0b1501e6a2431bc098c4a
 /* Search courses */
 router.post('/', function(req, res, next){
 	console.log('search course');
