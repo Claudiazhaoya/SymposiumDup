@@ -271,7 +271,12 @@
               <div class="m-board">
                   <div class="m-board-cell m-board-key"></div>
                   <div class="m-board-cell m-board-title">
-                      Hi: <span id="demo"></span>
+                      Hi:
+                          {{#each posts}}
+                              <h2>{{this}}</h2><br>
+                              <h2>{{this}}</h2><br>
+
+                      {{/each}}
                   </div>
                   <div class="m-board-header-cell m-board-header-expand">
                       <div class="js-expand">
@@ -328,10 +333,12 @@
 
         <!--Josn Test Part START -->
           <!--Handlebar templates start-->
-          <script type="text/javascript">
-              console.log({{posts}});
-
-              document.getElementById("demo").innerHTML = json.information;
+          <script  type="text/javascript">
+              console.log(posts);
+              var jason = posts;
+              for (var i = 0; i < jason.length; i++) {
+                  <h2>jason[i].information</h2>
+              }
           </script>
           <!--Handlebar templates end-->
 
