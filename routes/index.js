@@ -20,7 +20,7 @@ router.get('/course', function(req,res,next) {
       console.log('index course');
       var json = JSON.parse(localStorage.getItem('Course'));
       console.log('local Storage' + json.Title);
-      res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+''});
+      res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+'', CI : json.CourseId});
 });
 
 function ensureAuthenticated(req, res, next){
@@ -31,10 +31,6 @@ function ensureAuthenticated(req, res, next){
 	}
 }
 
-router.param('/',function(req,res,next) {
-   req.Title = 'ddddd';
-});
-
 /* Search courses */
 router.post('/', function(req, res, next){
 	console.log('search course');
@@ -44,16 +40,11 @@ router.post('/', function(req, res, next){
 			res.redirect('/error');
 		}
 		else {
-			req.body.Title = 'dddd';
 			localStorage.setItem('Course',JSON.stringify(course));
-			//res.render('index',{Title: course})
-				//,function(err){
-			   res.redirect('/course');
-		       //	});
+			res.redirect('/course');
 		}
 
 	});
 });
-
 
 module.exports = router;
