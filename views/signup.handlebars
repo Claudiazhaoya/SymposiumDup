@@ -34,9 +34,24 @@
           </p>
 
           <p class="fieldset">
-            <input type="checkbox" id="accept-terms">
-            <label for="accept-terms">I agree to the <a href="#0">Terms & Conditions</a></label>
+            <label class="image-replace cd-username" for="signup-college">College</label>
+            <input class="full-width has-padding has-border" id="signup-college" type="text" placeholder="College" name="college">
+            <span class="cd-error-message">Error message here!</span>
           </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-username" for="signup-major">Major</label>
+            <input class="full-width has-padding has-border" id="signup-major" type="text" placeholder="Major" name="major">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          
+            <label for="file">Select your image:</label>
+            <input type="file" name="file" id="file" />
+            <span class="hint">Supported files: jpg, jpeg, png.</span>
+            <button type="submit">upload</button>
+          
+
 
           <p class="fieldset">
             <input class="full-width has-padding" type="submit" value="Create account">
