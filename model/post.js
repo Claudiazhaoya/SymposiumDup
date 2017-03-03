@@ -10,7 +10,7 @@ var ratingSchema = mongoose.Schema({
 	countUp: Number
 });
 var postSchema = mongoose.Schema({
-	infomation: {
+	information: {
 	  type: String,
 	  index:true
 	},

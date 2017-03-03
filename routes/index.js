@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var localStorage = require('localStorage');
 var bodyParser = require('body-parser');
-//add
 var Course = require('../model/course');
 var User = require('../model/user');
 
@@ -42,13 +41,15 @@ router.get('/course', function(req,res,next) {
 	      res.render('course', {
 	      	Title : json.Title+'', 
 	      	CH : json.CreditHours+'', 
-	      	DC : json.Description+''
+	      	DC : json.Description+'',
+		CI : json.CourseId+ ''
 	      });
       } else {
       	  res.render('course', {
 	      	Title : json.Title+'', 
 	      	CH : json.CreditHours+'', 
 	      	DC : json.Description+'',
+		CI : json.CourseId+'',
 	      	username:req.user.username
 	      });
       }
