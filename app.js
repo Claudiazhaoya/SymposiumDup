@@ -19,7 +19,8 @@ var db = mongoose.connection;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+//var course = require('./routes/course');
+var test = require('./routes/test');
 // initialize the application
 var app = express();
 
@@ -83,8 +84,8 @@ app.use(function (req, res, next) {
 
 app.use('/', index);
 app.use('/users', users);
-
-
+//app.use('/course',course);
+app.use('/test', test);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -103,11 +104,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-
-
-
 
 
 
