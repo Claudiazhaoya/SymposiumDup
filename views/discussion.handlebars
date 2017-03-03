@@ -19,7 +19,11 @@
 
 
 
+<<<<<<< HEAD
 <c1 class="container">
+=======
+<div class="container">
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-title">Discussion Boards</h2>
@@ -27,7 +31,11 @@
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+<<<<<<< HEAD
                     <button class="btn btn-default btn-lg" id="hide">Create Subject</button>
+=======
+                    <button class="btn btn-default btn-lg" onclick="Main_reply">Create Subject</button>
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
                     <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
                     <a href="groupstudy" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
 
@@ -56,6 +64,7 @@
                 <div class="m-board-header-cell m-board-header-key"></div>
                 <div class="m-board-header-cell m-board-header-title">
                     Course Boards
+<<<<<<< HEAD
                 </div>
                 <div class="m-board-header-cell m-board-header-expand">
                     <div class="js-collapse-all">
@@ -65,6 +74,17 @@
                         <i class="fa fa-expand" aria-hidden="true"></i> Expand All
                     </div>
                 </div>
+=======
+                </div>
+                <div class="m-board-header-cell m-board-header-expand">
+                    <div class="js-collapse-all">
+                        <i class="fa fa-compress" aria-hidden="true"></i> Collapse All
+                    </div>
+                    <div class="js-expand-all">
+                        <i class="fa fa-expand" aria-hidden="true"></i> Expand All
+                    </div>
+                </div>
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
                 <div class="m-board-header-cell m-board-header-readstatus">
                     Unread
                 </div>
@@ -74,10 +94,18 @@
             </div>
 
 
+<<<<<<< HEAD
             <div class="m-board">
                 <div class="m-board-cell m-board-key"></div>
                 <div class="m-board-cell m-board-title">
                     Main Board
+=======
+                {{#each posts}}
+            <div class="m-board">
+                <div class="m-board-cell m-board-key"></div>
+                <div class="m-board-cell m-board-title">
+			{{this.MainPost.information}}
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
                 </div>
                 <div class="m-board-header-cell m-board-header-expand">
                     <div class="js-expand">
@@ -86,7 +114,11 @@
                 </div>
 
                 <!-- commit button Start-->
+<<<<<<< HEAD
                 <a class="m-board-cell m-board-readstatus " id="show">
+=======
+                <a class="m-board-cell m-board-readstatus " onclick="Sub_reply">
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
                     Comment
                 </a>
 
@@ -98,8 +130,52 @@
                 </div>
             </div>
 
+	<div class="m-topics-container">
+		 {{#each this.SubPosts}}
+                    <div class="m-topic">
+                        <div class="m-topic-cell m-topic-key"></div>
+                        <div class="m-topic-cell m-topic-title">
+				<h2>{{this.information}}</h2><br>
+                        </div>
+
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                            <div class="m-label">2</div>
+                        </div>
 
 
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
+                            <div class="m-label m-label-unread">4</div>
+
+                        </div>
+
+
+                        <div class="m-topic-cell m-topic-check">
+                        </div>
+                    </div>
+                 {{/each}}
+
+                    <div class="m-topic">
+                        <div class="m-topic-cell m-topic-key"></div>
+                        <div class="m-topic-cell m-topic-title">
+				<h2>test</h2><br>
+                        </div>
+
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                            <div class="m-label">2</div>
+                        </div>
+
+
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
+                            <div class="m-label m-label-unread">4</div>
+
+                        </div>
+
+
+<<<<<<< HEAD
 <!--
             <div class="m-topics-container">
                 <div class="m-topic">
@@ -177,10 +253,26 @@
             <br>
 
             <textarea  name="information" rows="10" cols="30"></textarea>
+=======
+                        <div class="m-topic-cell m-topic-check">
+                        </div>
+                        </div>
+        </div>
+
+                {{/each}}
+
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<div id="my-container" class="table-responsive">
+</div>
+
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
 
             <br>
             <br>
 
+<<<<<<< HEAD
             <input type="submit" value="Submit Data">
         </form>
     </center>
@@ -228,13 +320,73 @@
     </script>
 
 
+=======
 
+<div class="footer">
+    <p>&copy; 2017 Symposium, Inc.</p>
+</div>
+
+<!--Josn Test Part START -->
+    <script type="text/template" id="Main_Reply">
+        <br>
+            <br>
+            <center>
+            <h4>Main Reply Editor</h4>
+            <form method="post" action="#" id="rtf">
+
+                    <br>
+
+                    <textarea  name="information" rows="10" cols="30"></textarea>
+
+                    <br>
+                    <br>
+
+                    <input type="submit" value="Submit Data">
+                    </form>
+                    </center>
+
+                    <br>
+    </script>
+    <script type="text/template" id="Sub_Reply">
+        function Sub_reply() {
+        <br>
+        <br>
+        <center>
+            <h4>Main Reply Editor</h4>
+            <form method="post" action="#" id="rtf">
+
+                <br>
+
+                <textarea  name="information" rows="10" cols="30"></textarea>
+
+                <br>
+                <br>
+
+                <input type="submit" value="Submit Data">
+            </form>
+        </center>
+        <br>
+        }
+    </script>
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
+
+    <script type="text/javascript">
+        var Main = document.getElementById('Main_Reply').innerHTML;
+        var Sub = document.getElementById('Sub_Reply').innerHTML;
+    </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+=======
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
 <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
 <script src="../stylesheets_wjz/assets/js/main.js"></script>
 <script src="../stylesheets_wjz/assets/js/functions.js"></script>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 04f7044a91b76b881ed5b94abe8aa5380b87bcba
