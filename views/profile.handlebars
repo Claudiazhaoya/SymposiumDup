@@ -26,6 +26,7 @@
                 <!--
                 <a href="#home">Home</a> -->
                 {{#if user}}
+                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
                     <a href="/users/profile">Profile</a>
                     <a href="/users/logout">Log Out</a>
                 {{else}}
@@ -50,7 +51,9 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 {{#if user}}
+                    <a class="nav-link prompt"> Welcome! {{username}} </a>
                     <li class="nav-item active">
+
                         <a class="nav-link" href="/users/profile">Profile</a>
                     </li>
                     <li class="nav-item">
@@ -111,46 +114,48 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Username:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Username1234" disabled>
+              <input class="form-control" type="text" value={{username}} disabled>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email Address:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input class="form-control" type="text" name="email" value={{email}}>
             </div>
           </div>
+          <!-- CURRENT PASSOWORD
           <div class="form-group">
             <label class="col-lg-3 control-label">Current Password:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="password" value="">
             </div>
           </div>
+          -->
           <div class="form-group">
             <label class="col-lg-3 control-label">New Password:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="password" value="" name="password">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Confirm New password:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="password" value="" name="passwordConfirm">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">College / University:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input class="form-control" type="text" value={{college}}>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Major: </label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input class="form-control" type="text" value="{{major}}">
             </div>
           </div>
-          <!-- Below is just to reference dropdown list that may be required for the future purposes -->
+          <!-- Below is just to reference dropdown list that may be required for the future purposes
           <div class="form-group">
             <label class="col-lg-3 control-label">Time Zone:</label>
             <div class="col-lg-8">
@@ -168,7 +173,7 @@
               </div>
             </div>
           </div>
-          <!-- Reference dropdown ends -->
+          Reference dropdown ends -->
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">

@@ -143,7 +143,7 @@ li a:hover {
 
 .navbar-inverse .navbar-nav .nav-link {
     font-size: 1.0rem;
-    color: rgba(180, 160, 70, .5)
+    color: rgba(180, 160, 70, .75)
 }
 
 .navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {
@@ -157,6 +157,7 @@ li a:hover {
 .navbar-inverse .navbar-nav .active > .nav-link, .navbar-inverse .navbar-nav .nav-link.active, .navbar-inverse .navbar-nav .nav-link.open, .navbar-inverse .navbar-nav .open > .nav-link {
     color: rgb(180, 160, 70)
 }
+
 
 /* For Nav Search Button */
 
@@ -245,6 +246,10 @@ li a:hover {
   color: #b4a046;
   background-color: #000;
   border-color: #1a1a1a;
+}
+
+.nav-link .prompt {
+  color: #b4a046;
 }
 
 /* Footer */
