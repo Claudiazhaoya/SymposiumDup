@@ -79,7 +79,4 @@ router.post('/', function(req, res, next){
 	});
 });
 
-router.get('/course/discussion', function(req,res){
-   res.render('discussion');
-});
 module.exports = router;
