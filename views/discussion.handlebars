@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 
 
 
-<div class="container">
+<c1 class="container">
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-title">Discussion Boards</h2>
@@ -27,7 +27,7 @@
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                    <button class="btn btn-default btn-lg" onclick="Main_reply">Create Subject</button>
+                    <button class="btn btn-default btn-lg" id="hide">Create Subject</button>
                     <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
                     <a href="groupstudy" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
 
@@ -86,7 +86,7 @@
                 </div>
 
                 <!-- commit button Start-->
-                <a class="m-board-cell m-board-readstatus " onclick="Sub_reply">
+                <a class="m-board-cell m-board-readstatus " id="show">
                     Comment
                 </a>
 
@@ -167,7 +167,46 @@
 <div id="my-container" class="table-responsive">
 </div>
 
+    <c1>
+    <br>
+    <br>
+    <center>
+        <h4>Main Reply Editor</h4>
+        <form method="post" action="#" id="rtf">
 
+            <br>
+
+            <textarea  name="information" rows="10" cols="30"></textarea>
+
+            <br>
+            <br>
+
+            <input type="submit" value="Submit Data">
+        </form>
+    </center>
+
+    <br>
+    </c1>
+
+    <c2>
+    <br>
+    <br>
+    <center>
+        <h4>Sub Reply Editor</h4>
+        <form method="post" action="#" id="rtf">
+
+            <br>
+
+            <textarea  name="information" rows="10" cols="30"></textarea>
+
+            <br>
+            <br>
+
+            <input type="submit" value="Submit Data">
+        </form>
+    </center>
+    <br>
+    </c2>
 
 
 <div class="footer">
@@ -175,54 +214,24 @@
 </div>
 
 <!--Josn Test Part START -->
-    <script type="text/template" id="Main_Reply">
-        <br>
-            <br>
-            <center>
-            <h4>Main Reply Editor</h4>
-            <form method="post" action="#" id="rtf">
-
-                    <br>
-
-                    <textarea  name="information" rows="10" cols="30"></textarea>
-
-                    <br>
-                    <br>
-
-                    <input type="submit" value="Submit Data">
-                    </form>
-                    </center>
-
-                    <br>
-    </script>
-    <script type="text/template" id="Sub_Reply">
-        function Sub_reply() {
-        <br>
-        <br>
-        <center>
-            <h4>Main Reply Editor</h4>
-            <form method="post" action="#" id="rtf">
-
-                <br>
-
-                <textarea  name="information" rows="10" cols="30"></textarea>
-
-                <br>
-                <br>
-
-                <input type="submit" value="Submit Data">
-            </form>
-        </center>
-        <br>
-        }
+    <script>
+        $("c1").hide();
+        $("c2").hide();
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("c1").show();
+            });
+            $("#show").click(function(){
+                $("c2").show();
+            });
+        });
     </script>
 
-    <script type="text/javascript">
-        var Main = document.getElementById('Main_Reply').innerHTML;
-        var Sub = document.getElementById('Sub_Reply').innerHTML;
-    </script>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
 <script src="../stylesheets_wjz/assets/js/main.js"></script>
 <script src="../stylesheets_wjz/assets/js/functions.js"></script>
