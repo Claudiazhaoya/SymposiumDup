@@ -80,7 +80,7 @@
 
 
              
-	    <center><h1><span id="Title" ></span>{{Title}}</h1></center>
+	    <center><h1><span id="Title" >{{Title}}</h1></center>
 
             <!-- Course Description, We may need Purdue API Interface here -->
 
@@ -98,13 +98,15 @@
     </div>
 
     <div class="container">
+       <form action = "#" method="post" class="flexsearch--form">
         <div class="jumbotron2">
             <center>
-            <a class="btn btn-lg btn-primary2" href="/course/discussion" role="button">Course Post &raquo;</a>
-
-            <a class="btn btn-lg btn-primary2" href="/course/groupstudy" role="button">Study Note &raquo;</a>
+            <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Course Post"/>
+            <input type="submit" name="type" class="btn btn-lg btn-primary2" value-"Study Note"/>
+	    <input  hidden readonly type="text" name="Course_id" value={{CI}}>
             </center>
         </div>
+       </form>
     </div>
 
     <!--Post Part START -->
