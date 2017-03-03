@@ -84,7 +84,7 @@ app.use(function (req, res, next) {
 
 app.use('/', index);
 app.use('/users', users);
-//app.use('/course',course);
+app.use('/course',course);
 app.use('/test', test);
 
 // catch 404 and forward to error handler
