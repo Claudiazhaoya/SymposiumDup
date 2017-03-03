@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^2.1.5",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
@@ -14,12 +15,12 @@
     "express-myconnection": "",
     "hyena": "*",
     "kerberos": "0.0.22",
-    "mongodb": "^2.2.24",
+    "localStorage": "~1.0.3",
+    "mongodb": "~2.2.24",
     "morgan": "~1.7.0",
     "mysql": "2.5.4",
     "passport-local": "*",
     "pug": "~2.0.0-beta10",
-    "serve-favicon": "~2.3.2",
-    "localStorage": "~1.0.3"
+    "serve-favicon": "~2.3.2"
   }
 }

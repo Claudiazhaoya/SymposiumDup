@@ -32,7 +32,6 @@ var postSchema = mongoose.Schema({
  });
 
 var post = module.exports = mongoose.model('post', postSchema);
-
 module.exports.createPost = function(newPost, callback) {
     console.log('creating the post');
     newPost.save(callback);
@@ -42,12 +41,13 @@ module.exports.createPost = function(newPost, callback) {
 module.exports.getPostByCourseId = function(course_id, callback) {
     console.log('get post by course id');
     var query = {course_id : course_id, main_post_id : null };
-    post.find(query, callback);
+    post.find(query,callback);
+    
 }
 
 module.exports.getPostByMainPost = function(post_id, callback) {
     var query = {main_post_id : post_id};
-    post.find(query, callback);
+    post.find(query,callback);
 }
 
 
