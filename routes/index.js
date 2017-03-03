@@ -38,26 +38,9 @@ router.get('/error', function(req, res, next) {
 router.get('/course', function(req,res,next) {
       //console.log('index course');
       var json = JSON.parse(localStorage.getItem('Course'));
-<<<<<<< HEAD
       console.log('local Storage' + json.Title);
       res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+'', CI : json.CourseId});
-=======
-      //console.log('local Storage' + json.Title);
-      if(!req.user) {
-	      res.render('course', {
-	      	Title : json.Title+'', 
-	      	CH : json.CreditHours+'', 
-	      	DC : json.Description+''
-	      });
-      } else {
-      	  res.render('course', {
-	      	Title : json.Title+'', 
-	      	CH : json.CreditHours+'', 
-	      	DC : json.Description+'',
-	      	username:req.user.username
-	      });
-      }
->>>>>>> b393ebe6909ee50527a0b1501e6a2431bc098c4a
+
 });
 
 function ensureAuthenticated(req, res, next){
@@ -68,10 +51,6 @@ function ensureAuthenticated(req, res, next){
 	}
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b393ebe6909ee50527a0b1501e6a2431bc098c4a
 /* Search courses */
 router.post('/', function(req, res, next){
 	console.log('search course');
