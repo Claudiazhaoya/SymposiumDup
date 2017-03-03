@@ -12,6 +12,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+//var MongooseStore = require('mongoose-store')(session);
 mongoose.Promise = require('bluebird');
 // connect to the local database
 mongoose.connect('mongodb://localhost/symposium');
@@ -38,10 +39,16 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+/*
+var mongooseStore = new MongooseStore({
+  url: 'mongodb://localhost/symposium'
+});
+*/
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
-    resave: true
+    resave: true,
+    //store: mongooseStore
 }));
 
 app.use(passport.initialize());

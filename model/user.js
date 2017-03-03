@@ -18,6 +18,9 @@ var UserSchema = mongoose.Schema({
   },
   major: {
     type: String
+  },
+  avatar: {
+    type: String
   }
 });
 
