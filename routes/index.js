@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var localStorage = require('localStorage');
 var bodyParser = require('body-parser');
-//add
 var Course = require('../model/course');
 var User = require('../model/user');
 
@@ -38,9 +37,28 @@ router.get('/error', function(req, res, next) {
 router.get('/course', function(req,res,next) {
       //console.log('index course');
       var json = JSON.parse(localStorage.getItem('Course'));
+<<<<<<< HEAD
       console.log('local Storage' + json.Title);
       res.render('course', {Title : json.Title+'', CH : json.CreditHours+'', DC : json.Description+'', CI : json.CourseId});
 
+=======
+      if(!req.user) {
+	      res.render('course', {
+	      	Title : json.Title+'', 
+	      	CH : json.CreditHours+'', 
+	      	DC : json.Description+'',
+		CI : json.CourseId+ ''
+	      });
+      } else {
+      	  res.render('course', {
+	      	Title : json.Title+'', 
+	      	CH : json.CreditHours+'', 
+	      	DC : json.Description+'',
+		CI : json.CourseId+'',
+	      	username:req.user.username
+	      });
+      }
+>>>>>>> 21d9b95a2f797b49f203af6ea047c3a50c812bc4
 });
 
 function ensureAuthenticated(req, res, next){
@@ -67,7 +85,4 @@ router.post('/', function(req, res, next){
 	});
 });
 
-router.get('/course/discussion', function(req,res){
-   res.render('discussion');
-});
 module.exports = router;
