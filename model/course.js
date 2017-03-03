@@ -39,8 +39,8 @@ exports.searchCourse = function(coursename, callback){
 	  var json = JSON.parse(body);
 	  var first = json.value[0];
 	  if(typeof first === 'undefined') return callback(new Error('can not find the course'));
-	  console.log(first.Title);
-	  return callback(null, first.Title);
+	  console.log(first);
+	  return callback(null, first);
 	}
 	});
 };

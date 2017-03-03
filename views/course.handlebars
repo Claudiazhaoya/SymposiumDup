@@ -7,7 +7,7 @@
     <meta name="Jingzhou Wang" content="">
     <title>Course Page</title>
 
-    <!-- Bootstrap core CSS -->
+     <!-- Bootstrap core CSS -->
     <link href="stylesheets_wjz/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this project -->
@@ -38,7 +38,7 @@
         </div>
 
 
-        <a class="navbar-brand" href="/">Symposium</a>
+        <a class="navbar-brand" href="https://github.com/AF8EJFE/cs307_Symposium">Symposium</a>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
@@ -79,15 +79,15 @@
             <!--  <h1>CS307: Software Engineer</h1> -->
 
 
-
-            <center><h1><span id="Title" ></span></h1></center>
+             
+	    <center><h1><span id="Title" >{{Title}}</h1></center>
 
             <!-- Course Description, We may need Purdue API Interface here -->
 
             <p class="lead">
-                CreditHours: <span id="CreditHours"></span><br>
-                Description: <br>
-                <span id="Description"></span>
+	        CreditHours: <span id="CreditHours">{{CH}}</span><br>
+                Description: 
+		<span id="Description">{{DC}}</span>
             </p>
             <center>
             <a class="btn btn-lg btn-primary" href="https://github.com/AF8EJFE/cs307_Symposium" role="button">View on Github &raquo;</a>
@@ -98,13 +98,15 @@
     </div>
 
     <div class="container">
+       <form action = "#" method="post" class="flexsearch--form">
         <div class="jumbotron2">
             <center>
-            <a class="btn btn-lg btn-primary2" href="/course/discussion" role="button">Course Post &raquo;</a>
-
-            <a class="btn btn-lg btn-primary2" href="/course/groupstudy" role="button">Study Note &raquo;</a>
+            <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Course Post"/>
+            <input type="submit" name="type" class="btn btn-lg btn-primary2" value-"Study Note"/>
+	    <input  hidden readonly type="text" name="Course_id" value={{CI}}>
             </center>
         </div>
+       </form>
     </div>
 
     <!--Post Part START -->
@@ -121,11 +123,8 @@
 
     <!--Josn Test Part START -->
 
-    <script type="text/javascript">
 
-        document.getElementById("Title").innerHTML = localStorage.getItem("title");
-    </script>
-
+    
     <!-- Bootstrap core JavaScript
         ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
