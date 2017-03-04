@@ -27,7 +27,7 @@
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                    <button class="btn btn-default btn-lg" onclick="Main_reply">Create Subject</button>
+                    <button class="btn btn-default btn-lg" onclick="Main_reply()">Create Subject</button>
                     <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
                     <a href="groupstudy" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
 
@@ -87,7 +87,7 @@
                 </div>
 
                 <!-- commit button Start-->
-                <a class="m-board-cell m-board-readstatus " onclick="Sub_reply">
+                <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">
                     Comment
                 </a>
 
@@ -153,7 +153,22 @@
 
     </div><!-- end row -->
 </div><!-- end container -->
-
+<br>
+        <br>
+        <center>
+	  <div id = "submitForm" style="display:none;">
+            <h4 id="formHeader"></h4>
+            <form method="post" action="#" id="rtf">
+                <br>
+                <textarea  name="information" rows="10" cols="30"></textarea>
+		<input type="text" name="main_course_id" value="1" style = "display:none"/>
+                <br>
+                <br>
+                <input type="submit" value="Submit Data">
+            </form>
+	  </div>
+        </center>
+<br>
 <div id="my-container" class="table-responsive">
 </div>
 
@@ -165,51 +180,13 @@
 </div>
 
 <!--Josn Test Part START -->
-    <script type="text/template" id="Main_Reply">
-        <br>
-            <br>
-            <center>
-            <h4>Main Reply Editor</h4>
-            <form method="post" action="#" id="rtf">
-
-                    <br>
-
-                    <textarea  name="information" rows="10" cols="30"></textarea>
-
-                    <br>
-                    <br>
-
-                    <input type="submit" value="Submit Data">
-                    </form>
-                    </center>
-
-                    <br>
-    </script>
-    <script type="text/template" id="Sub_Reply">
-        function Sub_reply() {
-        <br>
-        <br>
-        <center>
-            <h4>Main Reply Editor</h4>
-            <form method="post" action="#" id="rtf">
-
-                <br>
-
-                <textarea  name="information" rows="10" cols="30"></textarea>
-
-                <br>
-                <br>
-
-                <input type="submit" value="Submit Data">
-            </form>
-        </center>
-        <br>
-        }
-    </script>
-
-    <script type="text/javascript">
-        var Main = document.getElementById('Main_Reply').innerHTML;
-        var Sub = document.getElementById('Sub_Reply').innerHTML;
+    <script>
+    function Main_reply(){
+       var x = document.getElementById('submitForm');
+       x.style.display = 'block';
+       var y = document.getElementById('formHeader');
+       y.innerHTML = "Main Reply Editor";
+    }
     </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
