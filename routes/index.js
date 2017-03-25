@@ -8,11 +8,9 @@ var User = require('../model/user');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	if(!req.user) {
-		//console.log('hi iam stranger');
 		res.render('index');
 	}
   	else {
-  		//console.log('hi iam user');
   		res.render('index', {
   			username: req.user.username
   		})
@@ -22,11 +20,11 @@ router.get('/', function(req, res, next) {
 /* GET error page. */
 router.get('/error', function(req, res, next) {
 	if(!req.user) {
-		//console.log('hi iam stranger');
+
 		res.render('error');
 	}
   	else {
-  		//console.log('hi iam user');
+
   		res.render('error', {
   			username: req.user.username
   		})
@@ -79,7 +77,16 @@ router.post('/', function(req, res, next){
 	});
 });
 
+/*
 router.get('/course/discussion', function(req,res){
    res.render('discussion');
 });
+
+router.get('/course/groupstudy', function(req, res) {
+	//console.log('ttt');
+	res.render('groupstudy');
+});
+*/
+
+
 module.exports = router;
