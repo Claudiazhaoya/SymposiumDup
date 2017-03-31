@@ -10,11 +10,11 @@ router.get('/', function(req, res, next) {
 	if(!req.user) {
 		res.render('index');
 	}
-  	else {
-  		res.render('index', {
-  			username: req.user.username
-  		})
-  	}
+	else {
+		res.render('index', {
+			username: req.user.username
+		});
+	}
 });
 
 /* GET error page. */
@@ -23,12 +23,12 @@ router.get('/error', function(req, res, next) {
 
 		res.render('error');
 	}
-  	else {
+	else {
 
-  		res.render('error', {
-  			username: req.user.username
-  		})
-  	}
+		res.render('error', {
+			username: req.user.username
+		});
+	}
 });
 
 
@@ -38,7 +38,7 @@ router.get('/course', function(req,res,next) {
       if(!req.user) {
 	      res.render('course', {
 	      	Title : json.Title+'', 
-	      	CH : json.CreditHours+'', 
+		  	CH : json.CreditHours+'', 
 	      	DC : json.Description+'',
 		CI : json.CourseId+ ''
 	      });
