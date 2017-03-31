@@ -8,29 +8,27 @@ var User = require('../model/user');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	if(!req.user) {
-		//console.log('hi iam stranger');
 		res.render('index');
 	}
-  	else {
-  		//console.log('hi iam user');
-  		res.render('index', {
-  			username: req.user.username
-  		})
-  	}
+	else {
+		res.render('index', {
+			username: req.user.username
+		});
+	}
 });
 
 /* GET error page. */
 router.get('/error', function(req, res, next) {
 	if(!req.user) {
-		//console.log('hi iam stranger');
+
 		res.render('error');
 	}
-  	else {
-  		//console.log('hi iam user');
-  		res.render('error', {
-  			username: req.user.username
-  		})
-  	}
+	else {
+
+		res.render('error', {
+			username: req.user.username
+		});
+	}
 });
 
 
@@ -40,7 +38,7 @@ router.get('/course', function(req,res,next) {
       if(!req.user) {
 	      res.render('course', {
 	      	Title : json.Title+'', 
-	      	CH : json.CreditHours+'', 
+		  	CH : json.CreditHours+'', 
 	      	DC : json.Description+'',
 		CI : json.CourseId+ ''
 	      });

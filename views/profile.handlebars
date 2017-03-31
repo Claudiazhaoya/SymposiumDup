@@ -13,6 +13,26 @@
     
   <title>Symposium</title>
 </head>
+
+<div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div>  
+</div>
+
+
 <body>
    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
@@ -89,21 +109,19 @@
   <div class="row">
       <!-- left column -->
       <div class="col-md-3">
-        <div class="text-center">
-          <img src="{{user.avatar}}" class="avatar img-circle" name="avatar" alt="avatar">
-          <h6>Change your avatar</h6>
-          <input type="file" name="avatar" class="form-control">
-          <ul>
-          <hr>
-            <li><a class="classTaken" href="#"> Classes Taken on Symposium </a></li>
-          <hr>
-            <li><a class="fileDL" href="#"> Files Downloaded </a></li>
-          <hr>
-            <li><a class="fileUL" href="#"> Files Uploaded </a></li>
-          <hr>
-            <li><a class="pointHistory" href="#"> Points History </a></li>
-          <ul>
-        </div>
+          <div class="text-center">
+            <img src="{{avatar}}" class="avatar img-circle" alt="avatar">
+            <ul>
+            <hr>
+              <li><a class="classTaken" href="#"> Classes Taken on Symposium </a></li>
+            <hr>
+              <li><a class="fileDL" href="#"> Files Downloaded </a></li>
+            <hr>
+              <li><a class="fileUL" href="#"> Files Uploaded </a></li>
+            <hr>
+              <li><a class="pointHistory" href="#"> Points History </a></li>
+            <ul>
+          </div>
       </div>
       
       <!-- edit form column -->
@@ -152,6 +170,12 @@
             <label class="col-lg-3 control-label">Major: </label>
             <div class="col-lg-8">
               <input class="form-control" type="text" name="major" value={{major}}>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Avatar: </label>
+            <div class="col-lg-8">
+              <input class="form-control" type="file" name="avatar" id="avatar">
             </div>
           </div>
           
