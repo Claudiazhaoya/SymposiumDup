@@ -77,16 +77,4 @@ router.post('/', function(req, res, next){
 	});
 });
 
-/*
-router.get('/course/discussion', function(req,res){
-   res.render('discussion');
-});
-
-router.get('/course/groupstudy', function(req, res) {
-	//console.log('ttt');
-	res.render('groupstudy');
-});
-*/
-
-
 module.exports = router;
