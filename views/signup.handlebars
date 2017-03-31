@@ -16,24 +16,6 @@
           {{/each}}
     {{/if}}
 
-    <div class="row">
-        <div class="col-lg-12">
-          {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-          {{/if}}
-
-          {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
-          {{/if}}
-
-          {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-          {{/if}}
-          
-          {{{body}}}
-        </div>  
-      </div>
-
     <!--NAVBAR SECTION START -->
 <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
@@ -148,7 +130,7 @@
 
           
             <label for="file">Select your image:</label>
-            <input type="file" name="avatar" id="avatar" />
+            <input type="file" name="avatar" id="file" />
             <span class="hint">Supported files: jpg, jpeg, png.</span>
             
           
