@@ -107,32 +107,27 @@
     <h2>My Profile</h1>
     <hr>
   <div class="row">
-    <div class="col-md-9 personal-info">
-      <form class="form-horizontal" role="form" method="post" action="/users/profile">
       <!-- left column -->
       <div class="col-md-3">
-        <div class="text-center">
-          <img src="{{avatar}}" class="avatar img-circle" alt="avatar" >
-          <h6>Change your avatar</h6>
-          <input type="file" name="avatar" id="avatar" class="form-control">
-          <ul>
-          <hr>
-            <li><a class="classTaken" href="#"> Classes Taken on Symposium </a></li>
-          <hr>
-            <li><a class="fileDL" href="#"> Files Downloaded </a></li>
-          <hr>
-            <li><a class="fileUL" href="#"> Files Uploaded </a></li>
-          <hr>
-            <li><a class="pointHistory" href="#"> Points History </a></li>
-          <ul>
-        </div>
+          <div class="text-center">
+            <img src="{{avatar}}" class="avatar img-circle" alt="avatar">
+            <ul>
+            <hr>
+              <li><a class="classTaken" href="#"> Classes Taken on Symposium </a></li>
+            <hr>
+              <li><a class="fileDL" href="#"> Files Downloaded </a></li>
+            <hr>
+              <li><a class="fileUL" href="#"> Files Uploaded </a></li>
+            <hr>
+              <li><a class="pointHistory" href="#"> Points History </a></li>
+            <ul>
+          </div>
       </div>
-    
       
       <!-- edit form column -->
-      
+      <div class="col-md-9 personal-info">
         <h3>Personal info</h3>
-        
+        <form class="form-horizontal" role="form" method="post" action="/users/profile">
           <div class="form-group">
             <label class="col-lg-3 control-label">Username:</label>
             <div class="col-lg-8">
@@ -156,25 +151,31 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">New Password:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="password" name="password" value="">
+              <input class="form-control" type="password" value="" name="password">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Confirm New password:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="password" name="passwordConfirm" value="">
+              <input class="form-control" type="password" value="" name="passwordConfirm">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">College / University:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" name="college" value={{user.college}}>
+              <input class="form-control" type="text" name="college" value={{college}}>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Major: </label>
             <div class="col-lg-8">
               <input class="form-control" type="text" name="major" value={{major}}>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Avatar: </label>
+            <div class="col-lg-8">
+              <input class="form-control" type="file" name="avatar" id="avatar">
             </div>
           </div>
           
@@ -201,7 +202,6 @@
             </div>
           </div>
           Reference dropdown ends -->
-          
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
