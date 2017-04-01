@@ -44,7 +44,7 @@ module.exports.getPostByCourseId = function(course_id, callback) {
 
 module.exports.getPostByMainPost = function(post_id, callback) {
     var query = {main_post_id : post_id};
-    post.find(query,callback);
+    post.find({query, $orderby: {countUp : 1}} ,callback);
 }
 
 module.exports.deletePostById = function(post_id, callback) {
@@ -55,4 +55,14 @@ module.exports.deletePostById = function(post_id, callback) {
     });
 }
 
+module.exports.updataRatingById = function(post_id, rating, callback) {
+    var query = {_id : post_id};
+    var temp;
+    if(rating == 1) temp = "countUp";
+    else temp = "countDown";
+    post.findOneAndUpdate({
+       query,
+       $inc: {temp : 1}},callback
+    );
+}
 //module.exports.updataPostById = function(
