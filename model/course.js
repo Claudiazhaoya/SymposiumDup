@@ -29,9 +29,34 @@ var course = {
 
 exports.searchCourse = function(coursename, callback){
 	console.log(coursename);
-	var subString = coursename.split(" ");
-   	course.url = myurl + ' \'' + subString[0] + '\'' + ' and Number eq ' + ' \'' + subString[1] + '\'';
-   	console.log(myurl);
+	var subString;
+	var countCourse = coursename.replace(/[^0-9]/g, "").length;
+	console.log(countCourse);
+
+	if (countCourse  == 5) {
+		if (/\s/.test(coursename)) {
+			subString = coursename.split(" ");
+			course.url = myurl + ' \'' + subString[0] + '\'' + ' and Number eq ' + ' \'' + subString[1] + '\'';
+		} else {
+			var s1 = coursename.replace(/[0-9]/g, '');
+			console.log(s1);
+			var s2 = coursename.match(/\d/g);
+			s2 = s2.join("");
+			course.url = myurl + ' \'' + s1 + '\'' + ' and Number eq ' + ' \'' + s2 + '\'';
+		}
+	} else if (countCourse == 3) {
+		if (/\s/.test(coursename)) {
+			subString = coursename.split(" ");
+			course.url = myurl + ' \'' + subString[0] + '\'' + ' and Number eq ' + ' \'' + subString[1] + '00\'';
+		} else {
+			var s1 = coursename.replace(/[0-9]/g, '');
+			console.log(s1);
+			var s2 = coursename.match(/\d/g);
+			s2 = s2.join("");
+			course.url = myurl + ' \'' + s1 + '\'' + ' and Number eq ' + ' \'' + s2 + '00\'';
+		}
+	}
+   	
    	request(course, function(error, response, body){
 
    	if(error) return callback(error);
@@ -44,4 +69,3 @@ exports.searchCourse = function(coursename, callback){
 	}
 	});
 };
-

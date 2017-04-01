@@ -252,6 +252,10 @@ li a:hover {
   color: #b4a046;
 }
 
+.name {
+  right: 10;
+}
+
 /* Footer */
 
 .footer {

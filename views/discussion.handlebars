@@ -86,10 +86,17 @@
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <!-- commit button Start-->
                     <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">
                         Comment
                     </a>
+=======
+                <!-- commit button Start-->
+                <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">
+                    Comment
+                </a>
+>>>>>>> 414dc451613488a243024ffaf4d88a7a4945fd0a
 
                     <!--<button class="btn " type="submit">comment</button>-->
                     <!-- commit button End-->
@@ -149,6 +156,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
             {{/each}}
 
         </div><!-- end row -->
@@ -182,24 +190,53 @@
         }
         function Sub_reply() {
         <br>
+=======
+    </div><!-- end row -->
+</div><!-- end container -->
+<br>
+>>>>>>> 414dc451613488a243024ffaf4d88a7a4945fd0a
         <br>
         <center>
-            <h4>Main Reply Editor</h4>
+	  <div id = "submitForm" style="display:none;">
+            <h4 id="formHeader"></h4>
             <form method="post" action="#" id="rtf">
                 <br>
                 <textarea  name="information" rows="10" cols="30"></textarea>
+<<<<<<< HEAD
+=======
+		<input type="text" name="main_course_id" value="1" style = "display:none"/>
+>>>>>>> 414dc451613488a243024ffaf4d88a7a4945fd0a
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
             </form>
+	  </div>
         </center>
-        <br>
-        }
-    </script>
+<br>
+<div id="my-container" class="table-responsive">
+</div>
 
+
+
+<<<<<<< HEAD
     <script type="text/javascript">
         document.getElementById('Main_Reply').innerHTML = ;
         document.getElementById('Sub_Reply').innerHTML = Main;
+=======
+
+<div class="footer">
+    <p>&copy; 2017 Symposium, Inc.</p>
+</div>
+
+<!--Josn Test Part START -->
+    <script>
+    function Main_reply(){
+       var x = document.getElementById('submitForm');
+       x.style.display = 'block';
+       var y = document.getElementById('formHeader');
+       y.innerHTML = "Main Reply Editor";
+    }
+>>>>>>> 414dc451613488a243024ffaf4d88a7a4945fd0a
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
