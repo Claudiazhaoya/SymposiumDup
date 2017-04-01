@@ -27,7 +27,7 @@
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                    <button class="btn btn-default btn-lg" onclick="Main_reply()">Create Subject</button>
+                    <button class="btn btn-default btn-slg" onclick="Main_reply()">Create Subject</button>
                     <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
                     <a href="groupstudy" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
 
@@ -73,27 +73,20 @@
                 </div>
             </div>
 
-
                 {{#each posts}}
             <div class="m-board">
                 <div class="m-board-cell m-board-key"></div>
-                <div class="m-board-cell m-board-title">
+               	 <div id="main_inform"class="m-board-cell m-board-title">
 			{{this.MainPost.information}}
                 </div>
+               	 <div id="main_post_id" style="display:none">{{this.MainPost._id}}</div>
                 <div class="m-board-header-cell m-board-header-expand">
                     <div class="js-expand">
                         <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
                     </div>
                 </div>
-
-                <!-- commit button Start-->
-                <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">
-                    Comment
-                </a>
-
-                <!--<button class="btn " type="submit">comment</button>-->
-                <!-- commit button End-->
-
+		<a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">Comment
+                  </a>
                 <div class="m-board-cell m-board-check">
                     <input type="checkbox" name="" value="">
                 </div>
@@ -125,28 +118,6 @@
                     </div>
                  {{/each}}
 
-                    <div class="m-topic">
-                        <div class="m-topic-cell m-topic-key"></div>
-                        <div class="m-topic-cell m-topic-title">
-				<h2>test</h2><br>
-                        </div>
-
-                        <div class="m-topic-cell m-topic-readstatus">
-                            <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
-                            <div class="m-label">2</div>
-                        </div>
-
-
-                        <div class="m-topic-cell m-topic-readstatus">
-                            <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
-                            <div class="m-label m-label-unread">4</div>
-
-                        </div>
-
-
-                        <div class="m-topic-cell m-topic-check">
-                        </div>
-                        </div>
         </div>
 
                 {{/each}}
@@ -158,10 +129,10 @@
         <center>
 	  <div id = "submitForm" style="display:none;">
             <h4 id="formHeader"></h4>
-            <form method="post" action="#" id="rtf">
+            <form method="post" action="#" id="submitFormT">
                 <br>
                 <textarea  name="information" rows="10" cols="30"></textarea>
-		<input type="text" name="main_course_id" value="1" style = "display:none"/>
+		<input type="text" name="main_post_id" value="1" style = "display:none"/>
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
@@ -186,6 +157,15 @@
        x.style.display = 'block';
        var y = document.getElementById('formHeader');
        y.innerHTML = "Main Reply Editor";
+    }
+    function Sub_reply(){
+       var x = document.getElementById('submitForm');
+       x.style.display = 'block';
+       var y = document.getElementById('formHeader');
+       y.innerHTML = "Make a comment to " + test;
+	       //document.getElementById("main_inform").innerHTML;
+      document.getElementById("submitFormT").elements.namedItem("main_post_id").value = test;
+	       //document.getElementById("main_post_id").innerHTML;
     }
     </script>
 

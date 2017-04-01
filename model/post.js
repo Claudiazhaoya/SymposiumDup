@@ -1,14 +1,5 @@
 var mongoose = require('mongoose');
 
-var ratingSchema = mongoose.Schema({
-	post_id:{
-	  type:String
-	},
-	user_id:{
-	  type:String
-	},
-	countUp: Number
-});
 var postSchema = mongoose.Schema({
 	information: {
 	  type: String,
@@ -25,7 +16,13 @@ var postSchema = mongoose.Schema({
 	  type: Date,
 	  default: Date.now
         },
-	rating: [ratingSchema],
+
+	countUp : {
+	  type: Number
+	},
+	countDown : {
+	  type: Number
+	},
 	main_post_id: {
 	  type: String
 	}
@@ -40,7 +37,7 @@ module.exports.createPost = function(newPost, callback) {
 
 module.exports.getPostByCourseId = function(course_id, callback) {
     console.log('get post by course id');
-    var query = {course_id : course_id, main_post_id : null };
+    var query = {course_id : course_id, main_post_id : '1' };
     post.find(query,callback);
     
 }
