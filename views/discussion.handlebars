@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="m-board-header-cell m-board-header-readstatus">
-                    Unread
+
                 </div>
                 <div class="m-board-header-cell m-board-header-check">
                     <input type="checkbox" id="checkAll" name="" value="">
@@ -81,8 +81,12 @@
                         {{this.MainPost.information}}
                     </div>
                     <div class="m-board-header-cell m-board-header-expand">
-                        <div class="js-expand">
+                        <!-- <div class="js-expand">
                             <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+                        </div> -->
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                            <div class="m-label">2</div>
                         </div>
                     </div>
 
@@ -108,16 +112,26 @@
                                 <h2>{{this.information}}</h2><br>
                             </div>
 
+
                             <div class="m-topic-cell m-topic-readstatus">
-                                <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
-                                <div class="m-label">2</div>
+                                <!--<button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                                <div class="m-label">2</div>-->
                             </div>
 
 
+                            <!--
                             <div class="m-topic-cell m-topic-readstatus">
                                 <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
                                 <div class="m-label m-label-unread">4</div>
 
+                            </div> -->
+
+                            <div class="m-topic-cell m-topic-readstatus">
+                                <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                                <div class="last-post-date">
+                                    Jingzhou Wang
+                                    <span>{{this.timeStamp}}</span>
+                                </div>
                             </div>
 
 
