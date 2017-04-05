@@ -28,7 +28,6 @@
     "morgan": "~1.7.0",
     "multer": "^1.3.0",
     "mysql": "2.5.4",
-    "node-datetime": "^1.0.0",
     "passport": "^0.3.2",
     "passport-local": "*",
     "promise": "^7.1.1",
