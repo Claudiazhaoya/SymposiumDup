@@ -4,6 +4,12 @@ var NoteSchema = mongoose.Schema({
 	filename: {
 		type: String
 	},
+	author: {
+		type: String
+	},
+	avatar: {
+		type: String
+	},
 	link: {
 		type: String
 	},
