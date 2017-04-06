@@ -14,5 +14,3 @@ Users: Any Purdue student who is  going to make class schedule for a new semeste
 Developers: Jay Cha, Jingzhou Wang, Xiaotian Yu, Zhaoya Sun, Xiaowei Fu
 Project Manager: 
 Project Owner: Jay Cha, Jingzhou Wang, Xiaotian Yu, Zhaoya Sun, Xiaowei Fu
-
-
