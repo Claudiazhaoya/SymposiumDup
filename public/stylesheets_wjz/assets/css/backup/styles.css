@@ -132,7 +132,6 @@ body {
 
 .container {
   padding-top: 3%;
-  padding-bottom: 3%;
 }
 
 .page-actions {
@@ -390,7 +389,7 @@ h6 {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;

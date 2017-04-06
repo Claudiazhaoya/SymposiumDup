@@ -14,11 +14,91 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
+
+<div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div>
+</div> 
+
 <body>
 
+<!--NAVBAR SECTION START -->
 
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
+        <div class="dropdown">
+        <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div id="navbar-collapse-1" class="dropdown-content">
+            <ul class="nav navbar-nav navbar-right" >
+                <!--
+                <a href="#home">Home</a> -->
+                {{#if user}}
+                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
+                    <a href="/users/profile">Profile</a>
+                    <a href="/users/logout">Log Out</a>
+                {{else}}
+                    <a href="/users/signup">Sign Up</a>
+                    <a href="/users/login">Log In</a>
+                {{/if}}
+                <!--
+                <a href="#course-sec">Course</a>
+                <a href="#contact-sec">Contact</a>
+                -->
+            </ul>
+        </div>
+        </div>
+
+        <a class="navbar-brand" href="/">Symposium</a>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="coursename"/>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <ul class="navbar-nav ml-auto">
+                <!--
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li> -->
+                {{#if user}}
+                    <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Log Out</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/signup">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/login">Log In</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
+
+<!-- NAV BAR ENDS -->
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -27,9 +107,9 @@
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                    <button class="btn btn-default btn-lg" onclick="Main_reply()">Create Subject</button>
+                    <button class="btn btn-default btn-slg" onclick="Main_reply()">Create Subject</button>
                     <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
-                    <a href="groupstudy" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
+                    <a href="/course/notes" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
 
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,6 +146,162 @@
                     </div>
                 </div>
                 <div class="m-board-header-cell m-board-header-readstatus">
+                    Unread
+                </div>
+                <div class="m-board-header-cell m-board-header-check">
+                    <input type="checkbox" id="checkAll" name="" value="">
+                </div>
+            </div>
+
+                {{#each posts}}
+            <div class="m-board">
+                <div class="m-board-cell m-board-key"></div>
+                 <div id="main_inform"class="m-board-cell m-board-title">
+            {{this.MainPost.information}}
+                </div>
+                 <div id="main_post_id" style="display:none">{{this.MainPost._id}}</div>
+                <div class="m-board-header-cell m-board-header-expand">
+                    <div class="js-expand">
+                        <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+                    </div>
+                </div>
+        <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">Comment
+                  </a>
+                <div class="m-board-cell m-board-check">
+                    <input type="checkbox" name="" value="">
+                </div>
+            </div>
+
+    <div class="m-topics-container">
+         {{#each this.SubPosts}}
+                    <div class="m-topic">
+                        <div class="m-topic-cell m-topic-key"></div>
+                        <div class="m-topic-cell m-topic-title">
+                <h2>{{this.information}}</h2><br>
+                        </div>
+
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                            <div class="m-label">2</div>
+                        </div>
+
+
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
+                            <div class="m-label m-label-unread">4</div>
+
+                        </div>
+
+
+                        <div class="m-topic-cell m-topic-check">
+                        </div>
+                    </div>
+                 {{/each}}
+
+        </div>
+
+                {{/each}}
+
+    </div><!-- end row -->
+</div><!-- end container -->
+<br>
+        <br>
+        <center>
+      <div id = "submitForm" style="display:none;">
+            <h4 id="formHeader"></h4>
+            <form method="post" action="#" id="submitFormT">
+                <br>
+                <textarea  name="information" rows="10" cols="30"></textarea>
+        <input type="text" name="main_post_id" value="1" style = "display:none"/>
+                <br>
+                <br>
+                <input type="submit" value="Submit Data">
+            </form>
+      </div>
+        </center>
+<br>
+<div id="my-container" class="table-responsive">
+</div>
+
+
+
+
+<div class="footer">
+    <p>&copy; 2017 Symposium, Inc.</p>
+</div>
+
+<!--Josn Test Part START -->
+    <script>
+    function Main_reply(){
+       var x = document.getElementById('submitForm');
+       x.style.display = 'block';
+       var y = document.getElementById('formHeader');
+       y.innerHTML = "Main Reply Editor";
+    }
+    function Sub_reply(){
+       var x = document.getElementById('submitForm');
+       x.style.display = 'block';
+       var y = document.getElementById('formHeader');
+       y.innerHTML = "Make a comment to ";
+           //document.getElementById("main_inform").innerHTML;
+      document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
+         // = document.getElementById(;
+           //document.getElementById("main_post_id").innerHTML;
+    }
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
+<script src="../stylesheets_wjz/assets/js/main.js"></script>
+<script src="../stylesheets_wjz/assets/js/functions.js"></script>
+<!-- Jingzhou's edit
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="page-title">Discussion Boards</h2>
+
+            <div class="m-box page-actions">
+                <div class="col-md-7">
+                    <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+                    <button class="btn btn-default btn-lg" onclick="Main_reply()">Create Subject</button>
+                    <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
+                    <a href="/course/notes" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-cog" aria-hidden="true"></i> Options <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-times" aria-hidden="true"></i> Delete</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-external-link" aria-hidden="true"></i> View Log</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <a class="btn btn-lg btn-primary pull-right" href="/course" role="button">Course page &raquo;</a>
+                </div><!-- end col-md-5 --
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="m-board-header">
+                <div class="m-board-header-cell m-board-header-key"></div>
+                <div class="m-board-header-cell m-board-header-title">
+                    Course Boards
+                </div>
+                <div class="m-board-header-cell m-board-header-expand">
+                    <div class="js-collapse-all">
+                        <i class="fa fa-compress" aria-hidden="true"></i> Collapse All
+                    </div>
+                    <div class="js-expand-all">
+                        <i class="fa fa-expand" aria-hidden="true"></i> Expand All
+                    </div>
+                </div>
+                <div class="m-board-header-cell m-board-header-readstatus">
 
                 </div>
                 <div class="m-board-header-cell m-board-header-check">
@@ -83,7 +319,7 @@
                     <div class="m-board-header-cell m-board-header-expand">
                         <!-- <div class="js-expand">
                             <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
-                        </div> -->
+                        </div> --
                         <div class="m-topic-cell m-topic-readstatus">
                             <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                             <div class="m-label">2</div>
@@ -91,13 +327,13 @@
                     </div>
 
 
-                <!-- commit button Start-->
+                <!-- commit button Start--
                 <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">
                     Comment
                 </a>
 
                     <!--<button class="btn " type="submit">comment</button>-->
-                    <!-- commit button End-->
+                    <!-- commit button End--
 
                     <div class="m-board-cell m-board-check">
                         <input type="checkbox" name="" value="">
@@ -115,7 +351,7 @@
 
                             <div class="m-topic-cell m-topic-readstatus">
                                 <!--<button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
-                                <div class="m-label">2</div>-->
+                                <div class="m-label">2</div>--
                             </div>
 
 
@@ -123,7 +359,7 @@
                             <div class="m-topic-cell m-topic-readstatus">
                                 <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
                                 <div class="m-label m-label-unread">4</div>
-                            </div> -->
+                            </div> --
 
                             <div class="m-topic-cell m-topic-readstatus">
                                 <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
@@ -164,20 +400,20 @@
                 </div>
 
             {{/each}}
-
-        </div><!-- end row -->
-    </div><!-- end container -->
+            </div>
+        </div><!-- end row --
+    </div><!-- end container --
 
     <div id="my-container" class="table-responsive">
     </div>
-
+     
 
 
     <div class="footer">
         <p>&copy; 2017 Symposium, Inc.</p>
     </div>
 
-    <!--Josn Test Part START -->
+    <!--Josn Test Part START --
     <script type="text/template">
         function Main_reply() {
         <br>
@@ -186,7 +422,7 @@
             <h4>Main Reply Editor</h4>
             <form method="post" action="#" id="rtf">
                 <br>
-                <textarea  name="information" rows="10" cols="30"></textarea>
+                <textarea name="information" rows="10" cols="30"></textarea>
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
@@ -209,7 +445,9 @@
             </form>
       </div>
         </center>
-<br>
+        <br>
+    </script>
+
 <div id="my-container" class="table-responsive">
 </div>
     <script type="text/javascript">
@@ -220,5 +458,8 @@
     <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
     <script src="../stylesheets_wjz/assets/js/main.js"></script>
     <script src="../stylesheets_wjz/assets/js/functions.js"></script>
+    Jingzhou confirm ???-->
+
+
 </body>
 </html>
