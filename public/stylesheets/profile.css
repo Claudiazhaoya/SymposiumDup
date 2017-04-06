@@ -216,6 +216,10 @@ li a:hover {
   right: 10;
 }
 
+.avatar {
+  padding-left: 2.2rem;
+}
+
 /* Footer */
 
 .footer {
