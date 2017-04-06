@@ -27,8 +27,8 @@
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                    <button class="btn btn-default btn-slg" onclick="Main_reply()">Create Subject</button>
-                    <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
+                    <button class="btn btn-default btn-lg" onclick="Main_reply()">Create Subject</button>
+                   <!-- <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button> -->
                     <a href="groupstudy" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
 
                     <div class="btn-group">
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
+
 
             {{#each posts}}
                 <div class="m-board">
@@ -103,23 +103,7 @@
                     <div class="m-board-cell m-board-check">
                         <input type="checkbox" name="" value="">
                     </div>
-=======
-                {{#each posts}}
-            <div class="m-board">
-                <div class="m-board-cell m-board-key"></div>
-               	 <div id="main_inform"class="m-board-cell m-board-title">
-			{{this.MainPost.information}}
-                </div>
-                <div class="m-board-header-cell m-board-header-expand">
-                    <div class="js-expand">
-                        <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
-                    </div>
-                </div>
-		<a class="m-board-cell m-board-readstatus " onclick="Sub_reply('{{this.MainPost._id}}')">Comment
-                  </a>
-                <div class="m-board-cell m-board-check">
-                    <input type="checkbox" name="" value="">
->>>>>>> 3271835ae5dbf249ca2e1977b403fb597cc0a843
+
                 </div>
 
                 <div class="m-topics-container">
@@ -158,7 +142,6 @@
                         </div>
                     {{/each}}
 
-<<<<<<< HEAD
                     <div class="m-topic">
                         <div class="m-topic-cell m-topic-key"></div>
                         <div class="m-topic-cell m-topic-title">
@@ -182,9 +165,6 @@
                         </div>
                     </div>
                 </div>
-=======
-        </div>
->>>>>>> 3271835ae5dbf249ca2e1977b403fb597cc0a843
 
             {{/each}}
 
