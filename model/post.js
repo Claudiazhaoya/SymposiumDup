@@ -38,13 +38,13 @@ module.exports.createPost = function(newPost, callback) {
 module.exports.getPostByCourseId = function(course_id, callback) {
     console.log('get post by course id');
     var query = {course_id : course_id, main_post_id : '1' };
-    post.find(query,callback);
+    post.find({$query:query, $orderby:{countUp:1}},callback);
     
 }
 
 module.exports.getPostByMainPost = function(post_id, callback) {
     var query = {main_post_id : post_id};
-    post.find({query, $orderby: {countUp : 1}} ,callback);
+    post.find(query ,callback);
 }
 
 module.exports.deletePostById = function(post_id, callback) {
