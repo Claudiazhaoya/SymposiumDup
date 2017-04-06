@@ -79,13 +79,12 @@
                	 <div id="main_inform"class="m-board-cell m-board-title">
 			{{this.MainPost.information}}
                 </div>
-               	 <div id="main_post_id" style="display:none">{{this.MainPost._id}}</div>
                 <div class="m-board-header-cell m-board-header-expand">
                     <div class="js-expand">
                         <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
                     </div>
                 </div>
-		<a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">Comment
+		<a class="m-board-cell m-board-readstatus " onclick="Sub_reply('{{this.MainPost._id}}')">Comment
                   </a>
                 <div class="m-board-cell m-board-check">
                     <input type="checkbox" name="" value="">
@@ -158,14 +157,14 @@
        var y = document.getElementById('formHeader');
        y.innerHTML = "Main Reply Editor";
     }
-    function Sub_reply(){
+    function Sub_reply(test){
        var x = document.getElementById('submitForm');
        x.style.display = 'block';
        var y = document.getElementById('formHeader');
-       y.innerHTML = "Make a comment to ";
+       y.innerHTML = "Make a comment to a post";
 	       //document.getElementById("main_inform").innerHTML;
       document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
-	     // = document.getElementById(;
+	     = test;
 	       //document.getElementById("main_post_id").innerHTML;
     }
     </script>
