@@ -1,6 +1,13 @@
 body {
   background: #f7f7f7; }
 
+ul {
+  list-style-type: none;
+}
+
+li {
+}
+
 /*=====================================
   NAVBAR STYLES
     ===================================*/
@@ -227,13 +234,16 @@ body {
 .m-board-cell {
   padding: 26px 20px 26px 20px; }
 
+.m-board-c {
+  padding: 0px 20px 10px 10px; }
+
 .m-board-key {
   background: #351c78;
   padding: 0 5px; }
 
 .m-board-title {
   font-weight: bold;
-  width: 100%; }
+  width: 80%; }
   @media (min-width: 768px) {
     .m-board-title {
       display: table-cell;
@@ -254,7 +264,7 @@ body {
       width: 20%; } }
 
 .m-board-check {
-  display: none; }
+  display: block; }
   @media (min-width: 768px) {
     .m-board-check {
       display: table-cell;
