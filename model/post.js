@@ -46,12 +46,14 @@ module.exports.getPostByMainPost = function(post_id, callback) {
 
 module.exports.deletePostById = function(post_id, callback) {
     var query = {_id : post_id};
-    post.findOneAndRemove(query,function(err, post) {
-       if(err) throw err;	
-	console.log('post: '+ post_id + 'is deleted!');
-    });
+    post.findOneAndRemove(query, callback);
 }
+module.exports.deletePostByMainId = function(post_id, callback) {
+    var query = {main_post_id : post_id};
+    post.remove(query,callback);
 
+
+}
 module.exports.updateRatingById = function(post_id,callback) {
     var query = {_id : post_id};
     post.findOneAndUpdate(
@@ -59,4 +61,8 @@ module.exports.updateRatingById = function(post_id,callback) {
 	    {$inc: {countUp : 1}},callback);
 }
 
+module.exports.updatePostById = function(post_id, information, callback) {
+    var query = {_id : post_id};
+	post.findOneAndUpdate(query, {$set : {information:information, timeStamp : new Date().setUTCHours(-4,0,0,0) }}, callback);
 
+}
