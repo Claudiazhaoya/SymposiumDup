@@ -6,6 +6,12 @@ var NoteSchema = mongoose.Schema({
 	},
 	link: {
 		type: String
+	},
+	size: {
+		type: Number
+	},
+	time: {
+		type: String
 	}
 });
 

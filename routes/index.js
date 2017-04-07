@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
 	}
 	else {
 		res.render('index', {
-			username: req.user.username
+			username: req.user.username,
+			point: req.user.point
 		});
 	}
 });
@@ -26,7 +27,8 @@ router.get('/error', function(req, res, next) {
 	else {
 
 		res.render('error', {
-			username: req.user.username
+			username: req.user.username,
+			point: req.user.point
 		});
 	}
 });
@@ -48,7 +50,8 @@ router.get('/course', function(req,res,next) {
 	      	CH : json.CreditHours+'', 
 	      	DC : json.Description+'',
 		CI : json.CourseId+'',
-	      	username:req.user.username
+	      	username:req.user.username,
+	      	point:req.user.point
 	      });
       }
 });
@@ -73,7 +76,6 @@ router.post('/', function(req, res, next){
 			localStorage.setItem('Course',JSON.stringify(course));
 			res.redirect('/course');
 		}
-
 	});
 });
 

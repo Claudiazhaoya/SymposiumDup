@@ -18,21 +18,99 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
     </head>
-    <body>
+    <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
 
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
 
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div>
+</div> 
 
+<body>
 
+<!--NAVBAR SECTION START -->
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+        <div class="dropdown">
+        <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbar-collapse-1" class="dropdown-content">
+            <ul class="nav navbar-nav navbar-right" >
+                <!--
+                <a href="#home">Home</a> -->
+                {{#if user}}
+                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
+                    <a href="/users/profile">Profile</a>
+                    <a href="/users/logout">Log Out</a>
+                {{else}}
+                    <a href="/users/signup">Sign Up</a>
+                    <a href="/users/login">Log In</a>
+                {{/if}}
+                <!--
+                <a href="#course-sec">Course</a>
+                <a href="#contact-sec">Contact</a>
+                -->
+            </ul>
+        </div>
+        </div>
+
+        <a class="navbar-brand" href="/">Symposium</a>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="coursename"/>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <ul class="navbar-nav ml-auto">
+                <!--
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li> -->
+                {{#if user}}
+                    <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Log Out</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/signup">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/login">Log In</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
 
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="page-title">Discussion Boards</h2>
+              <br>
+            <h2 class="page-title">Study Notes</h2>
 
             <div class="m-box page-actions">
               <div class="col-md-7">
                 <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
+                <button onclick="myFunction()" class="btn btn-default btn-lg" id="myBtn" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> Upload Note</button>
                 <a href="discussion" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-discussion-board.svg" class="icons"> Course Boards</a>
                 <div class="btn-group">
                   <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,13 +138,7 @@
 <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
 <!--  !!!!!!!! Need to be modified !!!!!!!  -->
 <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
-          <form class="cd-form" method="post" action="/course/notes">
-            <div class = "upload" >
-              <input type = "file" name = "studyNotes" id = "studyNotes">
-              <input class="full-width has-padding" type="submit" value="submit">
 
-            </div>
-          </form>
 
             <div class="m-board-header">
               
@@ -75,22 +147,19 @@
               </div>
             </div>
 
-            <div class="m-board">
-              <div class="m-board-cell m-board-key"></div>
-              
-              <input type="text" disabled="disabled" name="studyNotes" id="studyNotes" value={{studyNotes}}>   
-            </div>
-          </form>
   
 
 <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
 <!--  !!!!!!!! Need to be modified !!!!!!!  -->
 <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
 
-            <div class="m-board">
+            <!--<div class="m-board">
               <div class="m-board-cell m-board-key"></div>
               <div class="m-board-cell m-board-title">
-                JU School Of Elite Nurses
+                {{#each notes}}
+                  <li>{{this.filename}}</li>
+                  <li>{{this.time}}</li>
+                {{/each}}
               </div>
               <div class="m-board-cell m-board-expand">
                 <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
@@ -102,7 +171,6 @@
                 <input type="checkbox" name="" value="">
               </div>
             </div>
-
             <div class="m-topics-container">
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
@@ -122,7 +190,6 @@
                 <div class="m-topic-cell m-topic-check">
                 </div>
               </div>
-
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
                 <div class="m-topic-cell m-topic-title">
@@ -141,7 +208,6 @@
                 <div class="m-topic-cell m-topic-check">
                 </div>
               </div>
-
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
                 <div class="m-topic-cell m-topic-title">
@@ -160,7 +226,6 @@
                 <div class="m-topic-cell m-topic-check">
                 </div>
               </div>
-
               <div class="m-topic">
                 <div class="m-topic-cell m-topic-key"></div>
                 <div class="m-topic-cell m-topic-title">
@@ -180,125 +245,59 @@
                 </div>
               </div>
             </div>
+            -->
 
-            <div class="m-board">
-              <div class="m-board-cell m-board-key"></div>
-              <div class="m-board-cell m-board-title">
-                Nightingale School of Nursing
-              </div>
-              <div class="m-board-cell m-board-expand">
-                <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
-              </div>
-              <div class="m-board-cell m-board-readstatus">
-                Members <div class="m-label">8</div>
-              </div>
-              <div class="m-board-cell m-board-check">
-                <input type="checkbox" name="" value="">
-              </div>
-            </div>
+              {{#each notes}}
+                  <!--<div class="m-board">
+                      <div class="m-board-cell m-board-key"></div>
+                      <div class="m-board-cell m-board-title">
+                              <li>{{this.filename}}</li>
+                              <li>{{this.time}}</li>
+                      </div>
+                      <div class="m-board-cell m-board-expand">
+                          <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+                      </div>
+                      <div class="m-board-cell m-board-readstatus">
+                          Members <div class="m-label">12</div>
+                      </div>
+                      <div class="m-board-cell m-board-check">
+                          <input type="checkbox" name="" value="">
+                      </div>
+                  </div>-->
 
-            <div class="m-topics-container">
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  Service Learning
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">6</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
+              <div class="m-topics-container">
+                  <div class="m-topic">
+                      <div class="m-topic-cell m-topic-key"></div>
+                      <div class="m-topic-cell m-topic-title">
+                          {{this.filename}}
+                      </div>
+                      <a href="{{this.link}}" class="m-topic-cell m-topic-readstatus">
+                          Download
+                      </a>
+                      <div class="m-topic-cell m-topic-readstatus">
+                          <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                          <div class="last-post-date">
+                              Last Post
+                              <span>{{this.time}}</span>
+                          </div>
+                      </div>
+                      <div class="m-topic-cell m-topic-check">
+                      </div>
                   </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
 
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  Classroom Assessment Techniques
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">3</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
-            </div>
 
-            <div class="m-board">
-              <div class="m-board-cell m-board-key"></div>
-              <div class="m-board-cell m-board-title">
-                Infinite Choices University (ICU)
-              </div>
-              <div class="m-board-cell m-board-expand">
-                <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
-              </div>
-              <div class="m-board-cell m-board-readstatus">
-                Members <div class="m-label">6</div>
-              </div>
-              <div class="m-board-cell m-board-check">
-                <input type="checkbox" name="" value="">
-              </div>
-            </div>
-            
-            <div class="m-topics-container">
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  Week 1 Discussion
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">2</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
 
-              <div class="m-topic">
-                <div class="m-topic-cell m-topic-key"></div>
-                <div class="m-topic-cell m-topic-title">
-                  Career Plan
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  Unread <div class="m-label m-label-unread">6</div>
-                </div>
-                <div class="m-topic-cell m-topic-readstatus">
-                  <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                  <div class="last-post-date">
-                    Last Post
-                    <span>4/24/16</span>
-                  </div>
-                </div>
-                <div class="m-topic-cell m-topic-check">
-                </div>
-              </div>
-            </div>
+              {{/each}}
+
+
+          </div>
+
 
               <!--Editor Test Part START -->
-              <br>
+              <!--<br>
               <br>
               <center>
-                  <form method="post" action="../stylesheets_wjz/assets/js/submit.php" id="rtf">
-
+                  <form method="post" action="../stylesheets_wjz/assets/js/submit.php" id="rtf"> 
                       <input type="button"value="B" onclick="bold()">
                       <input type="button"value="I" onclick="italic()">
                       <input type="button"value="U" onclick="underline()">
@@ -308,18 +307,36 @@
                       <input type="button"value="Link" onclick="link()">
                       <input type="button" value="Unlink" onclick="unlink()">
                       <br>
-
                       <textarea name="textarea" id="textarea" style="display: none;"></textarea>
                       <iframe class="text-editor" name="editor" id="editor" style="width: 500; height: 400;"></iframe>
-
                       <br>
                       <br>
-
                       <input type="button" onclick="formsubmit()" value="Submit Data">
                   </form>
               </center>
-
               <br>
+                -->
+
+
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p>Upload your note</p>
+                      <form class="cd-form" method="post" action="/course/notes">
+                          <div class = "upload" >
+                              <input type = "file" name = "studyNotes" id = "studyNotes">
+                              <input class="full-width has-padding" type="submit" value="submit">
+
+                          </div>
+                      </form>
+                  </div>
+
+
+
+              </div>
 
               <!--Editor Test Part End -->
 
@@ -327,6 +344,37 @@
                   <p>&copy; 2017 Symposium, Inc.</p>
               </div>
 
+              <script>
+                  function myFunction() {
+                      var x;
+                      if (confirm("Upload a note!") == true) {
+                      }
+                      document.getElementById("demo").innerHTML = x;
+                  }
+              </script>
+
+              <script>
+                  // Get the modal
+                  var modal = document.getElementById('myModal');
+                  // Get the button that opens the modal
+                  var btn = document.getElementById("myBtn");
+                  // Get the <span> element that closes the modal
+                  var span = document.getElementsByClassName("close")[0];
+                  // When the user clicks the button, open the modal
+                  btn.onclick = function() {
+                      modal.style.display = "block";
+                  }
+                  // When the user clicks on <span> (x), close the modal
+                  span.onclick = function() {
+                      modal.style.display = "none";
+                  }
+                  // When the user clicks anywhere outside of the modal, close it
+                  window.onclick = function(event) {
+                      if (event.target == modal) {
+                          modal.style.display = "none";
+                      }
+                  }
+              </script>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
