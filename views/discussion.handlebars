@@ -14,11 +14,91 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
+
+<div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div>
+</div> 
+
 <body>
 
+<!--NAVBAR SECTION START -->
 
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
+        <div class="dropdown">
+        <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div id="navbar-collapse-1" class="dropdown-content">
+            <ul class="nav navbar-nav navbar-right" >
+                <!--
+                <a href="#home">Home</a> -->
+                {{#if user}}
+                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
+                    <a href="/users/profile">Profile</a>
+                    <a href="/users/logout">Log Out</a>
+                {{else}}
+                    <a href="/users/signup">Sign Up</a>
+                    <a href="/users/login">Log In</a>
+                {{/if}}
+                <!--
+                <a href="#course-sec">Course</a>
+                <a href="#contact-sec">Contact</a>
+                -->
+            </ul>
+        </div>
+        </div>
+
+        <a class="navbar-brand" href="/">Symposium</a>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="coursename"/>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <ul class="navbar-nav ml-auto">
+                <!--
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li> -->
+                {{#if user}}
+                    <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Log Out</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/signup">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/login">Log In</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
+
+<!-- NAV BAR ENDS -->
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -79,12 +159,34 @@
                     <div id="main_inform"class="m-board-cell m-board-title">
                         {{this.MainPost.information}}
                     </div>
+<<<<<<< HEAD
                     <div class="m-topic-cell m-topic-readstatus">
                         <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                         <div class="m-label">{{this.MainPost.__v}}</div>
                     </div>
                     <a class="m-board-cell m-board-readstatus " onclick="Sub_reply('{{this.MainPost._id}}')">Comment
                     </a>
+=======
+                    <div class="m-board-header-cell m-board-header-expand">
+                        <!-- <div class="js-expand">
+                            <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+                        </div> --
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                            <div class="m-label">2</div>
+                        </div>
+                    </div>
+
+
+                <!-- commit button Start--
+                <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">
+                    Comment
+                </a>
+
+                    <!--<button class="btn " type="submit">comment</button>-->
+                    <!-- commit button End--
+
+>>>>>>> 3ccfd1882a1f4f8acb0c2eac9c17a91a6578ac9d
                     <div class="m-board-cell m-board-check">
                         <input type="checkbox" name="" value="">
                     </div>
@@ -99,15 +201,31 @@
                             </div>
 
                             <div class="m-topic-cell m-topic-readstatus">
+<<<<<<< HEAD
                                 <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                                 <div class="m-label">2</div>
+=======
+                                <!--<button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                                <div class="m-label">2</div>--
+>>>>>>> 3ccfd1882a1f4f8acb0c2eac9c17a91a6578ac9d
                             </div>
 
 
                             <div class="m-topic-cell m-topic-readstatus">
                                 <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
                                 <div class="m-label m-label-unread">4</div>
+<<<<<<< HEAD
 
+=======
+                            </div> --
+
+                            <div class="m-topic-cell m-topic-readstatus">
+                                <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                                <div class="last-post-date">
+                                    Jingzhou Wang
+                                    <span>{{this.timeStamp}}</span>
+                                </div>
+>>>>>>> 3ccfd1882a1f4f8acb0c2eac9c17a91a6578ac9d
                             </div>
 
 
@@ -119,6 +237,7 @@
                 </div>
 
             {{/each}}
+<<<<<<< HEAD
 
         </div><!-- end row -->
     </div><!-- end container -->
@@ -126,15 +245,56 @@
     <br>
     <center>
         <div id = "submitForm" style="display:none;">
-            <h4 id="formHeader"></h4>
-            <form method="post" action="#" id="submitFormT">
+=======
+            </div>
+        </div><!-- end row --
+    </div><!-- end container --
+
+    <div id="my-container" class="table-responsive">
+    </div>
+     
+
+
+    <div class="footer">
+        <p>&copy; 2017 Symposium, Inc.</p>
+    </div>
+
+    <!--Josn Test Part START --
+    <script type="text/template">
+        function Main_reply() {
+        <br>
+        <br>
+        <center>
+            <h4>Main Reply Editor</h4>
+            <form method="post" action="#" id="rtf">
                 <br>
-                <textarea  name="information" rows="10" cols="30"></textarea>
-                <input type="text" name="main_post_id" value="1" style = "display:none"/>
+                <textarea name="information" rows="10" cols="30"></textarea>
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
             </form>
+        </center>
+        <br>
+        }
+        function Sub_reply() {
+        <br>
+        <br>
+        <center>
+      <div id = "submitForm" style="display:none;">
+>>>>>>> 3ccfd1882a1f4f8acb0c2eac9c17a91a6578ac9d
+            <h4 id="formHeader"></h4>
+            <form method="post" action="#" id="submitFormT">
+                <br>
+                <textarea  name="information" rows="10" cols="30"></textarea>
+<<<<<<< HEAD
+                <input type="text" name="main_post_id" value="1" style = "display:none"/>
+=======
+>>>>>>> 3ccfd1882a1f4f8acb0c2eac9c17a91a6578ac9d
+                <br>
+                <br>
+                <input type="submit" value="Submit Data">
+            </form>
+<<<<<<< HEAD
         </div>
     </center>
     <br>
@@ -166,12 +326,25 @@
                     = test;
             //document.getElementById("main_post_id").innerHTML;
         }
+=======
+      </div>
+        </center>
+        <br>
     </script>
 
+<div id="my-container" class="table-responsive">
+</div>
+    <script type="text/javascript">
+        document.getElementById('Main_Reply').innerHTML = ;
+        document.getElementById('Sub_Reply').innerHTML = Main;
+>>>>>>> 3ccfd1882a1f4f8acb0c2eac9c17a91a6578ac9d
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
     <script src="../stylesheets_wjz/assets/js/main.js"></script>
     <script src="../stylesheets_wjz/assets/js/functions.js"></script>
+    Jingzhou confirm ???-->
+
 
 </body>
 </html>
