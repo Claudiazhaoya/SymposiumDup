@@ -151,10 +151,10 @@
                     </div>
                 </div>
                 <div class="m-board-header-cell m-board-header-readstatus">
-                    Unread
+                    
                 </div>
                 <div class="m-board-header-cell m-board-header-check">
-
+                    
                 </div>
             </div>
 
@@ -178,17 +178,15 @@
                         </a></li>
                         </ul>
                     </div>
-
-                    <div class="m-board-cell m-topic-readstatus">
-                        <div class="m-topic-cell m-topic-readstatus">
-                            <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
-                            <div class="last-post-date">
-                                Jingzhou Wang
-                                <span>{{this.MainPost.timeStamp}}</span>
-                            </div>
-                        </div>
-
+                    <div class="m-topic-cell m-topic-readstatus">
+                        <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                                <div class="last-post-date">
+                                    {{this.MainPost.user_id}}
+                                    <span>{{this.MainPost.timeStamp}}</span>
+                                </div>
                     </div>
+
+
                 </div>
 
                 <div class="m-topics-container">
@@ -216,14 +214,13 @@
                             <div class="m-topic-cell m-topic-readstatus">
                                 <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
                                 <div class="last-post-date">
-                                    Jingzhou Wang
+                                    {{this.user_id}}
                                     <span>{{this.timeStamp}}</span>
                                 </div>
                             </div>
 
 
                             <div class="m-topic-cell m-topic-check">
-                                <input type="checkbox" name="" value="">
                             </div>
                         </div>
                     {{/each}}
