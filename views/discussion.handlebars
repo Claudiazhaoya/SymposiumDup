@@ -147,10 +147,10 @@
                     </div>
                 </div>
                 <div class="m-board-header-cell m-board-header-readstatus">
-                    Unread
+                    
                 </div>
                 <div class="m-board-header-cell m-board-header-check">
-                    <input type="checkbox" id="checkAll" name="" value="">
+                    
                 </div>
             </div>
 
@@ -164,12 +164,25 @@
                         <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                         <div class="m-label">{{this.MainPost.__v}}</div>
                     </div>
-                    <a class="m-board-cell m-board-readstatus " onclick="Sub_reply('{{this.MainPost._id}}')">Comment
-                    </a>
-
-                    <div class="m-board-cell m-board-check">
-                        <input type="checkbox" name="" value="">
+                    <div class="m-topic-cell m-topic-readstatus">
+                        <ul>
+                        <li><a class="m-board-c m-board-check" onclick="Sub_reply('{{this.MainPost._id}}')">Comment
+                        </a></li>
+                        <li><a class="m-board-c m-board-check" onclick="">Edit
+                        </a></li>
+                        <li><a class="m-board-c m-board-check" onclick="">Delete
+                        </a></li>
+                        </ul>
                     </div>
+                    <div class="m-topic-cell m-topic-readstatus">
+                        <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                                <div class="last-post-date">
+                                    {{this.MainPost.user_id}}
+                                    <span>{{this.MainPost.timeStamp}}</span>
+                                </div>
+                    </div>
+
+
                 </div>
 
                 <div class="m-topics-container">
@@ -183,9 +196,16 @@
                             <div class="m-topic-cell m-topic-readstatus">
                                 <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                                 <div class="m-label">2</div>
-
                             </div>
 
+                <div class="m-topic-cell m-topic-readstatus">
+                    <ul>   
+                        <li><a class="m-board-c m-board-check" onclick="">Edit
+                        </a></li>
+                        <li><a class="m-board-c m-board-check" onclick="">Delete
+                        </a></li>
+                    </ul>
+                </div>
 
                             <div class="m-topic-cell m-topic-readstatus">
                                 <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
