@@ -102,14 +102,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <br>
             <h2 class="page-title">Discussion Boards</h2>
 
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
                     <button class="btn btn-default btn-lg" onclick="Main_reply()">Create Subject</button>
-                    <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>
-                    <a href="/course/notes" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
+             <!--       <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>-->
+                    <a href="notes" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
 
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -153,107 +154,108 @@
                 </div>
             </div>
 
-                {{#each posts}}
-            <div class="m-board">
-                <div class="m-board-cell m-board-key"></div>
-                 <div id="main_inform"class="m-board-cell m-board-title">
-            {{this.MainPost.information}}
-                </div>
-                 <div id="main_post_id" style="display:none">{{this.MainPost._id}}</div>
-                <div class="m-board-header-cell m-board-header-expand">
-                    <div class="js-expand">
-                        <div class="js-expand-indv"><i class="fa fa-expand" aria-hidden="true"></i> Expand</div>
+            {{#each posts}}
+                <div class="m-board">
+                    <div class="m-board-cell m-board-key"></div>
+                    <div id="main_inform"class="m-board-cell m-board-title">
+                        {{this.MainPost.information}}
+                    </div>
+                    <div class="m-topic-cell m-topic-readstatus">
+                        <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                        <div class="m-label">{{this.MainPost.__v}}</div>
+                    </div>
+                    <a class="m-board-cell m-board-readstatus " onclick="Sub_reply('{{this.MainPost._id}}')">Comment
+                    </a>
+
+                    <div class="m-board-cell m-board-check">
+                        <input type="checkbox" name="" value="">
                     </div>
                 </div>
-        <a class="m-board-cell m-board-readstatus " onclick="Sub_reply()">Comment
-                  </a>
-                <div class="m-board-cell m-board-check">
-                    <input type="checkbox" name="" value="">
+
+                <div class="m-topics-container">
+                    {{#each this.SubPosts}}
+                        <div class="m-topic">
+                            <div class="m-topic-cell m-topic-key"></div>
+                            <div class="m-topic-cell m-topic-title">
+                                {{this.information}}
+                            </div>
+
+                            <div class="m-topic-cell m-topic-readstatus">
+                                <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                                <div class="m-label">2</div>
+
+                            </div>
+
+
+                            <div class="m-topic-cell m-topic-readstatus">
+                                <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                                <div class="last-post-date">
+                                    {{this.user_id}}
+                                    <span>{{this.timeStamp}}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="m-topic-cell m-topic-check">
+                            </div>
+                        </div>
+                    {{/each}}
+
                 </div>
-            </div>
 
-    <div class="m-topics-container">
-         {{#each this.SubPosts}}
-                    <div class="m-topic">
-                        <div class="m-topic-cell m-topic-key"></div>
-                        <div class="m-topic-cell m-topic-title">
-                <h2>{{this.information}}</h2><br>
-                        </div>
+            {{/each}}
 
-                        <div class="m-topic-cell m-topic-readstatus">
-                            <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
-                            <div class="m-label">2</div>
-                        </div>
-
-
-                        <div class="m-topic-cell m-topic-readstatus">
-                            <button><img src="../stylesheets_wjz/assets/images/dislike.png" class="icons2"></button>
-                            <div class="m-label m-label-unread">4</div>
-
-                        </div>
-
-
-                        <div class="m-topic-cell m-topic-check">
-                        </div>
-                    </div>
-                 {{/each}}
-
-        </div>
-
-                {{/each}}
-
-    </div><!-- end row -->
-</div><!-- end container -->
-<br>
-        <br>
-        <center>
-      <div id = "submitForm" style="display:none;">
+        </div><!-- end row -->
+    </div><!-- end container -->
+    <br>
+    <br>
+    <center>
+        <div id = "submitForm" style="display:none;">
             <h4 id="formHeader"></h4>
             <form method="post" action="#" id="submitFormT">
                 <br>
                 <textarea  name="information" rows="10" cols="30"></textarea>
-        <input type="text" name="main_post_id" value="1" style = "display:none"/>
+                <input type="text" name="main_post_id" value="1" style = "display:none"/>
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
             </form>
-      </div>
-        </center>
-<br>
-<div id="my-container" class="table-responsive">
-</div>
+        </div>
+    </center>
+    <br>
+    <div id="my-container" class="table-responsive">
+    </div>
 
 
 
 
-<div class="footer">
-    <p>&copy; 2017 Symposium, Inc.</p>
-</div>
+    <div class="footer">
+        <p>&copy; 2017 Symposium, Inc.</p>
+    </div>
 
-<!--Josn Test Part START -->
+    <!--Josn Test Part START -->
     <script>
-    function Main_reply(){
-       var x = document.getElementById('submitForm');
-       x.style.display = 'block';
-       var y = document.getElementById('formHeader');
-       y.innerHTML = "Main Reply Editor";
-    }
-    function Sub_reply(){
-       var x = document.getElementById('submitForm');
-       x.style.display = 'block';
-       var y = document.getElementById('formHeader');
-       y.innerHTML = "Make a comment to ";
-           //document.getElementById("main_inform").innerHTML;
-      document.getElementById("submitForm").elements.namedItem("main_post_id").value 
-         // = document.getElementById(;
-           //document.getElementById("main_post_id").innerHTML;
-    }
+        function Main_reply(){
+            var x = document.getElementById('submitForm');
+            x.style.display = 'block';
+            var y = document.getElementById('formHeader');
+            y.innerHTML = "Main Reply Editor";
+        }
+        function Sub_reply(test){
+            var x = document.getElementById('submitForm');
+            x.style.display = 'block';
+            var y = document.getElementById('formHeader');
+            y.innerHTML = "Make a comment to a post";
+            //document.getElementById("main_inform").innerHTML;
+            document.getElementById("submitFormT").elements.namedItem("main_post_id").value
+                    = test;
+            //document.getElementById("main_post_id").innerHTML;
+        }
     </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
-<script src="../stylesheets_wjz/assets/js/main.js"></script>
-<script src="../stylesheets_wjz/assets/js/functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
+    <script src="../stylesheets_wjz/assets/js/main.js"></script>
+    <script src="../stylesheets_wjz/assets/js/functions.js"></script>
 <!-- Jingzhou's edit
 <div class="container">
     <div class="row">
