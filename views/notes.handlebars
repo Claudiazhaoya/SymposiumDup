@@ -186,7 +186,7 @@
                           <input type="checkbox" name="" value="">
                       </div>
                   </div>-->
-
+              <form class="cd-form" method="post" action="/course/notes/download">
               <div class="m-topics-container">
                   <div class="m-topic">
                     {{#each notes}}
@@ -194,9 +194,13 @@
                       <div class="m-topic-cell m-topic-title">
                           {{this.filename}}
                       </div>
-                      <a href="{{this.link}}" class="m-topic-cell m-topic-readstatus">
+                      <a onclick="download('{{this.link}}')" href="{{this.link}}" id="downloadli" class="m-topic-cell m-topic-readstatus">
                           Download
                       </a>
+                      
+
+
+                      
                       <div class="m-topic-cell m-topic-readstatus">
                           <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
                           <div class="last-post-date">
@@ -214,6 +218,9 @@
 
 
           </div>
+        </form>
+
+          
 
 
               <!--Editor Test Part START -->
@@ -273,6 +280,12 @@
                       if (confirm("Upload a note!") == true) {
                       }
                       document.getElementById("demo").innerHTML = x;
+                  }
+
+                  function download(link) {
+                      var downloadLink = document.getElementsById('downloadli');
+                      downloadLink.action += "/download";
+                      downloadLink.submit();
                   }
               </script>
 
