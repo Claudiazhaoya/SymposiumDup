@@ -216,6 +216,7 @@
                 <br>
                 <textarea  name="information" rows="10" cols="30"></textarea>
                 <input type="text" name="main_post_id" value="1" style = "display:none"/>
+                <input type="text" name="rating" value="1" style = "display:none"/>
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
@@ -241,16 +242,44 @@
             var y = document.getElementById('formHeader');
             y.innerHTML = "Main Reply Editor";
         }
-        function Sub_reply(test){
+        function Sub_reply(main_post_id){
             var x = document.getElementById('submitForm');
             x.style.display = 'block';
             var y = document.getElementById('formHeader');
             y.innerHTML = "Make a comment to a post";
             //document.getElementById("main_inform").innerHTML;
             document.getElementById("submitFormT").elements.namedItem("main_post_id").value
-                    = test;
+                    = main_post_id;
             //document.getElementById("main_post_id").innerHTML;
         }
+	function rating(main_post_id,rate){
+	    var x = document.getElementById('submitFormT');
+	    x.action = "#/rating";
+	    document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
+		     = main_post_id;
+
+	    document.getElementById("submitFormT").elements.namedItem("rating").value
+		     = rate;
+	    x.submit();
+        }
+	function deletePost(main_post_id) {
+	    var x = document.getElementById('submitFormT');
+	    x.action = "#/delete"; 
+	    document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
+		     = main_post_id;
+	    x.submit();
+	}
+	function editPost(main_post_id) {
+            var x = document.getElementById('submitForm');
+            x.style.display = 'block';
+            var y = document.getElementById('formHeader');
+	    y.action = "#/edit";
+            y.innerHTML = "re editting the post";
+            //document.getElementById("main_inform").innerHTML;
+            document.getElementById("submitFormT").elements.namedItem("main_post_id").value
+                    = main_post_id;
+
+	}
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
