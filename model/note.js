@@ -1,6 +1,12 @@
 var mongoose = require('mongoose');
 
 var NoteSchema = mongoose.Schema({
+	user_id: {
+		type: String
+	},
+	course_id: {
+		type: String
+	},
 	filename: {
 		type: String
 	},
