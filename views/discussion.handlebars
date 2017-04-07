@@ -104,14 +104,17 @@
         <div class="col-md-12">
             <br>
             <h2 class="page-title">Discussion Boards</h2>
-
             <div class="m-box page-actions">
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+                    {{#if user}}
                     <button class="btn btn-default btn-lg" onclick="Main_reply()">Create Subject</button>
+                    {{else}}
+                    <button class="btn btn-default btn-lg" onclick=" prompt_createPost_error()">Create Subject</button>
+                    {{/if}}
              <!--       <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>-->
                     <a href="notes" class="btn btn-default btn-lg" type="submit"><img src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
-
+                    <!--
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-cog" aria-hidden="true"></i> Options <span class="caret"></span>
@@ -126,6 +129,7 @@
                             <li><a href="#"><i class="fa fa-external-link" aria-hidden="true"></i> View Log</a></li>
                         </ul>
                     </div>
+                    -->
                 </div><!-- end col-md-9 -->
                 <div class="col-md-5">
                     <a class="btn btn-lg btn-primary pull-right" href="/course" role="button">Course page &raquo;</a>
@@ -273,40 +277,40 @@
             document.getElementById("submitFormT").elements.namedItem("main_post_id").value
                     = main_post_id;
         }
-	function rating(main_post_id,rate){
-	    var x = document.getElementById('submitFormT');
-	    x.action = "#/rating";
-	    document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
-		     = main_post_id;
-
-	    document.getElementById("submitFormT").elements.namedItem("rating").value
-		     = rate;
-	    x.submit();
+        function prompt_createPost_error(){
+            alert("You need to log in first!");
         }
-	function deletePost(main_post_id) {
-	    var x = document.getElementById('submitFormT');
-	    x.action = "#/delete"; 
-	    document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
-		     = main_post_id;
-	    x.submit();
-	}
-	function editPost(main_post_id) {
+        function rating(main_post_id,rate){
+            var x = document.getElementById('submitFormT');
+            x.action = "#/rating";
+            document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
+                 = main_post_id;
+
+            document.getElementById("submitFormT").elements.namedItem("rating").value
+                 = rate;
+            x.submit();
+        }
+        function deletePost(main_post_id) {
+            var x = document.getElementById('submitFormT');
+            x.action = "#/delete"; 
+            document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
+                 = main_post_id;
+            x.submit();
+        }
+        function editPost(main_post_id) {
             var x = document.getElementById('submitForm');
             x.style.display = 'block';
             var y = document.getElementById('formHeader');
-	    y.action = "#/edit";
+            y.action = "#/edit";
             y.innerHTML = "re editting the post";
             //document.getElementById("main_inform").innerHTML;
             document.getElementById("submitFormT").elements.namedItem("main_post_id").value
                     = main_post_id;
-
-	}
+    }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
     <script src="../stylesheets_wjz/assets/js/main.js"></script>
     <script src="../stylesheets_wjz/assets/js/functions.js"></script>
-
-
 </body>
 </html>
