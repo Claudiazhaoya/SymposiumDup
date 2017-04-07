@@ -165,7 +165,7 @@
                         {{this.MainPost.information}}
                     </div>
                     <div class="m-topic-cell m-topic-readstatus">
-                        <button onclick="rating()"><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+			    <button onclick="rating('{{this.MainPost._id}}')"><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                         <div class="m-label">{{this.MainPost.countUp}}</div>
                     </div>
                     <div class="m-topic-cell m-topic-readstatus">
@@ -174,7 +174,7 @@
                         </a></li>
 			<li><a class="m-board-c m-board-check" onclick="editPost('{{this.MainPost._id}}')">Edit
                         </a></li>
-			<li><a class="m-board-c m-board-check" onclick="deletePost('{{this.MainPost._id}}')">Delete
+			<li><a class="m-board-c m-board-check" onclick="deletePost('{{this.MainPost._id}}',1)">Delete
                         </a></li>
                         </ul>
                     </div>
@@ -198,15 +198,13 @@
                             </div>
 
                             <div class="m-topic-cell m-topic-readstatus">
-                                <button onclick="rating()" ><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
-				<div class="m-label">{{this.MainPost.countUp}}</div>
                             </div>
 
                 <div class="m-topic-cell m-topic-readstatus">
                     <ul>   
-			    <li><a class="m-board-c m-board-check" onclick="editPost('{{this.MainPost._id}}')">Edit
+			    <li><a class="m-board-c m-board-check" onclick="editPost('{{this._id}}')">Edit
                         </a></li>
-			<li><a class="m-board-c m-board-check" onclick="('{{this.MainPost._id}}')">Delete
+			<li><a class="m-board-c m-board-check" onclick="deletePost('{{this._id}}',0)">Delete
                         </a></li>
                     </ul>
                 </div>
@@ -236,11 +234,11 @@
     <center>
         <div id = "submitForm" style="display:none;">
             <h4 id="formHeader"></h4>
-            <form method="post" action="#" id="submitFormT">
+            <form method="post" action="" id="submitFormT">
                 <br>
                 <textarea  name="information" rows="10" cols="30"></textarea>
                 <input type="text" name="main_post_id" value="1" style = "display:none"/>
-                <input type="text" name="rating" value="1" style = "display:none"/>
+                <input type="text" name="main" value="1" style = "display:none"/>
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
@@ -277,32 +275,33 @@
         function prompt_createPost_error(){
             alert("You need to log in first!");
         }
-        function rating(main_post_id,rate){
+        function rating(main_post_id){
             var x = document.getElementById('submitFormT');
-            x.action = "#/rating";
+            x.action += "/rating";
             document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
                  = main_post_id;
 
-            document.getElementById("submitFormT").elements.namedItem("rating").value
-                 = rate;
             x.submit();
         }
-        function deletePost(main_post_id) {
+        function deletePost(main_post_id,main) {
             var x = document.getElementById('submitFormT');
-            x.action = "#/delete"; 
+            x.action += "/delete"; 
             document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
                  = main_post_id;
+            document.getElementById("submitFormT").elements.namedItem("main").value
+                 = main;
             x.submit();
         }
-        function editPost(main_post_id) {
+        function editPost(post_id) {
             var x = document.getElementById('submitForm');
             x.style.display = 'block';
             var y = document.getElementById('formHeader');
-            y.action = "#/edit";
             y.innerHTML = "re editting the post";
             //document.getElementById("main_inform").innerHTML;
+            var z = document.getElementById('submitFormT');
+	    z.action += "/edit";
             document.getElementById("submitFormT").elements.namedItem("main_post_id").value
-                    = main_post_id;
+                    = post_id;
     }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
