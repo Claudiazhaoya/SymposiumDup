@@ -150,7 +150,7 @@
                     Unread
                 </div>
                 <div class="m-board-header-cell m-board-header-check">
-                    <input type="checkbox" id="checkAll" name="" value="">
+
                 </div>
             </div>
 
@@ -167,8 +167,15 @@
                     <a class="m-board-cell m-board-readstatus " onclick="Sub_reply('{{this.MainPost._id}}')">Comment
                     </a>
 
-                    <div class="m-board-cell m-board-check">
-                        <input type="checkbox" name="" value="">
+                    <div class="m-board-cell m-topic-readstatus">
+                        <div class="m-topic-cell m-topic-readstatus">
+                            <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                            <div class="last-post-date">
+                                Jingzhou Wang
+                                <span>{{this.MainPost.timeStamp}}</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -197,6 +204,7 @@
 
 
                             <div class="m-topic-cell m-topic-check">
+                                <input type="checkbox" name="" value="">
                             </div>
                         </div>
                     {{/each}}
