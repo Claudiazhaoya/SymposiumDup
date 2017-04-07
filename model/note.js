@@ -6,15 +6,12 @@ var NoteSchema = mongoose.Schema({
 	},
 	link: {
 		type: String
-<<<<<<< HEAD
-=======
 	},
 	size: {
 		type: Number
 	},
 	time: {
 		type: String
->>>>>>> 3ccfd1882a1f4f8acb0c2eac9c17a91a6578ac9d
 	}
 });
 
