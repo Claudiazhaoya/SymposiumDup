@@ -161,11 +161,31 @@
                         {{this.MainPost.information}}
                     </div>
                     <div class="m-topic-cell m-topic-readstatus">
-                        <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
-                        <div class="m-label">{{this.MainPost.__v}}</div>
+                        <button onclick="rating()"><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                        <div class="m-label">{{this.MainPost.countUp}}</div>
                     </div>
+<<<<<<< HEAD
                     <a class="m-board-cell m-board-readstatus " onclick="Sub_reply('{{this.MainPost._id}}')">Comment
                     </a>
+=======
+                    <div class="m-topic-cell m-topic-readstatus">
+                        <ul>
+                        <li><a class="m-board-c m-board-check" onclick="Sub_reply('{{this.MainPost._id}}')">Comment
+                        </a></li>
+			<li><a class="m-board-c m-board-check" onclick="editPost('{{this.MainPost._id}}')">Edit
+                        </a></li>
+			<li><a class="m-board-c m-board-check" onclick="deletePost('{{this.MainPost._id}}')">Delete
+                        </a></li>
+                        </ul>
+                    </div>
+                    <div class="m-topic-cell m-topic-readstatus">
+                        <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                                <div class="last-post-date">
+                                    {{this.MainPost.user_id}}
+                                    <span>{{this.MainPost.timeStamp}}</span>
+                                </div>
+                    </div>
+>>>>>>> 3c5a32209020737b0713d03498154030eed4f970
 
                     <div class="m-board-cell m-topic-readstatus">
                         <div class="m-topic-cell m-topic-readstatus">
@@ -176,7 +196,10 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
                     </div>
+=======
+>>>>>>> 3c5a32209020737b0713d03498154030eed4f970
                 </div>
 
                 <div class="m-topics-container">
@@ -188,11 +211,26 @@
                             </div>
 
                             <div class="m-topic-cell m-topic-readstatus">
+<<<<<<< HEAD
                                 <button><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                                 <div class="m-label">2</div>
 
                             </div>
 
+=======
+                                <button onclick="rating()" ><img src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+				<div class="m-label">{{this.MainPost.countUp}}</div>
+                            </div>
+
+                <div class="m-topic-cell m-topic-readstatus">
+                    <ul>   
+			    <li><a class="m-board-c m-board-check" onclick="editPost('{{this.MainPost._id}}')">Edit
+                        </a></li>
+			<li><a class="m-board-c m-board-check" onclick="('{{this.MainPost._id}}')">Delete
+                        </a></li>
+                    </ul>
+                </div>
+>>>>>>> 3c5a32209020737b0713d03498154030eed4f970
 
                             <div class="m-topic-cell m-topic-readstatus">
                                 <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
@@ -224,6 +262,7 @@
                 <br>
                 <textarea  name="information" rows="10" cols="30"></textarea>
                 <input type="text" name="main_post_id" value="1" style = "display:none"/>
+                <input type="text" name="rating" value="1" style = "display:none"/>
                 <br>
                 <br>
                 <input type="submit" value="Submit Data">
@@ -249,16 +288,45 @@
             var y = document.getElementById('formHeader');
             y.innerHTML = "Main Reply Editor";
         }
-        function Sub_reply(test){
+        function Sub_reply(main_post_id){
             var x = document.getElementById('submitForm');
             x.style.display = 'block';
             var y = document.getElementById('formHeader');
             y.innerHTML = "Make a comment to a post";
+            document.getElementById("submitFormT").elements.namedItem("main_post_id").value
+                    = main_post_id;
+        }
+<<<<<<< HEAD
+=======
+	function rating(main_post_id,rate){
+	    var x = document.getElementById('submitFormT');
+	    x.action = "#/rating";
+	    document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
+		     = main_post_id;
+
+	    document.getElementById("submitFormT").elements.namedItem("rating").value
+		     = rate;
+	    x.submit();
+        }
+	function deletePost(main_post_id) {
+	    var x = document.getElementById('submitFormT');
+	    x.action = "#/delete"; 
+	    document.getElementById("submitFormT").elements.namedItem("main_post_id").value 
+		     = main_post_id;
+	    x.submit();
+	}
+	function editPost(main_post_id) {
+            var x = document.getElementById('submitForm');
+            x.style.display = 'block';
+            var y = document.getElementById('formHeader');
+	    y.action = "#/edit";
+            y.innerHTML = "re editting the post";
             //document.getElementById("main_inform").innerHTML;
             document.getElementById("submitFormT").elements.namedItem("main_post_id").value
-                    = test;
-            //document.getElementById("main_post_id").innerHTML;
-        }
+                    = main_post_id;
+
+	}
+>>>>>>> 3c5a32209020737b0713d03498154030eed4f970
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
