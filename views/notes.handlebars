@@ -272,7 +272,7 @@
                           <input type="checkbox" name="" value="">
                       </div>
                   </div>-->
-              <form class="cd-form" method="post" action="/course/notes/download">
+              
               <div class="m-topics-container">
                   <div class="m-topic">
                     {{#each notes}}
@@ -280,7 +280,7 @@
                       <div class="m-topic-cell m-topic-title">
                           {{this.filename}}
                       </div>
-                      <a onclick="download('{{this.link}}')" href="{{this.link}}" id="downloadli" class="m-topic-cell m-topic-readstatus">
+                      <a href="{{this.link}}"  class="m-topic-cell m-topic-readstatus">
                           Download
                       </a>
                       
@@ -304,7 +304,7 @@
 
 
           </div>
-        </form>
+      
 
           
 
@@ -340,7 +340,7 @@
                   <div class="modal-content">
                       <span class="close">&times;</span>
                       <p>Upload your note</p>
-                      <form class="cd-form" method="post" action="/course/notes">
+                      <form class="cd-form" method="post" action="/course/notes" id="submitForm">
                           <div class = "upload" >
                               <input type = "file" name = "studyNotes" id = "studyNotes">
                               <input class="full-width has-padding" type="submit" value="submit">
@@ -363,10 +363,7 @@
                       document.getElementById("demo").innerHTML = x;
                   }
 
-                  function download(link) {
-                      var downloadLink = document.getElementsById('downloadli');
-                      downloadLink.action += "/download";
-                      downloadLink.submit();
+                
                   function prompt_createPost_error(){
                       alert("You need to log in first!");
                   }
