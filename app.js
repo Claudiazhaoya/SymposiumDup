@@ -39,11 +39,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*
-var mongooseStore = new MongooseStore({
-  url: 'mongodb://localhost/symposium'
-});
-*/
+
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
