@@ -1,6 +1,147 @@
 body {
   background: #f7f7f7; }
 
+ul {
+  list-style-type: none;
+}
+
+li {
+}
+
+/*=====================================
+  NAVBAR STYLES
+    ===================================*/
+
+/* Brand Name Modifier after Bootstrap.min */
+.navbar {
+  padding-top: 1.15rem;
+  padding-bottom: 1.15rem;
+}
+
+.navbar-brand {
+    padding-left: 0.75rem;
+    padding-right: 1rem;
+    font-size: 2.05rem;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-toggler {
+    color: #b4a046;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-toggler:focus, .navbar-inverse .navbar-toggler:hover {
+    color: #ccb85f
+}
+
+.dropbtn {
+    background-color: rgba(255, 255, 255, .15);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right:0;
+    top: 46px;;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #f0ad4e;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+    color: rgba(180, 160, 70, .5)
+}
+
+.navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {
+    color: rgba(180, 160, 70, .75)
+}
+
+.navbar-inverse .navbar-nav .nav-link.disabled {
+    color: rgba(180, 160, 70, .25)
+}
+
+.navbar-inverse .navbar-nav .active > .nav-link, .navbar-inverse .navbar-nav .nav-link.active, .navbar-inverse .navbar-nav .nav-link.open, .navbar-inverse .navbar-nav .open > .nav-link {
+    color: rgb(180, 160, 70)
+}
+
+
+
+/* NAVBAR STYLES ENDS */
+
+/*=====================================
+  BUTTON STYLES
+    ===================================*/
+
+/* For Nav Search Button */
+
+.btn-outline-success {
+    color: #b4a046;
+    background-image: none;
+    background-color: transparent;
+    border-color: #b4a046;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #b4a046;
+    border-color: #ccb653;
+}
+
+.btn-outline-success.focus, .btn-outline-success:focus {
+    -webkit-box-shadow: 0 0 0 2px rgba(92, 184, 92, .5);
+    box-shadow: 0 0 0 2px rgba(92, 184, 92, .5)
+}
+
+.btn-outline-success.disabled, .btn-outline-success:disabled {
+    color: #5cb85c;
+    background-color: transparent
+}
+
+.btn-outline-success.active, .btn-outline-success:active, .show > .btn-outline-success.dropdown-toggle {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c
+}
+
+/* Nav button Style Ends*/
+
+.container {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
 .page-actions {
   margin-bottom: 2em !important; }
 
@@ -93,13 +234,16 @@ body {
 .m-board-cell {
   padding: 26px 20px 26px 20px; }
 
+.m-board-c {
+  padding: 0px 20px 10px 10px; }
+
 .m-board-key {
   background: #351c78;
   padding: 0 5px; }
 
 .m-board-title {
   font-weight: bold;
-  width: 100%; }
+  width: 80%; }
   @media (min-width: 768px) {
     .m-board-title {
       display: table-cell;
@@ -120,7 +264,7 @@ body {
       width: 20%; } }
 
 .m-board-check {
-  display: none; }
+  display: block; }
   @media (min-width: 768px) {
     .m-board-check {
       display: table-cell;
@@ -217,4 +361,54 @@ h6 {
 .page-title {
   margin-bottom: 1em; }
 
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #1a1a1a;
+  color: #b4a046;
+}
+
 /*# sourceMappingURL=styles.css.map */
+

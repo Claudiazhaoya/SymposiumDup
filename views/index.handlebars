@@ -6,7 +6,6 @@
 
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
-  
   <link rel="stylesheet" href="stylesheets_wjz/bootstrap.min.css">
   <link rel="stylesheet" href="stylesheets/index.css"> <!-- Gem style -->
   <script src="javascripts/modernizr.js"></script> <!-- Modernizr -->
@@ -74,7 +73,7 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 {{#if user}}
-                    <a class="nav-link prompt"> Welcome! {{username}} </a>
+                    <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                     <li class="nav-item active">
                         <a class="nav-link" href="/users/profile">Profile</a>
                     </li>
@@ -133,7 +132,7 @@
         <form action="#" method="post" class="flexsearch--form">
           <div class="search--input-wrapper">
             <input type="search" placeholder="Type in your course here" class="search--input" name="coursename"/>
-	    <input type="submit" value="➜" class="search--submit" />
+	          <input type="submit" value="➜" class="search--submit" />
           </div>
         </form>
       </div>

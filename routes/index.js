@@ -10,11 +10,12 @@ router.get('/', function(req, res, next) {
 	if(!req.user) {
 		res.render('index');
 	}
-  	else {
-  		res.render('index', {
-  			username: req.user.username
-  		})
-  	}
+	else {
+		res.render('index', {
+			username: req.user.username,
+			point: req.user.point
+		});
+	}
 });
 
 /* GET error page. */
@@ -23,12 +24,13 @@ router.get('/error', function(req, res, next) {
 
 		res.render('error');
 	}
-  	else {
+	else {
 
-  		res.render('error', {
-  			username: req.user.username
-  		})
-  	}
+		res.render('error', {
+			username: req.user.username,
+			point: req.user.point
+		});
+	}
 });
 
 
@@ -38,7 +40,7 @@ router.get('/course', function(req,res,next) {
       if(!req.user) {
 	      res.render('course', {
 	      	Title : json.Title+'', 
-	      	CH : json.CreditHours+'', 
+		  	CH : json.CreditHours+'', 
 	      	DC : json.Description+'',
 		CI : json.CourseId+ ''
 	      });
@@ -48,7 +50,8 @@ router.get('/course', function(req,res,next) {
 	      	CH : json.CreditHours+'', 
 	      	DC : json.Description+'',
 		CI : json.CourseId+'',
-	      	username:req.user.username
+	      	username:req.user.username,
+	      	point:req.user.point
 	      });
       }
 });
@@ -73,7 +76,6 @@ router.post('/', function(req, res, next){
 			localStorage.setItem('Course',JSON.stringify(course));
 			res.redirect('/course');
 		}
-
 	});
 });
 

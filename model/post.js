@@ -1,18 +1,9 @@
 var mongoose = require('mongoose');
 
-var ratingSchema = mongoose.Schema({
-	post_id:{
-	  type:String
-	},
-	user_id:{
-	  type:String
-	},
-	countUp: Number
-});
 var postSchema = mongoose.Schema({
 	information: {
 	  type: String,
-	  index:true
+	  index: true
 	},
 	
 	course_id: {
@@ -25,7 +16,10 @@ var postSchema = mongoose.Schema({
 	  type: Date,
 	  default: Date.now
         },
-	rating: [ratingSchema],
+
+	countUp : {
+	  type: Number
+	},
 	main_post_id: {
 	  type: String
 	}
@@ -40,22 +34,35 @@ module.exports.createPost = function(newPost, callback) {
 
 module.exports.getPostByCourseId = function(course_id, callback) {
     console.log('get post by course id');
-    var query = {course_id : course_id, main_post_id : null };
-    post.find(query,callback);
+    var query = {course_id : course_id, main_post_id : '1' };
+    post.find(query).sort({countUp:-1}).exec(callback);
     
 }
 
 module.exports.getPostByMainPost = function(post_id, callback) {
     var query = {main_post_id : post_id};
-    post.find(query,callback);
+    post.find(query ,callback);
 }
 
 module.exports.deletePostById = function(post_id, callback) {
     var query = {_id : post_id};
-    post.findOneAndRemove(query,function(err, post) {
-       if(err) throw err;	
-	console.log('post: '+ post_id + 'is deleted!');
-    });
+    post.findOneAndRemove(query, callback);
+}
+module.exports.deletePostByMainId = function(post_id, callback) {
+    var query = {main_post_id : post_id};
+    post.remove(query,callback);
+
+
+}
+module.exports.updateRatingById = function(post_id,callback) {
+    var query = {_id : post_id};
+    post.findOneAndUpdate(
+       query,
+	    {$inc: {countUp : 1}},callback);
 }
 
-//module.exports.updataPostById = function(
+module.exports.updatePostById = function(post_id, information, callback) {
+    var query = {_id : post_id};
+	post.findOneAndUpdate(query, {$set : {information:information, timeStamp : new Date().setUTCHours(-4,0,0,0) }}, callback);
+
+}

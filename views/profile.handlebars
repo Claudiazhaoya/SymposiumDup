@@ -6,15 +6,35 @@
 
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets_wjz/bootstrap.min.css"> <!-- Bootstrap style -->
-  <link rel="stylesheet" href="/stylesheets/reset.css"> <!-- CSS reset -->
   <link rel="stylesheet" href="/stylesheets/profile.css"> <!-- Gem style -->
 
   <script src="javascripts/modernizr.js"></script> <!-- Modernizr -->
     
   <title>Symposium</title>
 </head>
-<body>
-   <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+<div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div>  
+</div>
+
+
+    <!--NAVBAR SECTION START -->
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
         <div class="dropdown">
         <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,15 +65,20 @@
         <a class="navbar-brand" href="/">Symposium</a>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="coursename"/>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
             <ul class="navbar-nav ml-auto">
                 <!--
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 {{#if user}}
-                    <a class="nav-link prompt"> Welcome! {{username}} </a>
+                    <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                     <li class="nav-item active">
-
                         <a class="nav-link" href="/users/profile">Profile</a>
                     </li>
                     <li class="nav-item">
@@ -67,18 +92,6 @@
                         <a class="nav-link" href="/users/login">Log In</a>
                     </li>
                 {{/if}}
-                <!--
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Course</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                -->
             </ul>
         </div>
     </nav>
@@ -89,21 +102,19 @@
   <div class="row">
       <!-- left column -->
       <div class="col-md-3">
-        <div class="text-center">
-          <img src="{{user.avatar}}" class="avatar img-circle" alt="avatar">
-          <h6>Change your avatar</h6>
-          <input type="file" name="avatar" class="form-control">
-          <ul>
-          <hr>
-            <li><a class="classTaken" href="#"> Classes Taken on Symposium </a></li>
-          <hr>
-            <li><a class="fileDL" href="#"> Files Downloaded </a></li>
-          <hr>
-            <li><a class="fileUL" href="#"> Files Uploaded </a></li>
-          <hr>
-            <li><a class="pointHistory" href="#"> Points History </a></li>
-          <ul>
-        </div>
+          <div class="text-center">
+            <img src="{{avatar}}" class="avatar img-circle" alt="avatar">
+            <ul>
+            <hr>
+              <li><a class="classTaken" href="#"> Classes Taken on Symposium </a></li>
+            <hr>
+              <li><a class="fileDL" href="#"> Files Downloaded </a></li>
+            <hr>
+              <li><a class="fileUL" href="#"> Files Uploaded </a></li>
+            <hr>
+              <li><a class="pointHistory" href="#"> Points History </a></li>
+            <ul>
+          </div>
       </div>
       
       <!-- edit form column -->
@@ -154,6 +165,12 @@
               <input class="form-control" type="text" name="major" value={{major}}>
             </div>
           </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Avatar: </label>
+            <div class="col-lg-8">
+              <input class="form-control" type="file" name="avatar" id="avatar">
+            </div>
+          </div>
           
           
           <!-- Reference dropdown ends -->
@@ -183,7 +200,7 @@
             <div class="col-md-8">
               <div class="col-md-10">
                 <p class="fieldset">
-                  <input class="full-width has-padding" type="submit" value="Create account">
+                  <input class="full-width has-padding" type="submit" value="Create Account">
                 </p>
               </div>
             </div>
