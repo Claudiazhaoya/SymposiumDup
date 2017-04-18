@@ -39,11 +39,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*
-var mongooseStore = new MongooseStore({
-  url: 'mongodb://localhost/symposium'
-});
-*/
+
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
@@ -75,20 +71,6 @@ app.use(expressValidator({
         };
     }
 }));
-
-
-// set a cookie
-app.use(function (req, res, next) {
-  var cookie = req.cookies.cookieName;
-  if (cookie === undefined) {
-    // set a new cookie if no
-    var randomNum = Math.random().toString();
-    randomNum = randomNum.substring(2, randomNum.length);
-    res.cookie('cookieName', randomNum, {maxAge: 900000, httpOnly: true});
-  }
-  next();
-});
-
 
 // Connect to flash
 app.use(flash());
