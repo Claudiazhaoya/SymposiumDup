@@ -129,7 +129,12 @@
         <div class="jumbotron2">
             <center>
             <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Course Post"/>
+{{#if user}}
             <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Study Note"/>
+{{else}}
+    <button onclick="prompt_createPost_error()" class="btn btn-lg btn-primary2">Study Note</button>
+{{/if}}
+
 	    <input  hidden readonly type="text" name="Course_id" value={{CI}}>
             </center>
         </div>
@@ -150,6 +155,11 @@
 
     <!--Josn Test Part START -->
 
+    <script>
+        function prompt_createPost_error(){
+            alert("You need to log in first!");
+        }
+    </script>
 
     
     <!-- Bootstrap core JavaScript
