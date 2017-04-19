@@ -275,13 +275,41 @@
 
               <div class="m-topics-container">
                   <div class="m-topic">
+<<<<<<< HEAD
+=======
+                    {{#if user}}
+
+                    {{#each notes}}
+>>>>>>> b81d79f576b64755ebc3976e8e534002fd9e79fa
                       <div class="m-topic-cell m-topic-key"></div>
                       <div class="m-topic-cell m-topic-title">
                           {{this.filename}}
                       </div>
                       <a href="{{this.link}}" class="m-topic-cell m-topic-readstatus">
                           Download
+<<<<<<< HEAD
                       </a>
+=======
+                        </a>
+                      {{/lt}}
+                      
+
+                      <script>
+                        function redirect() {
+                          var points = {{{point}}};
+                          setTimeout(function(){
+                            console.log('something');
+                            //this.flag = true;
+                            window.location.href="/course/notes";
+                          }, 1000);
+                          return true;
+                        }
+                      </script>
+                      
+
+
+                      
+>>>>>>> b81d79f576b64755ebc3976e8e534002fd9e79fa
                       <div class="m-topic-cell m-topic-readstatus">
                           <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
                           <div class="last-post-date">
@@ -296,6 +324,7 @@
 
 
               {{/each}}
+              {{/if}}
 
 
           </div>
@@ -356,7 +385,7 @@
                   }
                   function prompt_createPost_error(){
                       alert("You need to log in first!");
-                  }
+                  }}
               </script>
 
               <script>
