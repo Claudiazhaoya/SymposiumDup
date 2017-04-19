@@ -22,6 +22,9 @@ var postSchema = mongoose.Schema({
 	},
 	main_post_id: {
 	  type: String
+	},
+	avator : {
+	  type: String
 	}
  });
 
