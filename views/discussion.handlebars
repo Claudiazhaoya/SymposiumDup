@@ -110,12 +110,9 @@
                 <div class="col-md-7">
                     <a href="/" class="btn btn-default btn-lg" type="submit"><i class="fa fa-search"
                                                                                 aria-hidden="true"></i> Search</a>
-                    {{#if user}}
+
                         <button class="btn btn-default btn-lg" onclick="Main_reply()" id="myBtn">Create Subject</button>
-                    {{else}}
-                        <button class="btn btn-default btn-lg" onclick=" prompt_createPost_error()">Create Subject
-                        </button>
-                    {{/if}}
+
                     <!--       <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>-->
                     <a href="notes" class="btn btn-default btn-lg" type="submit"><img
                             src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
@@ -170,49 +167,30 @@
                             {{this.MainPost.information}}
                     </div>
 
-                    {{#if user}}
                         <div class="m-topic-cell m-topic-readstatus">
                             <button onclick="rating('{{this.MainPost._id}}')"><img
                                     src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                             <div class="m-label">{{this.MainPost.countUp}}</div>
                         </div>
-                    {{else}}
-                        <div class="m-topic-cell m-topic-readstatus">
-                            <button onclick="prompt_createPost_error()"><img
-                                    src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
-                            <div class="m-label">{{this.MainPost.countUp}}</div>
-                        </div>
-                    {{/if}}
 
                     <div class="m-topic-cell m-topic-readstatus">
                         <ul>
-                            {{#if user}}
                                 <li><a class="m-board-c m-board-check" id="myBtn"
                                        onclick="Sub_reply('{{this.MainPost._id}}')">Comment
                                 </a></li>
-                            {{else}}
-                                <li><a class="m-board-c m-board-check" onclick=" prompt_createPost_error()">Comment</a>
-                                </li>
-                            {{/if}}
-                            {{#if user}}
+
                                 <li><a class="m-board-c m-board-check" id="myBtn"
-                                       onclick="editPost('{{this.MainPost._id}}')">Edit
+                                       onclick="editPost('{{this.MainPost._id}}','{{this.MainPost.information}}')">Edit
                                 </a></li>
-                            {{else}}
-                                <li><a class="m-board-c m-board-check" onclick=" prompt_createPost_error()">Edit</a>
-                                </li>
-                            {{/if}}
-                            {{#if user}}
+
+
                                 <li><a class="m-board-c m-board-check" onclick="deletePost('{{this.MainPost._id}}',1)">Delete
                                 </a></li>
-                            {{else}}
-                                <li><a class="m-board-c m-board-check" onclick=" prompt_createPost_error()">Delete</a>
-                                </li>
-                            {{/if}}
+
                         </ul>
                     </div>
                     <div class="m-topic-cell m-topic-readstatus">
-                        <img class="last-post-profile" src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                        <img class="last-post-profile" src="{{this.MainPost.avator}}">
                         <div class="last-post-date">
                             {{this.MainPost.user_id}}
                             <span>{{this.MainPost.timeStamp}}</span>
@@ -235,28 +213,20 @@
 
                             <div class="m-topic-cell m-topic-readstatus">
                                 <ul>
-                                    {{#if user}}
+
                                         <li><a class="m-board-c m-board-check" id="myBtn"
-                                               onclick="editPost('{{this._id}}')">Edit
+                                               onclick="editPost('{{this._id}}','{{this.information}}')">Edit
                                         </a></li>
-                                    {{else}}
-                                        <li><a class="m-board-c m-board-check"
-                                               onclick=" prompt_createPost_error()">Edit</a>
-                                        </li>
-                                    {{/if}}
-                                    {{#if user}}
+
                                         <li><a class="m-board-c m-board-check" onclick="deletePost('{{this._id}}',0)">Delete
                                         </a></li>
-                                    {{else}}
-                                        <li><a class="m-board-c m-board-check" onclick=" prompt_createPost_error()">Delete</a>
-                                        </li>
-                                    {{/if}}
+
                                 </ul>
                             </div>
 
                             <div class="m-topic-cell m-topic-readstatus">
                                 <img class="last-post-profile"
-                                     src="../stylesheets_wjz/assets/images/profile-picture.jpg">
+                                     src="{{this.avator}}">
                                 <div class="last-post-date">
                                     {{this.user_id}}
                                     <span>{{this.timeStamp}}</span>
@@ -277,20 +247,6 @@
     </div><!-- end container -->
     <br>
     <br>
-    <!--  <center>
-          <div id = "submitForm" style="display:none;">
-              <h4 id="formHeader"></h4>
-              <form method="post" action="" id="submitFormT">
-                  <br>
-                  <textarea  name="information" rows="10" cols="30"></textarea>
-                  <input type="text" name="main_post_id" value="1" style = "display:none"/>
-                  <input type="text" name="main" value="1" style = "display:none"/>
-                  <br>
-                  <br>
-                  <input type="submit" value="Submit Data">
-              </form>
-          </div>
-      </center>-->
     <br>
     <div id="my-container" class="table-responsive">
     </div>
@@ -306,7 +262,7 @@
                 <p id="formHeader"></p>
                 <form method="post" action="" id="submitFormT">
                     <br>
-                    <textarea name="information" rows="10" cols="30"></textarea>
+                    <textarea name="information" rows="10" cols="30" value=""></textarea>
                     <input type="text" name="main_post_id" value="1" style="display:none"/>
                     <input type="text" name="main" value="1" style="display:none"/>
                     <br>
@@ -363,11 +319,13 @@
                     = main;
             x.submit();
         }
-        function editPost(post_id) {
+        function editPost(post_id,information) {
             var x = document.getElementById('myModal');
             x.style.display = 'block';
             var y = document.getElementById('formHeader');
             y.innerHTML = "re editting the post";
+            document.getElementById("submitFormT").elements.namedItem("information").value
+                    = information;
             //document.getElementById("main_inform").innerHTML;
             var z = document.getElementById('submitFormT');
             z.action += "/edit";
