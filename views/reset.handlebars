@@ -66,7 +66,7 @@
 
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
       <div id="cd-login"> <!-- log in form -->
-        <form class="cd-form" method="post" action="/users/reset">
+        <form id="reset-form" class="cd-form" method="post" action="/users/reset/">
           <p class="fieldset">
             <label class="image-replace cd-username" for="password">New Password</label>
             <input class="full-width has-padding has-border" id="newPassword" type="password" placeholder="New password" name="password" autofocus=true>
@@ -78,18 +78,25 @@
             <input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Confirm password" name="confirm">
             <span class="cd-error-message">Error message here!</span>
           </p>
-
+          <script>
+            var decodedJson = decodeURIComponent("{{{token}}}");
+            var jsonObj = JSON.parse(decodedJson);
+            console.log(jsonObj);
+            document.getElementById('reset-form').action = '/users/reset/' + jsonObj;
+          </script>
 
           <p class="fieldset">
             <input class="full-width" type="submit" value="Update Password">
           </p>
+
+
         </form>
         <!-- <a href="#0" class="cd-close-form">Close</a> -->
       </div> <!-- cd-login -->
     </div>
 
   <div class="footer">
-    <p>&copy; 2017 Symposium, Inc.</p>
+    <p>&copy; 2017 Symposium, Inc.{{token}}</p>
   </div>
 
 </body>
