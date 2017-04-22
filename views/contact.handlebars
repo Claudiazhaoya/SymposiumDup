@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="stylesheets_wjz/bootstrap.min.css">
-  <link rel="stylesheet" href="stylesheets/index.css"> <!-- Gem style -->
+  <link rel="stylesheet" href="/stylesheets_wjz/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/contact.css"/>
+  
   <script src="javascripts/modernizr.js"></script> <!-- Modernizr -->
-    
   <title>Symposium</title>
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+     }
+     #map {
+        height:500px;
+        width:100%;
+     }
+  </style>
 </head>
 
 <div class="row">
@@ -29,31 +37,12 @@
           
           {{{body}}}
         </div>
-</div>
+
+        
+      </div>
 
 
 <body>
-  <!--
-  <header role="banner">
-     <div id="cd-logo"><a href="#0"><img src="img/nav-logo-6.png" alt="Logo"></a></div> 
-    <div id="cd-logo"> 
-      <h1> Symposium </h1>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        {{#if user}}
-          <li role="presentation"><a class="cd-signin" href="/users/profile">Profile</a></li>
-          <li role="presentation"><a class="cd-signin" href="/users/logout">Logout</a></li>
-        {{else}}
-          <li role="presentation"><a class="cd-signin" href="/users/login">Login</a></li>
-          <li role="presentation"><a class="cd-signup" href="/users/signup">Signup</a></li>
-        {{/if}}
-
-      </ul>
-    </nav>
-  </header>
-    -->
-
     <!--NAVBAR SECTION START -->
 
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
@@ -68,7 +57,6 @@
                 <!--
                 <a href="#home">Home</a> -->
                 {{#if user}}
-                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
                     <a href="/users/profile">Profile</a>
                     <a href="/users/logout">Log Out</a>
                 {{else}}
@@ -93,7 +81,6 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 {{#if user}}
-                    <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                     <li class="nav-item active">
                         <a class="nav-link" href="/users/profile">Profile</a>
                     </li>
@@ -124,43 +111,65 @@
             </ul>
         </div>
     </nav>
+    <!-- END NAV BAR -->
 
+    {{#if errors}}
+          {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+          {{/each}}
+    {{/if}}
 
-
-  <div class="row">
-        <div class="col-lg-12">
-          {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-          {{/if}}
-
-          {{#if error_msg}}
-	  <div class="alert alert-danger">{{error_msg}}</div>
-          {{/if}}
-
-          {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-          {{/if}}
-          
-          {{{body}}}
-        </div>
-  </div> 
-
-  <div class="logo1">
-    <img src="images/logo-1c.png" alt="" style="width:800px; height:210px"/>
-    <div class="search">
-      <div class="search--wrapper">
-        <form action="#" method="post" class="flexsearch--form">
-          <div class="search--input-wrapper">
-            <input type="search" placeholder="Type in your course here" class="search--input" name="coursename"/>
-	          <input type="submit" value="➜" class="search--submit" />
-          </div>
-        </form>
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+    <div class="content-wrapper">
+      <div class="cd-wrapper"> <!-- this is the container wrapper -->
+        <div class="cd-contact-wrapper"> <!-- Contact form -->
+          <p class="drop"><b>DROP US A LINE !</b></p>
+          <form class="form-horizontal" method="post" action="contact/send">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Name</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" placeholder="Name" name="name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="email" placeholder="Your Email" name="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Message</label>
+              <div class="col-lg-12">
+                <textarea class="form-control" type="input" placeholder="Enter Message" name="message" rows=8> </textarea>
+              </div>
+            </div>
+            <!--
+            <p class="fieldset">
+              <label>Email</label>
+              <input type="email"  placeholder="Enter Email" name="email">
+            </p>
+             <p class="fieldset">
+              <label>Message</label>
+              <textarea type="input" placeholder="Enter Message" name="message" rows=8></textarea> 
+            </p>
+            -->
+            <p class="fieldset">
+              <input class="full-width has-padding" type="submit" value="SEND MESSAGE">
+            </p>
+          </form>
+        </div> <!-- contact -->
+      </div>
+      <div class="cd-us-wrapper">
+        <p class="company-name"><b>Symposium Inc.</b></p>
+        <p class="company-mail">symposium_pu@gmail.com</p>
+        <p class="company-phone">267-441-2408</p>
+        <p class="company-description">225 Northwestern Ave., West Lafayette, IN. 47906</p>
       </div>
     </div>
-  </div>
 
 
-  <!-- Josn End-->
 
   <div class="footer">
     <a class="about" href="/about"><b>About us</b></a>
@@ -168,5 +177,22 @@
     <a class="company">&copy; 2017 Symposium, Inc.</a>
   </div>
 
+  <!--JavaScript-->
+  <script>
+  function initMap() {
+  var location = {lat: 40.425869, lng: -86.908066};
+  
+  var map = new google.maps.Map(document.getElementById('map'), {center: location,
+    scrollwheel: false,
+    zoom: 17
+  });
+
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map
+  });
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbxldcXVnEQ630ubdPK_gcNFvAfeJ9U14&callback=initMap" ></script>
 </body>
 </html>
