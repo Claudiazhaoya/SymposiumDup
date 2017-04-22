@@ -289,6 +289,9 @@
                       
 
                       <script>
+                        var decodedJson = decodeURIComponent("{{{point}}}");
+                        var jsonObj = JSON.parse(decodedJson);
+                        console.log(jsonObj);
                         function redirect() {
                           var points = {{{point}}};
                           setTimeout(function(){
