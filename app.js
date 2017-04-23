@@ -26,7 +26,6 @@ var test = require('./routes/test');
 var app = express();
 
 
-
 // set up view engine
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs('index'));
