@@ -28,6 +28,9 @@ var UserSchema = mongoose.Schema({
   point: {
     type: Number
   },
+  numberOfUploading: {
+    type: Number
+  },
   resetPasswordToken: String,
   resetPasswordExpires: Date
 

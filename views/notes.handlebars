@@ -169,7 +169,11 @@
             <form class="cd-form" method="post" action="/course/notes" id="submitForm">
               <div class = "upload" >
                 <input type = "file" name = "studyNotes" id = "studyNotes">
+                {{#if canUpload}}
                 <input class="full-width has-padding" type="submit" value="submit">
+                {{else}}
+                <input class="full-width has-padding" onclick="javaScript:alert('You do not have enough points')" type=button value="submit">
+                {{/if}}
               </div>
             </form>
           </div>
