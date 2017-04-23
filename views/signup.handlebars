@@ -6,8 +6,8 @@
 
   <link rel="stylesheet" href="/stylesheets_wjz/bootstrap.min.css"/>
   <link rel="stylesheet" href="/stylesheets/signup.css"/>
-  
-  <script src="javascripts/modernizr.js"></script> <!-- Modernizr -->
+
+
   <title>Symposium</title>
 </head>
 {{#if errors}}
@@ -104,9 +104,6 @@
         </nav>
         <!-- END NAV BAR -->
 
-        
-
-
         <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
           <div id="cd-signup"> <!-- sign up form -->
             <form class="cd-form" method="post" action="/users/signup">
@@ -121,12 +118,13 @@
                 <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" name="email">
                 <span class="cd-error-message">Error message here!</span>
               </p>
-
+              <div class="form-group">
               <p class="fieldset">
                 <label class="image-replace cd-password" for="signup-password">Password</label>
-                <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password" name="password">
-                <span class="cd-error-message">Error message here!</span>
+                <input class="full-width has-padding has-border" id="password" type="password"  placeholder="Password" name="password">
+                <span class="strength"></span>
               </p>
+              </div>
 
               <p class="fieldset">
                 <label class="image-replace cd-password" for="signup-password">Password</label>
@@ -158,6 +156,30 @@
                 <input class="full-width has-padding" type="submit" value="Create account">
               </p>
             </form>
+            
+
+            <!--
+            <div class="container">
+              <div class="row">
+                
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <div class="password-background"></div>
+                        <a class="show-password" href="">Show password</a>
+                        <span class="strength"></span>
+                      </div>
+                    </form>
+                    
+              </div>
+            </div>
+            -->
+
 
             <!-- <a href="#0" class="cd-close-form">Close</a> -->
           </div> <!-- cd-signup -->
@@ -168,6 +190,10 @@
           <a class="contact" href="/contact"><b>Contact us</b></a>
           <a class="company">&copy; 2017 Symposium, Inc.</a>
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/1.0/zxcvbn-async.min.js"></script>
+        <script src="../stylesheets_wjz/assets/js/pwdstr.js"></script> <!-- Modernizr -->
 
 
       </body>

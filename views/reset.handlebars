@@ -84,8 +84,8 @@
           <form id="reset-form" class="cd-form" method="post" action="/users/reset/">
             <p class="fieldset">
               <label class="image-replace cd-username" for="password">New Password</label>
-              <input class="full-width has-padding has-border" id="newPassword" type="password" placeholder="New password" name="password" autofocus=true>
-              <span class="cd-error-message">Error message</span>
+              <input class="full-width has-padding has-border" id="password" type="password" placeholder="New password" name="password" autofocus=true>
+              <span class="strength"></span>
             </p>
 
             <p class="fieldset">
@@ -115,6 +115,11 @@
       <a class="contact" href="/contact"><b>Contact us</b></a>
       <a class="company">&copy; 2017 Symposium, Inc.</a>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/1.0/zxcvbn-async.min.js"></script>
+    <script src="../stylesheets_wjz/assets/js/pwdstr.js"></script> <!-- Modernizr -->
+
 
     </body>
     </html>
