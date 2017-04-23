@@ -31,7 +31,7 @@
 
 
 <body>
-  <!--NAVBAR SECTION START -->
+ <!--NAVBAR SECTION START -->
 
   <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
@@ -40,10 +40,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div id="navbar-colla   ntent">
+      <div id="navbar-collapse-1" class="dropdown-content">
         <ul class="nav navbar-nav navbar-right" >
-                <!--
-                <a href="#home">Home</a> -->
                 {{#if user}}
                 <a href="/users/profile">Profile</a>
                 <a href="/users/logout">Log Out</a>
@@ -51,17 +49,34 @@
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
                 {{/if}}
-                <!--
-                <a href="#course-sec">Course</a>
-                <a href="#contact-sec">Contact</a>
-              -->
             </ul>
           </div>
         </div>
 
 
-      </nav>
-      <!-- END NAV BAR -->
+        <a class="navbar-brand" href="/">Symposium</a>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+                  {{#if user}}
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/profile">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Log Out</a>
+                  </li>
+                  {{else}}
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/signup">Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/login">Log In</a>
+                  </li>
+                  {{/if}}
+            </ul>
+          </div>
+        </nav>
+        <!-- END NAV BAR -->
 
 
       <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -95,9 +110,11 @@
         </div> <!-- cd-login -->
       </div>
 
-      <div class="footer">
-        <p>&copy; 2017 Symposium, Inc.</p>
-      </div>
+    <div class="footer">
+      <a class="about" href="/about"><b>About us</b></a>
+      <a class="contact" href="/contact"><b>Contact us</b></a>
+      <a class="company">&copy; 2017 Symposium, Inc.</a>
+    </div>
 
     </body>
     </html>

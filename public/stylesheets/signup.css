@@ -348,6 +348,11 @@ s {
   text-decoration: underline;
 }
 
+.forgot-link {
+  color: #b4a046;
+  float: right;
+}
+
 
 /* =========================
         Footer Form 

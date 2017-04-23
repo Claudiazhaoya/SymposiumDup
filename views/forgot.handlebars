@@ -31,7 +31,7 @@
 
 
 <body>
-  <!--NAVBAR SECTION START -->
+ <!--NAVBAR SECTION START -->
 
   <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
@@ -40,13 +40,43 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <div id="navbar-collapse-1" class="dropdown-content">
+        <ul class="nav navbar-nav navbar-right" >
+                {{#if user}}
+                <a href="/users/profile">Profile</a>
+                <a href="/users/logout">Log Out</a>
+                {{else}}
+                <a href="/users/signup">Sign Up</a>
+                <a href="/users/login">Log In</a>
+                {{/if}}
+            </ul>
+          </div>
+        </div>
 
 
-      <a class="navbar-brand" href="/">Symposium</a>
+        <a class="navbar-brand" href="/">Symposium</a>
 
-      
-    </nav>
-    <!-- END NAV BAR -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+                  {{#if user}}
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/profile">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Log Out</a>
+                  </li>
+                  {{else}}
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/signup">Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/login">Log In</a>
+                  </li>
+                  {{/if}}
+            </ul>
+          </div>
+        </nav>
+        <!-- END NAV BAR -->
 
     {{#if errors}}
     {{#each errors}}
@@ -74,7 +104,9 @@
     </div>
 
     <div class="footer">
-      <p>&copy; 2017 Symposium, Inc.</p>
+      <a class="about" href="/about"><b>About us</b></a>
+      <a class="contact" href="/contact"><b>Contact us</b></a>
+      <a class="company">&copy; 2017 Symposium, Inc.</a>
     </div>
 
   </body>
