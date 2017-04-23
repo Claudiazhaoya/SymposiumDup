@@ -56,6 +56,18 @@ router.get('/course', function(req,res,next) {
       }
 });
 
+router.get('/about', function(req, res, next) {
+	if(!req.user) {
+		res.render('about');
+	}
+	else {
+		res.render('about', {
+			username: req.user.username,
+			point: req.user.point
+		});
+	}
+});
+
 function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){
 		return next();

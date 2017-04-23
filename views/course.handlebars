@@ -7,7 +7,7 @@
     <meta name="Jingzhou Wang" content="">
     <title>Course Page</title>
 
-     <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
     <link href="stylesheets_wjz/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this project -->
@@ -16,21 +16,21 @@
 </head>
 
 <div class="row">
-        <div class="col-lg-12">
-          {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-          {{/if}}
+    <div class="col-lg-12">
+      {{#if success_msg}}
+      <div class="alert alert-success">{{success_msg}}</div>
+      {{/if}}
 
-          {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
-          {{/if}}
+      {{#if error_msg}}
+      <div class="alert alert-danger">{{error_msg}}</div>
+      {{/if}}
 
-          {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-          {{/if}}
-          
-          {{{body}}}
-        </div>
+      {{#if error}}
+      <div class="alert alert-danger">{{error}}</div>
+      {{/if}}
+      
+      {{{body}}}
+  </div>
 </div> 
 
 <body>
@@ -40,60 +40,60 @@
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
         <div class="dropdown">
-        <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div id="navbar-collapse-1" class="dropdown-content">
-            <ul class="nav navbar-nav navbar-right" >
+            <div id="navbar-collapse-1" class="dropdown-content">
+                <ul class="nav navbar-nav navbar-right" >
                 <!--
                 <a href="#home">Home</a> -->
                 {{#if user}}
-                    <li class="sampleText">Hi! <strong>{{username}}</strong></li>
-                    <a href="/users/profile">Profile</a>
-                    <a href="/users/logout">Log Out</a>
+                <li class="sampleText">Hi! <strong>{{username}}</strong></li>
+                <a href="/users/profile">Profile</a>
+                <a href="/users/logout">Log Out</a>
                 {{else}}
-                    <a href="/users/signup">Sign Up</a>
-                    <a href="/users/login">Log In</a>
+                <a href="/users/signup">Sign Up</a>
+                <a href="/users/login">Log In</a>
                 {{/if}}
                 <!--
                 <a href="#course-sec">Course</a>
                 <a href="#contact-sec">Contact</a>
-                -->
-            </ul>
-        </div>
-        </div>
+            -->
+        </ul>
+    </div>
+</div>
 
 
-        <a class="navbar-brand" href="/">Symposium</a>
+<a class="navbar-brand" href="/">Symposium</a>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+<div class="collapse navbar-collapse" id="navbarCollapse">
 
-            <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="coursename"/>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+    <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="coursename"/>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
 
-            <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto">
                 <!--
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 {{#if user}}
-                    <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/users/profile">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/logout">Log Out</a>
-                    </li>
+                <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/users/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Log Out</a>
+                </li>
                 {{else}}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/users/signup">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/login">Log In</a>
-                    </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/users/signup">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/login">Log In</a>
+                </li>
                 {{/if}}
             </ul>
         </div>
@@ -106,11 +106,11 @@
         <div class="jumbotron">
 
             <!--  <h1>CS307: Software Engineer</h1> -->
-	    <center>
-            <h1>
-                <span id="Title" >{{Title}}</span>
-            </h1>
-        </center>
+            <center>
+                <h1>
+                    <span id="Title" >{{Title}}</span>
+                </h1>
+            </center>
 
             <!-- Course Description, We may need Purdue API Interface here -->
 
@@ -125,35 +125,37 @@
     </div>
 
     <div class="container">
-       <form action = "#" method="post" class="flexsearch--form">
+     <form action = "#" method="post" class="flexsearch--form">
         <div class="jumbotron2">
             <center>
-            <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Course Post"/>
-            <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Study Note"/>
-	    <input  hidden readonly type="text" name="Course_id" value={{CI}}>
+                <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Course Post"/>
+                <input type="submit" name="type" class="btn btn-lg btn-primary2" value="Study Note"/>
+                <input  hidden readonly type="text" name="Course_id" value={{CI}}>
             </center>
         </div>
-       </form>
-    </div>
+    </form>
+</div>
 
-    <!--Post Part START -->
+<!--Post Part START -->
     <!--
     <div class="container">
         <div class="jumbotron">
             <h1>Post Part</h1>
         </div>
     </div>
-                        -->
-    <div class="footer">
-        <p>&copy; 2017 Symposium, Inc.</p>
-    </div>
+-->
+<div class="footer">
+    <a class="about" href="/about"><b>About us</b></a>
+    <a class="contact" href="/contact"><b>Contact us</b></a>
+    <a class="company">&copy; 2017 Symposium, Inc.</a>
+</div>
 
-    <!--Josn Test Part START -->
+<!--Josn Test Part START -->
 
 
-    
+
     <!-- Bootstrap core JavaScript
-        ================================================== -->
+    ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
