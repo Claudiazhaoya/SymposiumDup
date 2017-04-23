@@ -81,6 +81,7 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                   </li> -->
                   {{#if user}}
+                  <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                   <li class="nav-item active">
                     <a class="nav-link" href="/users/profile">Profile</a>
                   </li>
@@ -155,18 +156,21 @@
               <textarea type="input" placeholder="Enter Message" name="message" rows=8></textarea> 
             </p>
           -->
-          <p class="fieldset">
-            <input class="full-width has-padding" type="submit" value="SEND MESSAGE">
-          </p>
-        </form>
-      </div> <!-- contact -->
-    </div>
-    <div class="cd-us-wrapper">
-      <p class="company-name"><b>Symposium Inc.</b></p>
-      <p class="company-mail">symposium_pu@gmail.com</p>
-      <p class="company-phone">267-441-2408</p>
-      <p class="company-description">225 Northwestern Ave., West Lafayette, IN. 47906</p>
-    </div>
+                <p class="fieldset">
+                  <input class="full-width has-padding" type="submit" value="SEND MESSAGE">
+                </p>
+            </form>
+          </div>
+        </div> <!-- contact -->
+
+
+
+      <div class="cd-us-wrapper">
+        <p class="company-name"><b>Symposium Inc.</b></p>
+        <p class="company-mail">symposium_pu@gmail.com</p>
+        <p class="company-phone">267-441-2408</p>
+        <p class="company-description">225 Northwestern Ave., West Lafayette, IN. 47906</p>
+      </div>
   </div>
 
 

@@ -5,9 +5,17 @@ var nodemailer = require('nodemailer');
 
 router.get('/', function(req, res, next) {
 	//console.log('Get in!');
-	res.render('contact', {
-		title: 'Contact'
-	});
+	if (!req.user) {
+		res.render('contact', {
+			title: 'Contact'
+		});
+	} else {
+		res.render('contact', {
+			username: req.user.username,
+			point: req.user.point,
+			title: 'Contact'
+		});
+	}
 });
 
 //send email

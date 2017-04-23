@@ -7,6 +7,7 @@ body {
     min-height: 75rem;
     padding-top: 3.5rem;
     width: 100%;
+    height:100%;
     font-size: 100%;
     font-family: "PT Sans", sans-serif;
     color: #b4a046;
@@ -18,8 +19,13 @@ html, body {
     overflow-x: hidden; 
 }
 
-s {
-    border-bottom: 3px solid;
+
+hr {
+  position: relative;
+  margin-top: 3%;
+  margin-left: 10%;
+  width: 80%;
+  background-color: #c1bfb6;
 }
 
 
@@ -134,86 +140,41 @@ s {
     background-color: #5cb85c;
     border-color: #5cb85c
 }
-/* =========================
-         Map Form 
-============================*/
-
-div #map {
-  width: 100%;
-}
-
-/* Divide */
-
-.content-wrapper {
-  width: 100%;
-  overflow: auto;
-  margin-top:2%;
-}
 
 /* =========================
-        Contact Form 
+        About Form 
 ============================*/
-.cd-wrapper {
-  float: left;
-  width: 75%;
-  height: 100%;
-}
-
-.cd-contact-wrapper {
-  width: 70%;
-  margin-left: 12.5%;
-}
-
-.drop {
-  font-size:30px;
-}
-
-.form-horizontal input.full-width {
-  width: 65%;
-}
-
-.fieldset {
+.logo1 {
+  position: relative;
+  top: 10%;
   left: 50%;
-  margin-left: 250px;
-  margin-top: 30px;
+  margin-left: -400px;
 }
 
-.form-horizontal input[type=submit] {
-  padding: 16px 0;
-  cursor: pointer;
-  background: #b4a046;
-  color: #1a1a1a;
-  font-weight: bold;
-  border: none;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-}
-.no-touch .form-horizontal input[type=submit]:hover, .no-touch .form-horizontal input[type=submit]:focus {
-  background: #a08d39;
-  outline: none;
-}
-
-hr.vertical {
-   width: 1px;
-   height: 100%; /* or height in PX */
-} 
-
-/* =========================
-        Our Mail Form 
-============================*/
-
-.cd-us-wrapper {
-  height: 100%;
-  margin-right: 10%;
+.info-wrapper {
+  margin-left:10%;
 }
 
 
-.company-name {
-    font-size:26px;
+
+h5 {
+  color: #444440;
+  margin-top: 15px;
+
+}
+
+h4 {
+  margin-top: 35px;
+
+}
+
+h6 {
+  margin-top: 15px;
+  color: #444440;
+}
+
+.info-list {
+  margin-left: 50px;
 }
 
 

@@ -4,17 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-
+  <link rel="stylesheet" href="/stylesheets_wjz/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/about.css"/>
   
-  <link rel="stylesheet" href="stylesheets_wjz/bootstrap.min.css">
-  <link rel="stylesheet" href="stylesheets/error.css"> <!-- Gem style -->
   <script src="javascripts/modernizr.js"></script> <!-- Modernizr -->
-  
   <title>Symposium</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    height:500px;
+    width:100%;
+  }
+  </style>
 </head>
 
+<div class="row">
+  <div class="col-lg-12">
+    {{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+    
+    {{{body}}}
+  </div>
+
+  
+</div>
+
+
 <body>
+  <!--NAVBAR SECTION START -->
+
   <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
     <div class="dropdown">
@@ -27,7 +57,6 @@
                 <!--
                 <a href="#home">Home</a> -->
                 {{#if user}}
-                <li class="sampleText">Hi! <strong>{{username}}</strong></li>
                 <a href="/users/profile">Profile</a>
                 <a href="/users/logout">Log Out</a>
                 {{else}}
@@ -52,7 +81,7 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                   </li> -->
                   {{#if user}}
-                  <a class="nav-link prompt"> Welcome! {{username}} </a>
+                  <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                   <li class="nav-item active">
                     <a class="nav-link" href="/users/profile">Profile</a>
                   </li>
@@ -80,59 +109,47 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
               -->
-            </ul>
-          </div>
-        </nav>
+        </ul>
+      </div>
+  </nav>
+  <!-- END NAV BAR -->
+  <div class="body-wrapper">
+    <div class="logo1">
+      <img src="images/logo-1c.png" alt="" style="width:800px; height:210px"/>
 
-        <div class="row">
-          <div class="col-lg-12">
-            {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-            {{/if}}
+    </div>
+  
+    <hr>
 
-            {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
-            {{/if}}
+    <div class="info-wrapper">
+      <h2><b> About Symposium </b></h2>
+      <h5> We have begun our service in Purdue University. We are trying to reach our service to other University as well! Please Support us ! </h5>
 
-            {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-            {{/if}}
-            
-            {{{body}}}
-          </div>
-        </div>
+      <h4><b> Why Symposium? </b></h4>
+      <h6> Students at Purdue often lack sufficient information about the courses that they are going to take in their preceding semester. </h6>
+      <h6> As a result, some students have difficulties adjusting to different teaching styles of each professor when first few weeks are critical to finish the course with the strong grade.</h6>
+      <h6>Different from other rating websites such as RateMyProfessors, users are able to obtain points by uploading their own study notes and these points could be later used to purchase other courses’ notes.</h6>
 
-        <div class="new-search">
-         <div class="logo1">
-           <img src="images/logo-1c.png" alt="" style="width:350px; height:100px"/>
-         </div>
-	  <!-- Needs fix
-	  <div class="search">
-	      <div class="search--wrapper">
-	        <form action="#" method="post" class="flexsearch--form">
-	          <div class="search--input-wrapper">
-	            <input type="text" placeholder="Type in your course here" class="search--input" name="coursename"/>
-	            <input type="submit" value="➜" class="search--submit"/>
-	          </div>
-	        </form>
-	      </div>
-	  </div>
- -->
+      <h6>Therefore, we will provide a platform that aids students to better adjust and get prepared for their upcoming classes.</h6>
+
+      <h4><b> Our Mission </b></h4>
+      <h6> We aim to achieve the following goals: </h6>
+      <ul class="info-list">
+        <li> to share students' study experiences for each courses in Purdue. </li>
+        <li> to provide students with precise information about the courses. </li>
+        <li> to give students the study aids for different courses. </li>
+      </ul>
+    </div>
+  </div>
 
 
-</div>
 
-<hr>
 
-<div class="sorry-message">
- <p> Sorry! We found an error on your request :( </p>
-</div>
-
-<div class="footer">
+  <div class="footer">
     <a class="about" href="/about"><b>About us</b></a>
     <a class="contact" href="/contact"><b>Contact us</b></a>
     <a class="company">&copy; 2017 Symposium, Inc.</a>
-</div>
+  </div>
 
 
 </body>
