@@ -5,9 +5,9 @@ var nodemailer = require('nodemailer');
 
 router.get('/', function(req, res, next) {
 	//console.log('Get in!');
-     res.render('contact', {
-         title: 'Contact'
-     });
+	res.render('contact', {
+		title: 'Contact'
+	});
 });
 
 //send email
@@ -19,7 +19,7 @@ router.post('/send', function(req, res, next) {
 			user: 'symposiumtech@gmail.com',
 			pass: 'qwertyuiop[]'
 		}
-    });
+	});
 
 	var mailOptions = {
 		from: '"Symposium " <symposiumtech@gmail.com>', //sender address

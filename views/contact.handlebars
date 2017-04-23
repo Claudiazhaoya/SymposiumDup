@@ -10,91 +10,91 @@
   <script src="javascripts/modernizr.js"></script> <!-- Modernizr -->
   <title>Symposium</title>
   <style>
-     * {
-      margin: 0;
-      padding: 0;
-     }
-     #map {
-        height:500px;
-        width:100%;
-     }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    height:500px;
+    width:100%;
+  }
   </style>
 </head>
 
 <div class="row">
-        <div class="col-lg-12">
-          {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-          {{/if}}
+  <div class="col-lg-12">
+    {{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
 
-          {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
-          {{/if}}
+    {{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
 
-          {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-          {{/if}}
-          
-          {{{body}}}
-        </div>
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+    
+    {{{body}}}
+  </div>
 
-        
-      </div>
+  
+</div>
 
 
 <body>
-    <!--NAVBAR SECTION START -->
+  <!--NAVBAR SECTION START -->
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
-        <div class="dropdown">
-        <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="dropdown">
+      <button class="navbar-toggler navbar-toggler-right dropbtn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div id="navbar-collapse-1" class="dropdown-content">
-            <ul class="nav navbar-nav navbar-right" >
+      <div id="navbar-collapse-1" class="dropdown-content">
+        <ul class="nav navbar-nav navbar-right" >
                 <!--
                 <a href="#home">Home</a> -->
                 {{#if user}}
-                    <a href="/users/profile">Profile</a>
-                    <a href="/users/logout">Log Out</a>
+                <a href="/users/profile">Profile</a>
+                <a href="/users/logout">Log Out</a>
                 {{else}}
-                    <a href="/users/signup">Sign Up</a>
-                    <a href="/users/login">Log In</a>
+                <a href="/users/signup">Sign Up</a>
+                <a href="/users/login">Log In</a>
                 {{/if}}
                 <!--
                 <a href="#course-sec">Course</a>
                 <a href="#contact-sec">Contact</a>
-                -->
+              -->
             </ul>
-        </div>
+          </div>
         </div>
 
 
         <a class="navbar-brand" href="/">Symposium</a>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto">
                 <!--
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li> -->
-                {{#if user}}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/users/profile">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/logout">Log Out</a>
-                    </li>
-                {{else}}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/users/signup">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/login">Log In</a>
-                    </li>
-                {{/if}}
+                  </li> -->
+                  {{#if user}}
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/profile">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Log Out</a>
+                  </li>
+                  {{else}}
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/signup">Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/login">Log In</a>
+                  </li>
+                  {{/if}}
                 <!--
                 <li class="nav-item">
                     <a class="nav-link" href="#">Course</a>
@@ -107,44 +107,44 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
-                -->
+              -->
             </ul>
+          </div>
+        </nav>
+        <!-- END NAV BAR -->
+
+        {{#if errors}}
+        {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+        {{/if}}
+
+        <div class="map-wrapper">
+          <div id="map"></div>
         </div>
-    </nav>
-    <!-- END NAV BAR -->
-
-    {{#if errors}}
-          {{#each errors}}
-            <div class="alert alert-danger">{{msg}}</div>
-          {{/each}}
-    {{/if}}
-
-    <div class="map-wrapper">
-      <div id="map"></div>
-    </div>
-    <div class="content-wrapper">
-      <div class="cd-wrapper"> <!-- this is the container wrapper -->
-        <div class="cd-contact-wrapper"> <!-- Contact form -->
-          <p class="drop"><b>DROP US A LINE !</b></p>
-          <form class="form-horizontal" method="post" action="contact/send">
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Name</label>
-              <div class="col-lg-8">
-                <input class="form-control" type="text" placeholder="Name" name="name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Email</label>
-              <div class="col-lg-8">
-                <input class="form-control" type="email" placeholder="Your Email" name="email">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Message</label>
-              <div class="col-lg-12">
-                <textarea class="form-control" type="input" placeholder="Enter Message" name="message" rows=8> </textarea>
-              </div>
-            </div>
+        <div class="content-wrapper">
+          <div class="cd-wrapper"> <!-- this is the container wrapper -->
+            <div class="cd-contact-wrapper"> <!-- Contact form -->
+              <p class="drop"><b>DROP US A LINE !</b></p>
+              <form class="form-horizontal" method="post" action="contact/send">
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Name</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" type="text" placeholder="Name" name="name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Email</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" type="email" placeholder="Your Email" name="email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Message</label>
+                  <div class="col-lg-12">
+                    <textarea class="form-control" type="input" placeholder="Enter Message" name="message" rows=8> </textarea>
+                  </div>
+                </div>
             <!--
             <p class="fieldset">
               <label>Email</label>
@@ -154,20 +154,20 @@
               <label>Message</label>
               <textarea type="input" placeholder="Enter Message" name="message" rows=8></textarea> 
             </p>
-            -->
-            <p class="fieldset">
-              <input class="full-width has-padding" type="submit" value="SEND MESSAGE">
-            </p>
-          </form>
-        </div> <!-- contact -->
-      </div>
-      <div class="cd-us-wrapper">
-        <p class="company-name"><b>Symposium Inc.</b></p>
-        <p class="company-mail">symposium_pu@gmail.com</p>
-        <p class="company-phone">267-441-2408</p>
-        <p class="company-description">225 Northwestern Ave., West Lafayette, IN. 47906</p>
-      </div>
+          -->
+          <p class="fieldset">
+            <input class="full-width has-padding" type="submit" value="SEND MESSAGE">
+          </p>
+        </form>
+      </div> <!-- contact -->
     </div>
+    <div class="cd-us-wrapper">
+      <p class="company-name"><b>Symposium Inc.</b></p>
+      <p class="company-mail">symposium_pu@gmail.com</p>
+      <p class="company-phone">267-441-2408</p>
+      <p class="company-description">225 Northwestern Ave., West Lafayette, IN. 47906</p>
+    </div>
+  </div>
 
 
 
@@ -180,19 +180,19 @@
   <!--JavaScript-->
   <script>
   function initMap() {
-  var location = {lat: 40.425869, lng: -86.908066};
-  
-  var map = new google.maps.Map(document.getElementById('map'), {center: location,
-    scrollwheel: false,
-    zoom: 17
-  });
+    var location = {lat: 40.425869, lng: -86.908066};
+    
+    var map = new google.maps.Map(document.getElementById('map'), {center: location,
+      scrollwheel: false,
+      zoom: 17
+    });
 
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map
-  });
-}
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbxldcXVnEQ630ubdPK_gcNFvAfeJ9U14&callback=initMap" ></script>
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbxldcXVnEQ630ubdPK_gcNFvAfeJ9U14&callback=initMap" ></script>
 </body>
 </html>
