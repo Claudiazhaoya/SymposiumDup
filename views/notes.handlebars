@@ -43,7 +43,7 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
 
-      <form class="form-inline mt-2 mt-md-0">
+      <form class="form-inline mt-2 mt-md-0" action="/" method="post">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" name="coursename"/>
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
@@ -169,11 +169,13 @@
             <form class="cd-form" method="post" action="/course/notes" id="submitForm">
               <div class = "upload" >
                 <input type = "file" name = "studyNotes" id = "studyNotes">
-                {{#if canUpload}}
+                <!--{{#if canUpload}}
                 <input class="full-width has-padding" type="submit" value="submit">
                 {{else}}
                 <input class="full-width has-padding" onclick="javaScript:alert('You do not have enough points')" type=button value="submit">
                 {{/if}}
+                -->
+                <input class="full-width has-padding" type="submit" value="submit">
               </div>
             </form>
           </div>
@@ -222,10 +224,10 @@
                       modal.style.display = "none";
                     }
                   }
-                  </script>
+        </script>
 
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                   <script src="../stylesheets_wjz/assets/js/bootstrap.min.js"></script>
                   <script src="../stylesheets_wjz/assets/js/main.js"></script>
-                </body>
-                </html>
+</body>
+</html>

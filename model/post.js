@@ -4,23 +4,24 @@ var postSchema = mongoose.Schema({
 	information: {
 	  type: String,
 	  index: true
-	},
-	
+	},	
 	course_id: {
 	  type: String
 	},
 	user_id:{
 	  type: String
 	},
-	timeStamp: {
-	  type: Date,
-	  default: Date.now
+	date : {
+	  type: String
         },
 
 	countUp : {
 	  type: Number
 	},
 	main_post_id: {
+	  type: String
+	},
+	avator : {
 	  type: String
 	}
  });
@@ -61,8 +62,8 @@ module.exports.updateRatingById = function(post_id,callback) {
 	    {$inc: {countUp : 1}},callback);
 }
 
-module.exports.updatePostById = function(post_id, information, callback) {
+module.exports.updatePostById = function(post_id, information, date,callback) {
     var query = {_id : post_id};
-	post.findOneAndUpdate(query, {$set : {information:information, timeStamp : new Date().setUTCHours(-4,0,0,0) }}, callback);
+	post.findOneAndUpdate(query, {$set : {information:information, date : date }}, callback);
 
 }

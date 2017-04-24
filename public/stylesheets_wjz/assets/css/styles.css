@@ -242,7 +242,7 @@ li {
   padding: 26px 20px 26px 20px; }
 
 .m-board-c {
-  padding: 0px 20px 10px 10px; }
+  padding: 0px 15px 10px 0px; }
 
 .m-board-key {
   background: #351c78;
@@ -286,7 +286,7 @@ li {
     background-color: #fff2cc; }
 
 .m-topic-cell {
-  padding: 20px; }
+  padding: 18px; }
 
 .m-topic-key {
   background: transparent;
@@ -312,14 +312,14 @@ li {
   @media (min-width: 768px) {
     .m-topic-readstatus {
       display: table-cell;
-      width: 21%; } }
+      width: 15%; } }
 
 .m-topic-check {
   display: none; }
   @media (min-width: 768px) {
     .m-topic-check {
       display: table-cell;
-      width: 5%; } }
+      width: 10%; } }
 
 .last-post-profile {
   float: left;
@@ -406,16 +406,6 @@ h6 {
   cursor: pointer;
 }
 
-.footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  background-color: #1a1a1a;
-  color: #b4a046;
-}
 
 /*# sourceMappingURL=styles.css.map */
 
