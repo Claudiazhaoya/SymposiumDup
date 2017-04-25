@@ -37,8 +37,8 @@ module.exports.createPost = function(newPost, callback) {
 
 module.exports.getMostPopuPost = function(course_id, callback) {
     console.log('get most popular post');
-    var query = {course_id : course_id , main_post_is : '1'};
-    post.find(query).sort({courtUp: -1, timestamp: -1}).limit(1).exec(callback);
+    var query = {course_id : course_id , main_post_id : '1'};
+    post.find(query).sort({countUp: -1}).limit(1).exec(callback);
 }
 
 module.exports.getPostByCourseId = function(course_id, callback) {
