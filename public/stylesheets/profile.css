@@ -205,13 +205,13 @@ li a:hover {
   margin-bottom: 5px;
 }
 .col-lg-8 {
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 /* Button Design After Bootstrap loads*/
 
 .col-md-10 {
-  padding-left: 105%;
+  padding-left: 76%;
 }
 
 .nav-link .prompt {
@@ -224,6 +224,30 @@ li a:hover {
 
 .avatar {
   padding-left: 2.2rem;
+}
+
+/* =========================
+        Button Form 
+============================*/
+
+.form-horizontal input[type=submit] {
+  padding: 8px;
+  cursor: pointer;
+  background: #b4a046;
+  color: #1a1a1a;
+  font-weight: bold;
+  border: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.no-touch .form-horizontal input[type=submit]:hover, .no-touch .form-horizontal input[type=submit]:focus {
+  background: #a08d39;
+  outline: none;
 }
 
 /* =========================
