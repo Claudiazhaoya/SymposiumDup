@@ -163,6 +163,7 @@
                 </div>
             </div>
 
+
             {{#each posts}}
                 <div class="m-board">
                     <div class="m-board-cell m-board-key"></div>
@@ -184,9 +185,9 @@
                                        onclick="Sub_reply('{{this.MainPost._id}}')">Comment
                                 </a></li>
                                 <li><a class="m-board-c m-board-check" id="myBtn"
-                                       onclick="editPost('{{this.MainPost._id}}','{{this.MainPost.information}}')">Edit
+                                       onclick="editPost('{{this.MainPost._id}}','{{this.MainPost.information}}' , '{{../username}}','{{this.MainPost.user_id}}')">Edit
                                 </a></li>
-                                <li><a class="m-board-c m-board-check" onclick="deletePost('{{this.MainPost._id}}',1)">Delete
+                                <li><a class="m-board-c m-board-check" onclick="deletePost('{{this.MainPost._id}}', '{{../username}}','{{this.MainPost.user_id}}',1)">Delete
                                 </a></li>
                         </ul>
                         {{else}}
@@ -228,10 +229,10 @@
                                 {{#if ../../user}}
                                 <ul>
                                         <li><a class="m-board-c m-board-check" id="myBtn"
-                                               onclick="editPost('{{this._id}}','{{this.information}}')">Edit
+                                               onclick="editPost('{{this._id}}','{{this.information}}', '{{../../username}}','{{this.user_id}}')">Edit
                                         </a></li>
 
-                                        <li><a class="m-board-c m-board-check" onclick="deletePost('{{this._id}}',0)">Delete
+                                        <li><a class="m-board-c m-board-check" onclick="deletePost('{{this._id}}','{{../../username}}','{{this.user_id}}',0)">Delete
                                         </a></li>
                                 </ul>
                                 {{else}}
@@ -333,27 +334,37 @@
                     = main_post_id;
             x.submit();
         }
-        function deletePost(main_post_id, main) {
-            var x = document.getElementById('submitFormT');
-            x.action += "/delete";
-            document.getElementById("submitFormT").elements.namedItem("main_post_id").value
-                    = main_post_id;
-            document.getElementById("submitFormT").elements.namedItem("main").value
-                    = main;
-            x.submit();
+        function deletePost(main_post_id, username, main_post_user_id, main) {
+            if (username == main_post_user_id) {
+                var x = document.getElementById('submitFormT');
+                x.action += "/delete";
+                document.getElementById("submitFormT").elements.namedItem("main_post_id").value
+                        = main_post_id;
+                document.getElementById("submitFormT").elements.namedItem("main").value
+                        = main;
+                x.submit();
+            } else {
+                //alert(username);
+                //alert(main_post_user_id);
+                alert("You can't delete other's post!");
+            }
         }
-        function editPost(post_id,information) {
-            var x = document.getElementById('myModal');
-            x.style.display = 'block';
-            var y = document.getElementById('formHeader');
-            y.innerHTML = "re editting the post";
-            document.getElementById("submitFormT").elements.namedItem("information").value
-                    = information;
-            //document.getElementById("main_inform").innerHTML;
-            var z = document.getElementById('submitFormT');
-            z.action += "/edit";
-            document.getElementById("submitFormT").elements.namedItem("main_post_id").value
-                    = post_id;
+        function editPost(post_id,information, username, main_post_user_id) {
+            if (username == main_post_user_id) {
+                var x = document.getElementById('myModal');
+                x.style.display = 'block';
+                var y = document.getElementById('formHeader');
+                y.innerHTML = "re editting the post";
+                document.getElementById("submitFormT").elements.namedItem("information").value
+                        = information;
+                //document.getElementById("main_inform").innerHTML;
+                var z = document.getElementById('submitFormT');
+                z.action += "/edit";
+                document.getElementById("submitFormT").elements.namedItem("main_post_id").value
+                        = post_id;
+            } else {
+                alert("You can't edit other's posts!")
+            }
         }
         function prompt_createPost_error() {
             alert("You need to log in first!");
