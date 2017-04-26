@@ -165,17 +165,25 @@
 
 
             {{#each posts}}
-                <div class="m-board">
+                <div class='{{#if @first}}m-board-first{{else}}m-board{{/if}}'>
                     <div class="m-board-cell m-board-key"></div>
                     <div id="main_inform" class="m-board-cell m-board-title">
                             {{this.MainPost.information}}
                     </div>
 
+                        {{#if ../user}}
                         <div class="m-topic-cell m-topic-check">
                             <button onclick="rating('{{this.MainPost._id}}')"><img
                                     src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
                             <div class="m-label">{{this.MainPost.countUp}}</div>
                         </div>
+                        {{else}}
+                        <div class="m-topic-cell m-topic-check">
+                            <button onclick="prompt_createPost_error()"><img
+                                    src="../stylesheets_wjz/assets/images/like.png" class="icons2"></button>
+                            <div class="m-label">{{this.MainPost.countUp}}</div>
+                        </div>
+                        {{/if}}
 
                     <div class="m-topic-cell m-topic-readstatus">
 
@@ -354,7 +362,7 @@
                 var x = document.getElementById('myModal');
                 x.style.display = 'block';
                 var y = document.getElementById('formHeader');
-                y.innerHTML = "re editting the post";
+                y.innerHTML = "Editting the post";
                 document.getElementById("submitFormT").elements.namedItem("information").value
                         = information;
                 //document.getElementById("main_inform").innerHTML;

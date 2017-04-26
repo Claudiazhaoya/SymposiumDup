@@ -7,6 +7,10 @@ $(document).ready(function() {
           $(".m-topic-container").not($(this).next()).slideUp('fast');
           $(this).next().slideToggle(400);
      });
+     $(".m-board-first").click(function() {
+          $(".m-topic-container").not($(this).next()).slideUp('fast');
+          $(this).next().slideToggle(400);
+     });
 });
 
 // Expand and Collapse All Boards
