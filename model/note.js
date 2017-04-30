@@ -24,6 +24,9 @@ var NoteSchema = mongoose.Schema({
 	},
 	time: {
 		type: String
+	},
+	avatar: {
+		type: String
 	}
 });
 

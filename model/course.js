@@ -55,6 +55,8 @@ exports.searchCourse = function(coursename, callback){
 			s2 = s2.join("");
 			course.url = myurl + ' \'' + s1 + '\'' + ' and Number eq ' + ' \'' + s2 + '00\'';
 		}
+	} else {
+		return callback(error);
 	}
    	
    	request(course, function(error, response, body){
