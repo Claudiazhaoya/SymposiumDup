@@ -48,8 +48,6 @@
 
         <div id="navbar-collapse-1" class="dropdown-content">
             <ul class="nav navbar-nav navbar-right">
-                <!--
-                <a href="#home">Home</a> -->
                 {{#if user}}
                     <a class="sampleText">Hi! <strong>{{username}}</strong></a>
                     <a href="/users/profile">Profile</a>
@@ -58,10 +56,6 @@
                     <a href="/users/signup">Sign Up</a>
                     <a href="/users/login">Log In</a>
                 {{/if}}
-                <!--
-                <a href="#course-sec">Course</a>
-                <a href="#contact-sec">Contact</a>
-                -->
             </ul>
         </div>
     </div>
@@ -76,10 +70,6 @@
         </form>
 
         <ul class="navbar-nav ml-auto">
-            <!--
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li> -->
             {{#if user}}
                 <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                 <li class="nav-item active">
@@ -116,25 +106,8 @@
                         <button class="btn btn-default btn-lg" onclick="prompt_createPost_error()">Create Subject</button>
                         {{/if}}
 
-                    <!--       <button class="btn btn-default btn-lg" type="submit"> <img src="../stylesheets_wjz/assets/images/icon-my-repository.svg" class="icons"> My Repository</button>-->
                     <a href="notes" class="btn btn-default btn-lg" type="submit"><img
                             src="../stylesheets_wjz/assets/images/icon-group-study.svg" class="icons"> Study Note</a>
-                    <!--
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-cog" aria-hidden="true"></i> Options <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="fa fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="fa fa-times" aria-hidden="true"></i> Delete</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="fa fa-external-link" aria-hidden="true"></i> View Log</a></li>
-                        </ul>
-                    </div>
-                    -->
                 </div><!-- end col-md-9 -->
                 <div class="col-md-5">
                     <a class="btn btn-lg btn-primary pull-right" href="/course" role="button">Course page &raquo;</a>

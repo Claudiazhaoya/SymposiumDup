@@ -46,8 +46,6 @@
 
             <div id="navbar-collapse-1" class="dropdown-content">
                 <ul class="nav navbar-nav navbar-right" >
-                <!--
-                <a href="#home">Home</a> -->
                 {{#if user}}
                 <li class="sampleText">Hi! <strong>{{username}}</strong></li>
                 <a href="/users/profile">Profile</a>
@@ -56,10 +54,6 @@
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
                 {{/if}}
-                <!--
-                <a href="#course-sec">Course</a>
-                <a href="#contact-sec">Contact</a>
-            -->
         </ul>
     </div>
 </div>
@@ -75,10 +69,6 @@
     </form>
 
     <ul class="navbar-nav ml-auto">
-                <!--
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li> -->
                 {{#if user}}
                 <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                 <li class="nav-item active">
@@ -132,14 +122,6 @@
     </form>
 </div>
 
-<!--Post Part START -->
-    <!--
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Post Part</h1>
-        </div>
-    </div>
--->
 <div class="footer">
     <a class="about" href="/about"><b>About us</b></a>
     <a class="contact" href="/contact"><b>Contact us</b></a>

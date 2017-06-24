@@ -33,26 +33,6 @@
 
 
 <body>
-  <!--
-  <header role="banner">
-     <div id="cd-logo"><a href="#0"><img src="img/nav-logo-6.png" alt="Logo"></a></div> 
-    <div id="cd-logo"> 
-      <h1> Symposium </h1>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        {{#if user}}
-          <li role="presentation"><a class="cd-signin" href="/users/profile">Profile</a></li>
-          <li role="presentation"><a class="cd-signin" href="/users/logout">Logout</a></li>
-        {{else}}
-          <li role="presentation"><a class="cd-signin" href="/users/login">Login</a></li>
-          <li role="presentation"><a class="cd-signup" href="/users/signup">Signup</a></li>
-        {{/if}}
-
-      </ul>
-    </nav>
-  </header>
--->
 
 <!--NAVBAR SECTION START -->
 
@@ -65,8 +45,6 @@
 
     <div id="navbar-collapse-1" class="dropdown-content">
       <ul class="nav navbar-nav navbar-right" >
-                <!--
-                <a href="#home">Home</a> -->
                 {{#if user}}
                 <li class="sampleText">Hi! <strong>{{username}}</strong></li>
                 <a href="/users/profile">Profile</a>
@@ -75,10 +53,6 @@
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
                 {{/if}}
-                <!--
-                <a href="#course-sec">Course</a>
-                <a href="#contact-sec">Contact</a>
-              -->
             </ul>
           </div>
         </div>
@@ -88,10 +62,6 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
-                <!--
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                  </li> -->
                   {{#if user}}
                   <a class="nav-link prompt"> Welcome! {{username}} has {{point}} points!</a>
                   <li class="nav-item active">
@@ -108,19 +78,6 @@
                     <a class="nav-link" href="/users/login">Log In</a>
                   </li>
                   {{/if}}
-                <!--
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Course</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              -->
             </ul>
           </div>
         </nav>
