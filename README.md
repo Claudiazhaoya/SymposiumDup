@@ -1,6 +1,6 @@
 # Symposium
 
-CS307 course project
+CS307 course project (Spring 17)
 
 ## Project Objectives:
 - A public platform will be provided for Purdue students to share their study experience in each course with different course professor. 
