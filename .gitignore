@@ -47,6 +47,4 @@ Temporary Items
 .apdisk
 routes/users.js
 routes/course.js
-routes/config.js
-routes/config.json
 config.json
